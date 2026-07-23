@@ -129,10 +129,27 @@ Le scroll fluide est celui du navigateur (`scroll-behavior: smooth`).
 
 ## Déploiement
 
-Build statique : `npm run build` puis servir `dist/` (Vercel, Netlify, GitHub
-Pages, n'importe quel hébergeur statique).
+Hébergé sur **GitHub Pages**, gratuitement. Chaque `git push` sur `main` déclenche
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) : lint, typecheck,
+build, prérendu, publication. Aucune commande manuelle.
 
-**Avant la mise en ligne**, remplacer `https://clement-toulouse.fr` par l'URL
-réelle dans `index.html` (`canonical`, `og:url`, `og:image`, JSON-LD) et dans
-`profile.siteUrl` — les URLs d'`og:image` doivent être absolues pour que les
+```bash
+git add -A && git commit -m "…" && git push
+```
+
+L'avancement est visible dans l'onglet **Actions** du dépôt ; la mise en ligne
+prend une à deux minutes.
+
+### Changer de domaine
+
+`profile.siteUrl` dans [`src/data/profile.ts`](src/data/profile.ts) est la **seule**
+ligne à modifier. Le plugin `site-url` de [`vite.config.ts`](vite.config.ts) injecte
+la valeur dans `index.html` à la place de `__SITE_URL__` (canonical, `og:url`,
+`og:image`, `twitter:image`, JSON-LD) — ces URL doivent être absolues pour que les
 aperçus de lien fonctionnent.
+
+Pour un dépôt de projet servi dans un sous-dossier (`user.github.io/cv`), passer
+aussi `base: '/cv/'` dans `vite.config.ts`.
+
+Le build reste un dossier statique : `npm run build` puis servir `dist/` marche
+tout aussi bien sur Vercel, Netlify ou tout autre hébergeur.

@@ -124,8 +124,15 @@ emits `public/clement.webp`, `public/clement.jpg` and the 1200×630 `public/og.j
   Begin every run with `await page.waitForSelector('#parcours')` (or curl the URL
   and check for a `200`).
 
-## Before deploying
+## Deployment
 
-`https://clement-toulouse.fr` is a placeholder. Replace it in `index.html`
-(`canonical`, `og:url`, `og:image`, JSON-LD) and in `profile.siteUrl`. `og:image`
-must be an absolute URL for link previews to work.
+GitHub Pages, driven by `.github/workflows/deploy.yml` — every push to `main` runs
+lint, typecheck, build and prerender, then publishes `dist/`.
+
+The absolute URLs in `index.html` are written as `__SITE_URL__` and substituted at
+build time by the `site-url` plugin in `vite.config.ts`, which reads
+`profile.siteUrl`. **That one field is the only place to change the domain** — don't
+reintroduce hardcoded absolute URLs in `index.html`.
+
+`base` in `vite.config.ts` is `/` because this is a GitHub *user* site
+(`<user>.github.io`). A project repo served from a subfolder needs `base: '/<repo>/'`.
