@@ -158,12 +158,13 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
             </a>
           ))}
           <a
-            href={profile.cv}
-            download
+            href={profile.linkedin}
+            target="_blank"
+            rel="noreferrer noopener"
             className="mt-8 flex items-center justify-center gap-2 rounded-full border border-line px-5 py-4 font-semibold"
           >
-            <Icon name="download" size={16} />
-            Télécharger le CV
+            <Icon name="linkedin" size={16} />
+            Voir mon LinkedIn
           </a>
           <a
             href={`mailto:${profile.email}`}

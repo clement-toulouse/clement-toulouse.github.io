@@ -129,24 +129,13 @@ export default function Hero() {
 
             <Magnetic strength={0.25}>
               <a
-                href={profile.cv}
-                download
-                className="flex cursor-pointer items-center gap-2.5 rounded-full border border-line bg-surface/50 px-6 py-3.5 text-sm font-semibold text-ink-soft backdrop-blur-xl transition-colors duration-300 hover:border-line-strong hover:text-ink"
-              >
-                <Icon name="download" size={17} />
-                Télécharger le CV
-              </a>
-            </Magnetic>
-
-            <Magnetic strength={0.25}>
-              <a
                 href={profile.linkedin}
                 target="_blank"
                 rel="noreferrer noopener"
-                aria-label="Profil LinkedIn de Clément Toulouse"
-                className="grid h-12 w-12 cursor-pointer place-items-center rounded-full border border-line bg-surface/50 text-ink-soft backdrop-blur-xl transition-colors duration-300 hover:border-line-strong hover:text-ink"
+                className="flex cursor-pointer items-center gap-2.5 rounded-full border border-line bg-surface/50 px-6 py-3.5 text-sm font-semibold text-ink-soft backdrop-blur-xl transition-colors duration-300 hover:border-line-strong hover:text-ink"
               >
-                <Icon name="linkedin" size={18} />
+                <Icon name="linkedin" size={17} />
+                Voir mon LinkedIn
               </a>
             </Magnetic>
           </div>

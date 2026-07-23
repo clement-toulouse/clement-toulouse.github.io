@@ -7,12 +7,6 @@ const links: { icon: IconName; label: string; value: string; href: string; exter
   [
     { icon: 'mail', label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
     {
-      icon: 'phone',
-      label: 'Téléphone',
-      value: profile.phone,
-      href: `tel:${profile.phone.replace(/\s/g, '')}`,
-    },
-    {
       icon: 'linkedin',
       label: 'LinkedIn',
       value: '/in/clement-toulouse',
@@ -64,18 +58,19 @@ export default function Contact() {
             </Magnetic>
             <Magnetic strength={0.3}>
               <a
-                href={profile.cv}
-                download
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer noopener"
                 className="inline-flex cursor-pointer items-center gap-2.5 rounded-full border border-line bg-surface/50 px-7 py-4.5 text-[15px] font-semibold text-ink-soft backdrop-blur-xl transition-colors duration-300 hover:border-line-strong hover:text-ink"
               >
-                <Icon name="download" size={17} />
-                Télécharger le CV
+                <Icon name="linkedin" size={17} />
+                Voir mon LinkedIn
               </a>
             </Magnetic>
           </div>
         </div>
 
-        <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-20 grid grid-cols-1 gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-3">
           {links.map((l) => {
             const Inner = (
               <>

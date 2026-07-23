@@ -5,11 +5,9 @@ export const profile = {
   company: 'Groupe Barrière',
   location: 'Rosny-sous-Bois (93) · Paris',
   email: 'ctoulous@gmail.com',
-  phone: '06 66 12 86 11',
   linkedin: 'https://www.linkedin.com/in/clement-toulouse/',
   photo: '/clement.jpg',
   photoWebp: '/clement.webp',
-  cv: '/cv-clement-toulouse.pdf',
   /**
    * Source unique de vérité pour les URL absolues du site (canonical, og:image,
    * JSON-LD). Injectée dans index.html au build par le plugin `site-url` de
