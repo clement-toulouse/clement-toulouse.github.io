@@ -51,10 +51,25 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
       />
 
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? 'py-3' : 'py-5'
+        className={`fixed inset-x-0 top-0 z-50 transition-[padding] duration-500 ${
+          scrolled ? 'py-2.5' : 'py-5'
         }`}
       >
+        {/*
+          Fond du header. Sans lui, le contenu de la page défile visiblement
+          derrière le logo et les boutons, qui n'ont pas de fond propre. Il
+          n'apparaît qu'une fois la page défilée, pour laisser le hero
+          respirer en haut.
+        */}
+        <div
+          className={`absolute inset-0 -z-10 border-b transition-[background-color,border-color,backdrop-filter] duration-500 ${
+            scrolled
+              ? 'border-line bg-canvas/80 backdrop-blur-xl'
+              : 'border-transparent bg-transparent'
+          }`}
+          aria-hidden="true"
+        />
+
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
           <a
             href="#accueil"
@@ -70,10 +85,16 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
             </span>
           </a>
 
-          {/* Nav desktop, pilule flottante */}
+          {/*
+            En haut de page : pilule flottante posée sur le hero.
+            Une fois défilé : la barre porte déjà le fond, la pilule s'efface
+            pour ne pas empiler deux couches de verre dépoli.
+          */}
           <nav
-            className={`hidden items-center gap-1 rounded-full border border-line px-1.5 py-1.5 backdrop-blur-xl transition-colors duration-500 md:flex ${
-              scrolled ? 'bg-surface/70' : 'bg-surface/30'
+            className={`hidden items-center gap-1 rounded-full border px-1.5 py-1.5 transition-colors duration-500 md:flex ${
+              scrolled
+                ? 'border-transparent bg-transparent'
+                : 'border-line bg-surface/30 backdrop-blur-xl'
             }`}
             aria-label="Navigation principale"
           >
@@ -100,7 +121,9 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
               <button
                 onClick={onToggleTheme}
                 aria-label="Changer de thème"
-                className="grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line bg-surface/60 text-ink-soft backdrop-blur-xl transition-all duration-300 hover:border-line-strong hover:text-ink"
+                className={`grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line text-ink-soft transition-all duration-300 hover:border-line-strong hover:text-ink ${
+                  scrolled ? 'bg-transparent' : 'bg-surface/60 backdrop-blur-xl'
+                }`}
               >
                 {/* Les deux icônes sont rendues, le CSS montre celle du thème
                     courant : pas d'écart entre le HTML prérendu et le client. */}
@@ -121,7 +144,9 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
               onClick={() => setOpen(true)}
               aria-label="Ouvrir le menu"
               aria-expanded={open}
-              className="grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line bg-surface/60 backdrop-blur-xl md:hidden"
+              className={`grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line transition-colors duration-300 md:hidden ${
+                scrolled ? 'bg-transparent' : 'bg-surface/60 backdrop-blur-xl'
+              }`}
             >
               <Icon name="menu" size={18} />
             </button>

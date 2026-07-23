@@ -78,8 +78,18 @@
 
 /* --------------------------------------------------------------------- base */
 
-* {
-  border-color: var(--c-line);
+/*
+ * Couleur de bordure par défaut. Impérativement dans @layer base : une règle
+ * non calquée l'emporterait sur les utilitaires Tailwind (qui vivent dans
+ * @layer utilities), et neutraliserait silencieusement tout `border-iris`,
+ * `border-transparent` ou `border-line-strong` posé dans le JSX.
+ */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    border-color: var(--c-line);
+  }
 }
 
 html {
