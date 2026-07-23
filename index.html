@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <title>Clément Toulouse · Head of Product</title>
+    <meta
+      name="description"
+      content="Head of Product Casino chez Groupe Barrière. 9+ ans de produit digital B2B & B2C, pilotage d'équipes et déploiement d'agents IA au service des process."
+    />
+    <link rel="canonical" href="__SITE_URL__/" />
+    <meta name="author" content="Clément Toulouse" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#f7f5f2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:site_name" content="Clément Toulouse" />
+    <meta property="og:title" content="Clément Toulouse · Head of Product" />
+    <meta
+      property="og:description"
+      content="9+ ans de produit digital B2B & B2C. Vision, delivery, impact chiffré et IA appliquée aux process."
+    />
+    <meta property="og:image" content="__SITE_URL__/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Clément Toulouse, Head of Product" />
+    <meta property="profile:first_name" content="Clément" />
+    <meta property="profile:last_name" content="Toulouse" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clément Toulouse · Head of Product" />
+    <meta
+      name="twitter:description"
+      content="9+ ans de produit digital B2B & B2C. Vision, delivery, impact chiffré et IA appliquée aux process."
+    />
+    <meta name="twitter:image" content="__SITE_URL__/og.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Clément Toulouse",
+        "givenName": "Clément",
+        "familyName": "Toulouse",
+        "jobTitle": "Head of Product",
+        "email": "mailto:ctoulous@gmail.com",
+        "telephone": "+33666128611",
+        "url": "__SITE_URL__/",
+        "image": "__SITE_URL__/clement.jpg",
+        "description": "Head of Product Casino chez Groupe Barrière. 9+ ans de produit digital B2B et B2C, pilotage d'équipes produit et déploiement d'agents IA au service des process.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rosny-sous-Bois",
+          "addressRegion": "Île-de-France",
+          "addressCountry": "FR"
+        },
+        "worksFor": { "@type": "Organization", "name": "Groupe Barrière" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "ECE Paris" },
+        "knowsLanguage": ["fr", "en", "de"],
+        "knowsAbout": [
+          "Product Management",
+          "Stratégie produit",
+          "OKR",
+          "Intelligence artificielle appliquée",
+          "Claude Code",
+          "Dust",
+          "SaaS B2B",
+          "Applications mobiles B2C"
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/in/clement-toulouse/",
+          "https://savor-nine.vercel.app/"
+        ]
+      }
+    </script>
+
+    <!--
+      Pose le thème avant le premier paint : sans ça, la page s'affiche en
+      sombre puis bascule en clair une fois React monté.
+    -->
+    <script>
+      // Le site est pensé en clair : c'est le défaut, quelle que soit la
+      // préférence système. Seul un choix explicite via le bouton est retenu.
+      // Pour suivre l'OS à la place : remplacer 'light' par
+      // matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+      try {
+        var t = localStorage.getItem('theme')
+        document.documentElement.dataset.theme = t === 'dark' ? 'dark' : 'light'
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"><!--app--></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

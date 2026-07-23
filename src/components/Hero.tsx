@@ -1,0 +1,201 @@
+import { useRef } from 'react'
+import { heroProofs, profile } from '../data/profile'
+import { useParallax } from '../hooks/useMotion'
+import SplitHeading from './ui/SplitHeading'
+import Magnetic from './ui/Magnetic'
+import Portrait from './ui/Portrait'
+import Tilt from './ui/Tilt'
+import Icon from './ui/Icon'
+
+export default function Hero() {
+  const root = useRef<HTMLElement>(null)
+  const auroraA = useRef<HTMLDivElement>(null)
+  const auroraB = useRef<HTMLDivElement>(null)
+  const auroraC = useRef<HTMLDivElement>(null)
+  const portrait = useRef<HTMLDivElement>(null)
+
+  // Parallaxe : les halos dérivent au scroll et suivent doucement la souris.
+  // Une seule boucle rAF, uniquement des transforms (jamais de layout).
+  useParallax(({ scrollY, mouseX, mouseY }) => {
+    const el = root.current
+    if (!el) return
+
+    const h = el.offsetHeight || 1
+    const p = Math.min(scrollY / h, 1)
+    if (p >= 1) return // hero sorti du viewport : on arrête d'écrire
+
+    const set = (node: HTMLElement | null, drift: number, mx: number, my: number) => {
+      if (!node) return
+      node.style.transform = `translate3d(${mouseX * mx}px, ${p * drift + mouseY * my}px, 0)`
+    }
+
+    set(auroraA.current, 190, 70, 50)
+    set(auroraB.current, -120, -50, -35)
+    set(auroraC.current, 90, 30, 20)
+    if (portrait.current) {
+      portrait.current.style.transform = `translate3d(0, ${p * 70}px, 0)`
+    }
+  })
+
+  return (
+    <section
+      ref={root}
+      id="accueil"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-20"
+    >
+      {/* Décor */}
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <div className="absolute inset-0 grid-bg" />
+        <div
+          ref={auroraA}
+          className="aurora -left-20 top-0 h-[38rem] w-[38rem]"
+          style={{ background: 'radial-gradient(circle, var(--c-iris), transparent 65%)' }}
+        />
+        <div
+          ref={auroraB}
+          className="aurora right-0 top-40 h-[32rem] w-[32rem]"
+          style={{ background: 'radial-gradient(circle, var(--c-mint), transparent 65%)' }}
+        />
+        <div
+          ref={auroraC}
+          className="aurora left-1/3 bottom-0 h-[26rem] w-[26rem] opacity-40"
+          style={{ background: 'radial-gradient(circle, var(--c-ember), transparent 68%)' }}
+        />
+      </div>
+
+      <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
+        {/* Colonne texte */}
+        <div className="intro">
+          <div
+            style={{ '--d': 0 } as React.CSSProperties}
+            className="intro-item mb-7 inline-flex items-center gap-2.5 rounded-full border border-line bg-surface/50 py-1.5 pl-2 pr-4 backdrop-blur-xl"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint opacity-70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
+            </span>
+            <span className="text-[12.5px] font-medium text-ink-soft">
+              {profile.role} · {profile.company}
+            </span>
+          </div>
+
+          <SplitHeading
+            as="h1"
+            gradient
+            text={`${profile.firstName} ${profile.lastName}`}
+            delay={0.25}
+            className="display text-[clamp(2.25rem,9vw,5.75rem)] text-gradient"
+          />
+
+          <p
+            style={{ '--d': 2 } as React.CSSProperties}
+            className="intro-item mt-6 max-w-xl text-[clamp(1.05rem,2.2vw,1.35rem)] leading-[1.55] text-ink-soft"
+          >
+            {profile.tagline[0]}{' '}
+            <span className="serif-accent text-ink">{profile.tagline[1]}</span>
+          </p>
+
+          {/* Preuves chiffrées plutôt que mots-clés : c'est la première chose
+              qu'un recruteur doit lire après le nom. */}
+          <div
+            style={{ '--d': 3 } as React.CSSProperties}
+            className="intro-item mt-9 flex flex-wrap items-stretch gap-x-8 gap-y-4"
+          >
+            {heroProofs.map((p) => (
+              <div key={p.label} className="border-l-2 border-iris/40 pl-3.5">
+                <p className="display text-[1.45rem] text-ink">{p.value}</p>
+                <p className="mt-0.5 text-[12px] leading-tight text-ink-mute">{p.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div
+            style={{ '--d': 4 } as React.CSSProperties}
+            className="intro-item mt-10 flex flex-wrap items-center gap-3 print:hidden"
+          >
+            <Magnetic strength={0.3}>
+              <a
+                href="#impact"
+                className="group flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_0_40px_-8px] hover:shadow-iris"
+              >
+                Voir mon impact
+                <Icon
+                  name="arrowRight"
+                  size={17}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+              </a>
+            </Magnetic>
+
+            <Magnetic strength={0.25}>
+              <a
+                href={profile.cv}
+                download
+                className="flex cursor-pointer items-center gap-2.5 rounded-full border border-line bg-surface/50 px-6 py-3.5 text-sm font-semibold text-ink-soft backdrop-blur-xl transition-colors duration-300 hover:border-line-strong hover:text-ink"
+              >
+                <Icon name="download" size={17} />
+                Télécharger le CV
+              </a>
+            </Magnetic>
+
+            <Magnetic strength={0.25}>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label="Profil LinkedIn de Clément Toulouse"
+                className="grid h-12 w-12 cursor-pointer place-items-center rounded-full border border-line bg-surface/50 text-ink-soft backdrop-blur-xl transition-colors duration-300 hover:border-line-strong hover:text-ink"
+              >
+                <Icon name="linkedin" size={18} />
+              </a>
+            </Magnetic>
+          </div>
+        </div>
+
+        {/* Portrait */}
+        <div
+          ref={portrait}
+          className="relative mx-auto w-full max-w-sm lg:max-w-none print:mx-0 print:max-w-[190px]"
+        >
+          <Tilt>
+            <div
+              style={{ '--d': 3 } as React.CSSProperties}
+              className="intro intro-item relative aspect-4/5 overflow-hidden rounded-[26px] border border-line-strong"
+            >
+              <Portrait className="portrait-graded scale-105 transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110" />
+              {/* Fondu vers le fond, pour intégrer la photo à la page */}
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-canvas via-canvas/10 to-transparent" />
+              <div className="pointer-events-none absolute inset-0 mix-blend-soft-light bg-linear-135 from-iris/20 via-transparent to-mint/10" />
+
+              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl border border-line bg-canvas/60 px-4 py-3 backdrop-blur-xl print:hidden">
+                <div>
+                  <p className="text-[13px] font-semibold leading-tight">
+                    Paris · Rosny-sous-Bois
+                  </p>
+                  <p className="text-[11.5px] text-ink-mute">Ouvert aux échanges</p>
+                </div>
+                <Icon name="mapPin" size={17} className="text-mint" />
+              </div>
+            </div>
+          </Tilt>
+
+          {/* Badge flottant */}
+          <div className="absolute -left-4 top-8 hidden rounded-2xl border border-line bg-surface/80 px-4 py-3 backdrop-blur-xl lg:block">
+            <p className="display text-2xl text-mint">9+</p>
+            <p className="text-[11px] leading-tight text-ink-mute">ans de produit</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Indice de scroll */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-7 flex justify-center print:hidden"
+        aria-hidden="true"
+      >
+        <div className="flex h-10 w-6 items-start justify-center rounded-full border border-line-strong p-1.5">
+          <span className="h-2 w-1 animate-bounce rounded-full bg-ink-soft" />
+        </div>
+      </div>
+    </section>
+  )
+}
