@@ -3,6 +3,7 @@ import { useLanguage } from '../i18n/LanguageContext'
 import { useActiveSection, useScrollProgress } from '../hooks/useMotion'
 import Icon from './ui/Icon'
 import Magnetic from './ui/Magnetic'
+import Flag from './ui/Flag'
 
 export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
   const { locale, setLocale, t } = useLanguage()
@@ -45,7 +46,7 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
 
   const toggleLocale = () => setLocale(locale === 'fr' ? 'en' : 'fr')
   // Le bouton affiche la langue vers laquelle on bascule, pas la langue courante.
-  const nextLocaleCode = locale === 'fr' ? 'EN' : 'FR'
+  const nextLocale = locale === 'fr' ? 'en' : 'fr'
 
   return (
     <>
@@ -127,11 +128,11 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
               <button
                 onClick={toggleLocale}
                 aria-label={t.nav.langToggleTo}
-                className={`grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line text-[12px] font-bold tracking-tight text-ink-soft transition-all duration-300 hover:border-line-strong hover:text-ink ${
+                className={`grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line transition-all duration-300 hover:border-line-strong ${
                   scrolled ? 'bg-transparent' : 'bg-surface/60 backdrop-blur-xl'
                 }`}
               >
-                {nextLocaleCode}
+                <Flag locale={nextLocale} size={22} />
               </button>
             </Magnetic>
 
@@ -183,9 +184,9 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
           <button
             onClick={toggleLocale}
             aria-label={t.nav.langToggleTo}
-            className="grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line text-[12px] font-bold tracking-tight"
+            className="grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line"
           >
-            {nextLocaleCode}
+            <Flag locale={nextLocale} size={22} />
           </button>
           <button
             onClick={() => setOpen(false)}
