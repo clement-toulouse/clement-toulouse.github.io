@@ -24,7 +24,7 @@ export const contentFr: SiteContent = {
       "Je transforme une vision en delivery, et le delivery en chiffres.",
     ],
     intro:
-      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige les produits digitaux du pôle casino du Groupe Barrière (Barrière Play, jeu en ligne, CZAM), avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
+      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige les produits digitaux du pôle casino du Groupe Barrière (Barrière Play, CZAM, et un jeu en ligne encore confidentiel), avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
   },
 
   hero: {
@@ -189,13 +189,13 @@ export const contentFr: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "Je pilote l'ensemble des produits digitaux du pôle casino du groupe : Barrière Play (fidélité et wallet digital en casino), le jeu en ligne, CZAM (l'outil collaborateur de gestion des entrées) et la stratégie de compte client commun entre nos plateformes. J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
+              "Je pilote l'ensemble des produits digitaux du pôle casino du groupe : Barrière Play (fidélité et wallet digital en casino), CZAM (l'outil collaborateur de gestion des entrées), un jeu en ligne encore en construction et confidentiel, et la stratégie de compte client commun entre nos plateformes. J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
           },
         ],
         responsibilities: [
           "Définir la vision produit et la stratégie digitale de l'activité, avec un pilotage par OKR",
           'Challenger et accompagner les Product Managers pour maximiser la qualité et la valeur de leurs produits',
-          'Piloter le portefeuille de produits du pôle : le jeu en ligne du groupe (casino en ligne, paris sportifs) et CZAM, l\'outil collaborateur de gestion des entrées en casino',
+          "Piloter le portefeuille de produits du pôle : CZAM, l'outil collaborateur de gestion des entrées en casino, et un jeu en ligne encore en construction, sous confidentialité",
           "Structurer les processus inter-équipes (déploiement d'agents IA, méthodologies produit) et mener la réflexion stratégique sur un compte client et un parcours d'inscription communs entre nos plateformes",
         ],
         wins: [

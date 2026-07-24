@@ -24,7 +24,7 @@ export const contentEn: SiteContent = {
       'I turn vision into delivery, and delivery into numbers.',
     ],
     intro:
-      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run the digital products of Groupe Barrière's casino division (Barrière Play, online gambling, CZAM), with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
+      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run the digital products of Groupe Barrière's casino division (Barrière Play, CZAM, and a still-confidential online gambling product), with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
   },
 
   hero: {
@@ -189,13 +189,13 @@ export const contentEn: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "I own every digital product of the group's casino division: Barrière Play (loyalty and digital wallet in-venue), online gambling, CZAM (the staff tool for managing entries) and the shared customer account strategy across our platforms. I lead a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
+              "I own every digital product of the group's casino division: Barrière Play (loyalty and digital wallet in-venue), CZAM (the staff tool for managing entries), an online gambling product still under wraps and in development, and the shared customer account strategy across our platforms. I lead a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
           },
         ],
         responsibilities: [
           'Define the product vision and digital strategy for the business, tracked through OKRs',
           'Challenge and coach the Product Managers to maximize the quality and value of their products',
-          "Own the pole's product portfolio: the group's online gambling product (online casino, sports betting) and CZAM, the staff tool for managing casino entries",
+          "Own the pole's product portfolio: CZAM, the staff tool for managing casino entries, and an online gambling product still under wraps and in development",
           'Structure cross-team processes (AI agent deployment, product methodology) and lead the strategic thinking on a shared customer account and sign-up flow across our platforms',
         ],
         wins: [
