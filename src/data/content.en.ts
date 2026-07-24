@@ -172,6 +172,10 @@ export const contentEn: SiteContent = {
 
   experience: {
     responsibilitiesLabel: 'Key responsibilities',
+    moreLabel: 'Read more',
+    lessLabel: 'Show less',
+    contextLabel: 'Context',
+    impactLabel: 'Impact',
     items: [
       {
         company: 'Groupe Barrière',
@@ -212,6 +216,17 @@ export const contentEn: SiteContent = {
           src: '/experience/barriere-play.webp',
           alt: 'Screenshot of the Barrière Play app, Carré VIP loyalty card',
           frame: 'phone',
+        },
+        caseStudy: {
+          context:
+            "The group's online gambling division ran on siloed teams and product processes that varied from one brand to the next. My mission: unify the product vision and industrialize the pace of feature releases on Barrière Play, the group's mobile app.",
+          impact:
+            "The app became the group's reference digital entry point for players, with steady month-over-month growth in its user base. Meanwhile, the internal AI assistant deployed to the teams now handles most day-to-day product questions without involving the Product Managers.",
+          image: {
+            src: '/experience/barriere-account.webp',
+            alt: 'Screenshot of the Barrière Play app, My Account screen',
+            frame: 'phone',
+          },
         },
       },
       {
@@ -269,6 +284,12 @@ export const contentEn: SiteContent = {
           alt: 'Screenshot of the Partoo distribution dashboard, publication rate by platform',
           frame: 'browser',
           url: 'app.partoo.co',
+        },
+        caseStudy: {
+          context:
+            "The Review Management product handled customer reviews for hundreds of brands across Google, Facebook and TripAdvisor APIs that were incompatible with one another, with a slow and largely manual client onboarding process.",
+          impact:
+            'The back-office and new-client onboarding revamp cut ramp-up time by 60%, while template review replies pushed the response rate up by 30%, with 70% of clients adopting the tool within the first few months.',
         },
       },
       {

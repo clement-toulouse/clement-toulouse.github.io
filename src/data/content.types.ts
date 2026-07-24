@@ -34,6 +34,17 @@ export interface Experience {
     /** Barre d'url affichée pour le cadre navigateur. */
     url?: string
   }
+  /** Mini case-study dépliable ("En savoir plus") : contexte, impact, image optionnelle. */
+  caseStudy?: {
+    context: string
+    impact: string
+    image?: {
+      src: string
+      alt: string
+      frame: 'browser' | 'phone'
+      url?: string
+    }
+  }
 }
 
 export interface AiCard {
@@ -144,6 +155,10 @@ export interface SiteContent {
   aiCards: AiCard[]
   experience: {
     responsibilitiesLabel: string
+    moreLabel: string
+    lessLabel: string
+    contextLabel: string
+    impactLabel: string
     items: Experience[]
   }
   savor: {

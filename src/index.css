@@ -501,6 +501,15 @@ body::after {
     border: 1px solid var(--c-line) !important;
   }
 
+  /* Le mini case-study est replié par défaut : sur papier, tout doit être lisible. */
+  .case-study {
+    grid-template-rows: 1fr !important;
+  }
+
+  [data-xp] button {
+    display: none !important;
+  }
+
   h1,
   h2,
   h3 {

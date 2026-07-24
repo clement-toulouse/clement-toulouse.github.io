@@ -20,6 +20,7 @@ const paths: Record<string, string> = {
   quote: 'M9 7c-2.5 1-4 3.2-4 6v4h5v-5H7c0-1.8.8-3.2 2.4-4Zm10 0c-2.5 1-4 3.2-4 6v4h5v-5h-3c0-1.8.8-3.2 2.4-4Z',
   menu: 'M4 7h16M4 12h16M4 17h16',
   close: 'M6 6l12 12M18 6 6 18',
+  chevronDown: 'm6 9 6 6 6-6',
 }
 
 export type IconName = keyof typeof paths

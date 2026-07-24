@@ -172,6 +172,10 @@ export const contentFr: SiteContent = {
 
   experience: {
     responsibilitiesLabel: 'Responsabilités clés',
+    moreLabel: 'En savoir plus',
+    lessLabel: 'Voir moins',
+    contextLabel: 'Contexte',
+    impactLabel: 'Impact',
     items: [
       {
         company: 'Groupe Barrière',
@@ -212,6 +216,17 @@ export const contentFr: SiteContent = {
           src: '/experience/barriere-play.webp',
           alt: "Capture d'écran de l'application Barrière Play, carte de fidélité Carré VIP",
           frame: 'phone',
+        },
+        caseStudy: {
+          context:
+            "Le pôle jeux d'argent en ligne du groupe reposait sur des équipes cloisonnées et des processus produit hétérogènes d'une marque à l'autre. Ma mission : unifier la vision produit et industrialiser le rythme de sortie de nouvelles fonctionnalités sur Barrière Play, l'application mobile du groupe.",
+          impact:
+            "L'app est devenue le point d'entrée numérique de référence pour les joueurs du groupe, avec une progression continue de son audience mensuelle. En parallèle, l'assistant IA interne déployé auprès des équipes traite désormais l'essentiel des questions produit du quotidien sans solliciter les Product Managers.",
+          image: {
+            src: '/experience/barriere-account.webp',
+            alt: "Capture d'écran de l'application Barrière Play, écran Mon Compte",
+            frame: 'phone',
+          },
         },
       },
       {
@@ -269,6 +284,12 @@ export const contentFr: SiteContent = {
           alt: "Capture d'écran du tableau de diffusion Partoo, taux de publication par plateforme",
           frame: 'browser',
           url: 'app.partoo.co',
+        },
+        caseStudy: {
+          context:
+            "Le produit Review Management gérait les avis clients de centaines d'enseignes à travers des API Google, Facebook et TripAdvisor incompatibles entre elles, avec un onboarding client lent et largement manuel.",
+          impact:
+            "La refonte du back-office et de l'arrivée des nouveaux clients a réduit de 60 % le temps de mise en route, tandis que les réponses types aux avis ont fait grimper le taux de réponse de 30 %, avec une adoption par 70 % des clients dès les premiers mois.",
         },
       },
       {
