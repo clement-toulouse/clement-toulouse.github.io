@@ -372,6 +372,13 @@ body::after {
   animation: marquee 40s linear infinite;
 }
 
+/* Variante défilant dans l'autre sens : le bandeau démarre décalé de -50 %
+   (les deux copies sont identiques, donc invisible) et revient à 0. */
+.marquee-track--reverse {
+  animation-name: marquee;
+  animation-direction: reverse;
+}
+
 .marquee:hover .marquee-track {
   animation-play-state: paused;
 }

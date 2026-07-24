@@ -179,7 +179,7 @@ export const experiences: Experience[] = [
     wins: [
       {
         headline: 'En agence (1 an)',
-        metrics: ['Conception et pilotage de 3 projets web pour Veolia, Gerep et Scor'],
+        metrics: ['Conception et pilotage de projets web pour Veolia et Gerep'],
       },
       {
         headline: 'Intégré aux équipes de GRDF (1 an)',
@@ -316,6 +316,20 @@ export const languages = [
   { name: 'Anglais', level: 'Courant · C2 · IELTS 7 / TOEIC 895', pct: 90 },
   { name: 'Allemand', level: 'Scolaire · A2', pct: 30 },
 ]
+
+/**
+ * Entreprises et grands comptes croisés au fil du parcours, pour le bandeau
+ * défilant. `slug` sert à charger un vrai logo depuis `/public/logos/<slug>.svg`
+ * quand il existe ; sinon on affiche le nom en toutes lettres (voir CompanyLogo).
+ */
+export const companies = [
+  { name: 'Groupe Barrière', slug: 'barriere' },
+  { name: 'Partoo', slug: 'partoo' },
+  { name: 'IpsoSenso', slug: 'ipsosenso' },
+  { name: 'Veolia', slug: 'veolia' },
+  { name: 'GRDF', slug: 'grdf' },
+  { name: 'Gerep', slug: 'gerep' },
+] as const
 
 export const navItems = [
   { id: 'impact', label: 'Impact' },

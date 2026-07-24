@@ -60,6 +60,21 @@ non servi) via [`scripts/make-images.mjs`](scripts/make-images.mjs) :
 Si le portrait est absent, le site affiche un monogramme dégradé plutôt qu'une
 image cassée. Chemins configurables dans `src/data/profile.ts`.
 
+### Logos des entreprises
+
+Le bandeau défilant du parcours ([`CompanyMarquee`](src/components/CompanyMarquee.tsx))
+lit la liste `companies` de `src/data/profile.ts` et charge un logo depuis
+`public/logos/<slug>.png` — posé dans une pastille blanche pour homogénéiser des
+fonds hétérogènes. Si le fichier manque, le nom s'affiche en toutes lettres
+(repli gracieux, cf. [`CompanyLogo`](src/components/ui/CompanyLogo.tsx)).
+
+Pour ajouter ou remplacer un logo : détourer le fond, normaliser à ~128 px de
+haut, déposer le PNG sous le bon `slug`. Exemple avec `sharp` :
+
+```bash
+node --input-type=module -e "import('sharp').then(({default:s})=>s('mon-logo.png').trim({threshold:12}).flatten({background:'#fff'}).resize({height:128}).png().toFile('public/logos/<slug>.png'))"
+```
+
 ## Architecture
 
 ```

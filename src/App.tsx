@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
+import CompanyMarquee from './components/CompanyMarquee'
 import Impact from './components/Impact'
 import AiSection from './components/AiSection'
 import Experience from './components/Experience'
@@ -50,6 +51,7 @@ export default function App() {
         <Marquee />
         <Impact />
         <AiSection />
+        <CompanyMarquee />
         <Experience />
         <Savor />
         <Profil />
