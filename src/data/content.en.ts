@@ -19,6 +19,8 @@ export const contentEn: SiteContent = {
     photo: '/clement.jpg',
     photoWebp: '/clement.webp',
     siteUrl: 'https://clement-toulouse.github.io',
+    // Donnée de config (non traduite) : elle n'est lue qu'en français au build.
+    goatCounterCode: '',
     tagline: [
       '9 years building B2B and B2C products that prove themselves in production.',
       'I turn vision into delivery, and delivery into numbers.',

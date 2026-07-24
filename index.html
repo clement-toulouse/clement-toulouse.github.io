@@ -18,6 +18,8 @@
 
     <meta property="og:type" content="profile" />
     <meta property="og:locale" content="fr_FR" />
+    <!-- Le contenu est aussi disponible en anglais (bascule dans le header). -->
+    <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:url" content="__SITE_URL__/" />
     <meta property="og:site_name" content="Clément Toulouse" />
     <meta property="og:title" content="Clément Toulouse · Head of Product" />
@@ -93,6 +95,26 @@
         var t = localStorage.getItem('theme')
         document.documentElement.dataset.theme = t === 'dark' ? 'dark' : 'light'
       } catch (e) {}
+    </script>
+
+    <!--
+      Analytics respectueux de la vie privée (GoatCounter) : aucun cookie,
+      aucune donnée personnelle, aucun bandeau de consentement requis (conforme
+      RGPD sans opt-in). Le code est substitué au build depuis
+      `profile.goatCounterCode` (content.fr.ts). Tant qu'il est vide, rien n'est
+      chargé : pas de script tiers, pas de requête. Pour activer : créer un
+      compte gratuit sur goatcounter.com et renseigner le code choisi.
+    -->
+    <script>
+      ;(function () {
+        var code = '__GC_CODE__'
+        if (!code || code.charAt(0) === '_') return // vide ou placeholder : on ne charge rien
+        var s = document.createElement('script')
+        s.async = true
+        s.src = 'https://gc.zgo.at/count.js'
+        s.setAttribute('data-goatcounter', 'https://' + code + '.goatcounter.com/count')
+        document.head.appendChild(s)
+      })()
     </script>
   </head>
   <body>

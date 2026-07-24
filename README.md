@@ -192,7 +192,7 @@ prend une à deux minutes.
 
 `profile.siteUrl` dans [`src/data/content.fr.ts`](src/data/content.fr.ts) est la
 **seule** ligne à modifier (le français est la langue du prérendu, donc du HTML
-statique livré — voir « Internationalisation »). Le plugin `site-url` de
+statique livré — voir « Internationalisation »). Le plugin `site-config` de
 [`vite.config.ts`](vite.config.ts) injecte la valeur dans `index.html` à la place
 de `__SITE_URL__` (canonical, `og:url`, `og:image`, `twitter:image`, JSON-LD) — ces
 URL doivent être absolues pour que les aperçus de lien fonctionnent.
@@ -202,3 +202,16 @@ aussi `base: '/cv/'` dans `vite.config.ts`.
 
 Le build reste un dossier statique : `npm run build` puis servir `dist/` marche
 tout aussi bien sur Vercel, Netlify ou tout autre hébergeur.
+
+### Analytics (optionnel)
+
+Mesure d'audience respectueuse de la vie privée via **GoatCounter** : aucun cookie,
+aucune donnée personnelle, aucun bandeau de consentement requis. Désactivé par
+défaut — tant que le code est vide, aucun script tiers n'est chargé.
+
+Pour l'activer : créer un compte gratuit sur [goatcounter.com](https://www.goatcounter.com/)
+(choisir un code, ex. `clement-toulouse` pour `clement-toulouse.goatcounter.com`),
+puis renseigner ce code dans `profile.goatCounterCode`
+([`src/data/content.fr.ts`](src/data/content.fr.ts)). Le plugin `site-config`
+l'injecte dans `index.html` au build ; le script gardé ne se charge qu'une fois le
+code renseigné.

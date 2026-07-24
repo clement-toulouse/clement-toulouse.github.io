@@ -122,6 +122,14 @@ export interface SiteContent {
     photo: string
     photoWebp: string
     siteUrl: string
+    /**
+     * Code GoatCounter (analytics sans cookie, sans consentement requis).
+     * Vide = désactivé : aucun script tiers n'est chargé. Pour activer, créer un
+     * compte gratuit sur goatcounter.com et renseigner le code choisi
+     * (ex. 'clement-toulouse' pour clement-toulouse.goatcounter.com).
+     * Substitué dans index.html au build via le plugin `analytics` de vite.config.
+     */
+    goatCounterCode: string
     tagline: [string, string]
     intro: string
   }

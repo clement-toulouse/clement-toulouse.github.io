@@ -158,11 +158,16 @@ emits `public/clement.webp`, `public/clement.jpg` and the 1200×630 `public/og.j
 GitHub Pages, driven by `.github/workflows/deploy.yml` — every push to `main` runs
 lint, typecheck, build and prerender, then publishes `dist/`.
 
-The absolute URLs in `index.html` are written as `__SITE_URL__` and substituted at
-build time by the `site-url` plugin in `vite.config.ts`, which reads
-`contentFr.profile.siteUrl` (French is the prerendered locale — see i18n above).
-**That one field is the only place to change the domain** — don't reintroduce
-hardcoded absolute URLs in `index.html`.
+The `site-config` plugin in `vite.config.ts` substitutes two tokens in
+`index.html` at build time, reading `contentFr.profile` (French is the prerendered
+locale — see i18n above):
+
+- `__SITE_URL__` → `profile.siteUrl`, the absolute URLs for canonical/`og:*`/JSON-LD.
+  **That one field is the only place to change the domain** — don't reintroduce
+  hardcoded absolute URLs in `index.html`.
+- `__GC_CODE__` → `profile.goatCounterCode`, the GoatCounter analytics code. Empty
+  = disabled: the guarded inline script in `index.html` loads nothing (no third-party
+  request). Set the field to a code to activate; no cookie, no consent banner.
 
 `base` in `vite.config.ts` is `/` because this is a GitHub *user* site
 (`<user>.github.io`). A project repo served from a subfolder needs `base: '/<repo>/'`.

@@ -19,6 +19,8 @@ export const contentFr: SiteContent = {
     photo: '/clement.jpg',
     photoWebp: '/clement.webp',
     siteUrl: 'https://clement-toulouse.github.io',
+    // Vide = analytics désactivé. Voir goatCounterCode dans content.types.ts.
+    goatCounterCode: '',
     tagline: [
       "9 ans à construire des produits B2B et B2C qui font leurs preuves en production.",
       "Je transforme une vision en delivery, et le delivery en chiffres.",
