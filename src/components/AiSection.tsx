@@ -11,6 +11,14 @@ const accent = {
   ember: { text: 'text-ember', glow: 'var(--c-ember)', icon: 'workflow' as IconName },
 }
 
+/** Nom lisible par logo, pour un alt distinct de celui du voisin dans la même carte. */
+const logoName: Record<string, string> = {
+  claude: 'Claude Code',
+  aistudio: 'Google AI Studio',
+  dust: 'Dust',
+  gemini: 'Gemini',
+}
+
 export default function AiSection() {
   const { t } = useLanguage()
   const grid = useReveal<HTMLDivElement>()
@@ -50,7 +58,7 @@ export default function AiSection() {
                       {card.logos.map((logo) => (
                         <CompanyLogo
                           key={logo}
-                          name={card.title}
+                          name={logoName[logo] ?? card.title}
                           slug={logo}
                           chipClass="h-10 w-10 shrink-0 rounded-xl p-1.5 ring-2 ring-canvas"
                           imgClass="max-h-full max-w-full"
