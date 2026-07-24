@@ -3,6 +3,7 @@ import { useReveal } from '../hooks/useMotion'
 import SectionHeader from './ui/SectionHeader'
 import Spotlight from './ui/Spotlight'
 import Icon from './ui/Icon'
+import CompanyLogo from './ui/CompanyLogo'
 
 /* Capture le chiffre en tête de métrique : « −60 % », « 8 M€ », « 60 000 »… */
 const METRIC_RE = /^([+\-−]?\d[\d\s .,]*(?:%|M€|€|k)?)/
@@ -52,12 +53,23 @@ export default function Experience() {
               </span>
 
               <Spotlight className="p-7 sm:p-9">
-                <header className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2">
-                  <div>
-                    <h3 className="display text-[clamp(1.5rem,3.5vw,2.1rem)]">{xp.company}</h3>
-                    {xp.context && (
-                      <p className="mt-1.5 text-[13.5px] text-ink-mute">{xp.context}</p>
+                <header className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
+                  <div className="flex items-center gap-4">
+                    {xp.logo && (
+                      <CompanyLogo
+                        name={xp.company}
+                        slug={xp.logo}
+                        chipClass="h-14 w-14 shrink-0 rounded-xl p-2"
+                        imgClass="max-h-full max-w-full"
+                        labelClass="text-[11px] text-center leading-tight"
+                      />
                     )}
+                    <div>
+                      <h3 className="display text-[clamp(1.5rem,3.5vw,2.1rem)]">{xp.company}</h3>
+                      {xp.context && (
+                        <p className="mt-1.5 text-[13.5px] text-ink-mute">{xp.context}</p>
+                      )}
+                    </div>
                   </div>
                   <p className="chip !border-line-strong">{xp.period}</p>
                 </header>

@@ -98,12 +98,9 @@ export default function Contact() {
           })}
         </div>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-line py-8 sm:flex-row">
+        <div className="mt-14 border-t border-line py-8">
           <p className="text-[13px] text-ink-mute">
             © {new Date().getFullYear()} {profile.firstName} {profile.lastName} · {profile.role}
-          </p>
-          <p className="text-[13px] text-ink-mute">
-            Développé en local avec Claude Code · React, Tailwind, CSS
           </p>
         </div>
       </div>

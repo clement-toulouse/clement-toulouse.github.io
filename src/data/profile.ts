@@ -76,6 +76,8 @@ export const stats: Stat[] = [
 
 export type Experience = {
   company: string
+  /** Slug du logo dans /public/logos/<logo>.png (repli sur le nom si absent). */
+  logo?: string
   context?: string
   period: string
   roles: { title: string; duration?: string; summary: string }[]
@@ -87,6 +89,7 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     company: 'Groupe Barrière',
+    logo: 'barriere',
     context: 'Casinos, hôtels & jeux en ligne · produit grand public',
     period: 'Depuis 2024',
     roles: [
@@ -122,6 +125,7 @@ export const experiences: Experience[] = [
   },
   {
     company: 'Partoo',
+    logo: 'partoo',
     context: 'Logiciel qui aide les enseignes à réseaux à soigner leur présence en ligne (Google, Maps, avis clients)',
     period: '2019 · 2023',
     roles: [
@@ -167,6 +171,7 @@ export const experiences: Experience[] = [
   },
   {
     company: 'IpsoSenso',
+    logo: 'ipsosenso',
     context: 'Société de conseil en informatique · projets pour de grandes entreprises',
     period: '2017 · 2018',
     roles: [
@@ -230,13 +235,13 @@ export const aiCards: AiCard[] = [
     span: 'lg:col-span-3',
   },
   {
-    kicker: 'Process',
+    kicker: 'Process produit',
     title: 'IA Ops chez Barrière',
-    body: "Je structure et harmonise les façons de travailler entre équipes en combinant assistants IA et méthodes produit : l'IA n'est pas un gadget posé à côté du travail, elle est dans le travail.",
+    body: "Je mets l'IA au cœur du travail produit : j'automatise ce qui est répétitif dans la spécification et la documentation, pour que les Product Managers gardent leur énergie pour les décisions.",
     points: [
-      'Chatbot interne en production : 95 % de réponses justes',
-      'Mêmes rituels et mêmes livrables pour toutes les équipes',
-      'Gains de productivité mesurés, pas seulement annoncés',
+      'Création et relecture de la spécification fonctionnelle automatisées',
+      'Agent de rédaction de User Stories, spécialisé par produit',
+      'Release notes générées automatiquement',
     ],
     accent: 'ember',
     span: 'lg:col-span-3',

@@ -30,8 +30,9 @@ export default function Savor() {
           {/* Carte principale */}
           <Spotlight className="flex flex-col justify-between gap-8 p-8 sm:p-10 lg:col-span-3">
             <div>
-              <span className="grid h-12 w-12 place-items-center rounded-2xl border border-line bg-surface-2 text-ember">
-                <Icon name="chef" size={22} />
+              {/* Marque Savor : carré vert + couverts, reprise du logo du projet. */}
+              <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#184d34] text-white shadow-[0_2px_8px_-2px_rgba(24,77,52,0.5)]">
+                <Icon name="cutlery" size={22} />
               </span>
               <h3 className="display mt-6 text-[clamp(1.8rem,4vw,2.8rem)]">{savor.pitch}</h3>
               <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-ink-soft">

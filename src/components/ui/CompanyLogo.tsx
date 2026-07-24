@@ -12,13 +12,28 @@ import { useState } from 'react'
  * lettres. Premier rendu identique serveur/client (le repli n'arrive qu'au
  * `onError`, jamais au prérendu).
  */
-export default function CompanyLogo({ name, slug }: { name: string; slug: string }) {
+export default function CompanyLogo({
+  name,
+  slug,
+  chipClass = 'h-16 min-w-[8rem] px-7',
+  imgClass = 'h-8 max-w-[9rem]',
+  labelClass = 'text-lg',
+}: {
+  name: string
+  slug: string
+  /** Dimensions de la pastille — surchargées pour la version compacte des cartes. */
+  chipClass?: string
+  imgClass?: string
+  labelClass?: string
+}) {
   const [failed, setFailed] = useState(false)
 
   return (
-    <span className="flex h-16 min-w-[8rem] items-center justify-center rounded-2xl border border-line bg-white px-7 shadow-[0_1px_2px_rgba(35,30,22,0.04)]">
+    <span
+      className={`flex items-center justify-center rounded-2xl border border-line bg-white shadow-[0_1px_2px_rgba(35,30,22,0.04)] ${chipClass}`}
+    >
       {failed ? (
-        <span className="text-lg font-semibold tracking-tight text-[#1d1b18]">{name}</span>
+        <span className={`font-semibold tracking-tight text-[#1d1b18] ${labelClass}`}>{name}</span>
       ) : (
         <img
           src={`/logos/${slug}.png`}
@@ -26,7 +41,7 @@ export default function CompanyLogo({ name, slug }: { name: string; slug: string
           loading="lazy"
           decoding="async"
           onError={() => setFailed(true)}
-          className="h-8 w-auto max-w-[9rem] object-contain"
+          className={`w-auto object-contain ${imgClass}`}
         />
       )}
     </span>
