@@ -34,9 +34,10 @@ export interface Experience {
     /** Barre d'url affichée pour le cadre navigateur. */
     url?: string
   }
-  /** Mini case-study dépliable ("En savoir plus") : contexte, impact, image optionnelle. */
+  /** Mini case-study dépliable ("En savoir plus") : contexte, approche, impact, image optionnelle. */
   caseStudy?: {
     context: string
+    approach: string[]
     impact: string
     image?: {
       src: string
@@ -158,6 +159,7 @@ export interface SiteContent {
     moreLabel: string
     lessLabel: string
     contextLabel: string
+    approachLabel: string
     impactLabel: string
     items: Experience[]
   }

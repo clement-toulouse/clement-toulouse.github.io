@@ -175,6 +175,7 @@ export const contentEn: SiteContent = {
     moreLabel: 'Read more',
     lessLabel: 'Show less',
     contextLabel: 'Context',
+    approachLabel: 'Approach',
     impactLabel: 'Impact',
     items: [
       {
@@ -219,9 +220,14 @@ export const contentEn: SiteContent = {
         },
         caseStudy: {
           context:
-            "The group's online gambling division ran on siloed teams and product processes that varied from one brand to the next. My mission: unify the product vision and industrialize the pace of feature releases on Barrière Play, the group's mobile app.",
+            "The group's online gambling division ran on siloed teams and product processes that varied from one brand to the next: each casino managed its own backlog, with no shared prioritization or methodology. My mission: unify the product vision and industrialize the pace of feature releases on Barrière Play, the group's mobile app.",
+          approach: [
+            'Shared OKR-based steering across the 4 Product Managers, aligning priorities without breaking their autonomy on their own scope',
+            'Deployed AI agents into the product process: drafting and reviewing specs, per-product user stories, release notes',
+            'Structured a shared product methodology (rituals, templates, a "definition of done") adopted by every team',
+          ],
           impact:
-            "The app became the group's reference digital entry point for players, with steady month-over-month growth in its user base. Meanwhile, the internal AI assistant deployed to the teams now handles most day-to-day product questions without involving the Product Managers.",
+            "The app became the group's reference digital entry point for players: 60,000 monthly active users, growing steadily at +2%/month, with €8M wagered through the app every month. The internal AI assistant now handles most day-to-day product questions, freeing up Product Managers' time for higher-value decisions.",
           image: {
             src: '/experience/barriere-account.webp',
             alt: 'Screenshot of the Barrière Play app, My Account screen',
@@ -287,9 +293,15 @@ export const contentEn: SiteContent = {
         },
         caseStudy: {
           context:
-            "The Review Management product handled customer reviews for hundreds of brands across Google, Facebook and TripAdvisor APIs that were incompatible with one another, with a slow and largely manual client onboarding process.",
+            'The Review Management product handled customer reviews for hundreds of brands across Google, Facebook and TripAdvisor APIs that were incompatible with one another: different data formats, quotas and update delays on every platform. Onboarding a new client took several days, most of it manual.',
+          approach: [
+            'Audited onboarding friction points with the support teams, to prioritize the revamp on what actually blocked clients',
+            'Designed a new back office unifying store configuration, independent of the distribution platform',
+            'Launched template review replies, co-written with the Care team to stay on-brand for each client',
+            'Integrated new distribution channels (Apple Maps, Waze) building on the already-unified architecture',
+          ],
           impact:
-            'The back-office and new-client onboarding revamp cut ramp-up time by 60%, while template review replies pushed the response rate up by 30%, with 70% of clients adopting the tool within the first few months.',
+            'The back-office and new-client onboarding revamp cut ramp-up time by 60%, while template review replies pushed the response rate up by 30%, with 70% of clients adopting the tool within the first few months. The new channels reached a 95% publication success rate from launch.',
         },
       },
       {

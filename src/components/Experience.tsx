@@ -161,6 +161,24 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
                         </p>
                       </div>
                       <div>
+                        <p className="eyebrow !text-[0.66rem]">{t.experience.approachLabel}</p>
+                        <ul className="mt-2 space-y-2">
+                          {xp.caseStudy.approach.map((a) => (
+                            <li
+                              key={a}
+                              className="flex gap-2.5 text-[14.5px] leading-relaxed text-ink-soft"
+                            >
+                              <Icon
+                                name="arrowRight"
+                                size={14}
+                                className="mt-1 shrink-0 text-ink-mute"
+                              />
+                              {a}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
                         <p className="eyebrow !text-[0.66rem]">{t.experience.impactLabel}</p>
                         <p className="mt-2 text-[14.5px] leading-relaxed text-ink-soft">
                           {xp.caseStudy.impact}
