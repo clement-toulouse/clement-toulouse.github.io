@@ -19,7 +19,12 @@ export interface Experience {
   period: string
   roles: { title: string; duration?: string; summary: string }[]
   responsibilities?: string[]
-  wins: { headline: string; metrics: string[] }[]
+  wins: {
+    headline: string
+    metrics: string[]
+    /** Capture d'écran illustrant cette réalisation précise, affichée dans la carte. */
+    screenshot?: { src: string; alt: string }
+  }[]
   tags: string[]
   /** Capture d'écran réelle du produit, encadrée en mockup navigateur ou téléphone. */
   screenshot?: {

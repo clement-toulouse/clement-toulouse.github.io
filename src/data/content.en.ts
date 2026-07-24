@@ -250,6 +250,10 @@ export const contentEn: SiteContent = {
           {
             headline: 'Template replies to customer reviews',
             metrics: ['+30% review response rate', '70% of customers adopted the tool'],
+            screenshot: {
+              src: '/experience/partoo-avis.webp',
+              alt: 'Screenshot of a reply to a Google review from the Partoo tool',
+            },
           },
           {
             headline: 'Revamped store-info publishing + Apple Maps & Waze integration',

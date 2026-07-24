@@ -250,6 +250,10 @@ export const contentFr: SiteContent = {
           {
             headline: 'Réponses types aux avis clients',
             metrics: ['+30 % de taux de réponse aux avis', "70 % des clients ont adopté l'outil"],
+            screenshot: {
+              src: '/experience/partoo-avis.webp',
+              alt: "Capture d'écran d'une réponse à un avis Google depuis l'outil Partoo",
+            },
           },
           {
             headline: 'Refonte de la publication des infos magasins + intégration Apple Plans & Waze',

@@ -144,6 +144,15 @@ export default function Experience() {
                               </li>
                             ))}
                           </ul>
+                          {win.screenshot && (
+                            <img
+                              src={win.screenshot.src}
+                              alt={win.screenshot.alt}
+                              loading="lazy"
+                              decoding="async"
+                              className="mt-4 w-full rounded-xl border border-line"
+                            />
+                          )}
                         </div>
                       ))}
                     </div>
