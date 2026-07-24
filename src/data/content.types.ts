@@ -30,6 +30,8 @@ export interface AiCard {
   points: string[]
   /** Encart de preuve mis en avant sous les points. */
   proof?: string
+  /** Slug du logo dans /public/logos/<logo>.png — remplace l'icône générique quand présent. */
+  logo?: string
   accent: Accent
   span: string
 }
