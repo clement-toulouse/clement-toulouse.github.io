@@ -24,13 +24,13 @@ export const contentFr: SiteContent = {
       "Je transforme une vision en delivery, et le delivery en chiffres.",
     ],
     intro:
-      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige le produit des jeux d'argent en ligne du Groupe Barrière, avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
+      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige Barrière Play, l'application mobile des clients de casino du Groupe Barrière, avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
   },
 
   hero: {
     proofs: [
       { value: '60 k', label: 'utilisateurs actifs' },
-      { value: '8 M€', label: 'de CA mensuel' },
+      { value: '8 M€', label: 'chargés sur les wallets' },
       { value: '95 %', label: 'réponses IA justes' },
       { value: '6', label: 'personnes managées' },
     ],
@@ -111,14 +111,14 @@ export const contentFr: SiteContent = {
       value: 60,
       suffix: 'k',
       label: 'utilisateurs actifs mensuels',
-      detail: "Sur Barrière Play, l'app mobile de jeux en ligne du groupe · +2 % par mois",
+      detail: "Sur Barrière Play, l'app mobile des clients de casino du groupe · +2 % par mois",
       accent: 'iris',
     },
     {
       value: 8,
       suffix: 'M€',
-      label: 'de CA mensuel généré',
-      detail: "Misé par les joueurs via l'app · +10 % par mois",
+      label: 'chargés sur les wallets digitaux',
+      detail: "Rechargés par les clients via Barrière Play · +10 % par mois",
       accent: 'mint',
     },
     {
@@ -181,13 +181,13 @@ export const contentFr: SiteContent = {
       {
         company: 'Groupe Barrière',
         logo: 'barriere',
-        context: 'Casinos, hôtels & jeux en ligne · produit grand public',
+        context: 'Casinos & hôtels · produit grand public',
         period: 'Depuis 2024',
         roles: [
           {
             title: 'Head of Product Casino',
             summary:
-              "Je dirige le produit digital des jeux d'argent en ligne du groupe (casino, machines à sous, paris). J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
+              "Je dirige Barrière Play, l'application mobile utilisée par les clients dans nos casinos : programme de fidélité et wallet digital connecté aux machines à sous pour créditer et retirer leurs gains sans cash. J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
           },
         ],
         responsibilities: [
@@ -197,10 +197,10 @@ export const contentFr: SiteContent = {
         ],
         wins: [
           {
-            headline: "Lancement de Barrière Play, l'app mobile de jeux d'argent en ligne du groupe",
+            headline: "Lancement de Barrière Play, l'app mobile des clients de casino du groupe",
             metrics: [
               '60 000 joueurs actifs par mois, soit 40 % des clients du groupe (+2 %/mois)',
-              "8 M€ misés chaque mois par les joueurs via l'app (+10 %/mois)",
+              "8 M€ chargés chaque mois par les joueurs sur leur wallet digital (+10 %/mois)",
             ],
           },
           {
@@ -220,14 +220,14 @@ export const contentFr: SiteContent = {
         },
         caseStudy: {
           context:
-            "Le pôle jeux d'argent en ligne du groupe reposait sur des équipes cloisonnées et des processus produit hétérogènes d'une marque à l'autre : chaque casino gérait son propre backlog, sans priorisation commune ni méthodologie partagée. Ma mission : unifier la vision produit et industrialiser le rythme de sortie de nouvelles fonctionnalités sur Barrière Play, l'application mobile du groupe.",
+            "L'expérience digitale des clients de casino du groupe reposait sur des équipes cloisonnées et des processus produit hétérogènes d'une marque à l'autre : chaque casino gérait son propre backlog, sans priorisation commune ni méthodologie partagée. Ma mission : unifier la vision produit et industrialiser le rythme de sortie de nouvelles fonctionnalités sur Barrière Play, l'application mobile des clients de casino du groupe (fidélité, wallet digital connecté aux machines à sous).",
           approach: [
             'Pilotage par OKR partagé entre les 4 Product Managers, pour aligner les priorités sans casser leur autonomie sur leur périmètre',
             "Déploiement d'agents IA dans le processus produit : rédaction et relecture des spécifications, User Stories par produit, release notes",
             'Structuration d\'un socle méthodologique commun (rituels, templates, définition de "fini") repris par toutes les équipes',
           ],
           impact:
-            "L'app est devenue le point d'entrée numérique de référence pour les joueurs du groupe : 60 000 utilisateurs actifs mensuels, en progression continue de +2 %/mois, et 8 M€ misés chaque mois via l'application. L'assistant IA interne traite désormais l'essentiel des questions produit du quotidien, libérant du temps aux Product Managers pour les décisions à plus forte valeur.",
+            "L'app est devenue le point d'entrée numérique de référence pour les joueurs du groupe : 60 000 utilisateurs actifs mensuels, en progression continue de +2 %/mois, et 8 M€ chargés chaque mois sur les wallets digitaux via l'application. L'assistant IA interne traite désormais l'essentiel des questions produit du quotidien, libérant du temps aux Product Managers pour les décisions à plus forte valeur.",
           image: {
             src: '/experience/barriere-account.webp',
             alt: "Capture d'écran de l'application Barrière Play, écran Mon Compte",

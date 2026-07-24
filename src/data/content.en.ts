@@ -24,13 +24,13 @@ export const contentEn: SiteContent = {
       'I turn vision into delivery, and delivery into numbers.',
     ],
     intro:
-      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run the online gambling product at Groupe Barrière, with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
+      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run Barrière Play, the mobile app for Groupe Barrière's casino customers, with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
   },
 
   hero: {
     proofs: [
       { value: '60K', label: 'active users' },
-      { value: '€8M', label: 'in monthly revenue' },
+      { value: '€8M', label: 'loaded onto wallets' },
       { value: '95%', label: 'accurate AI answers' },
       { value: '6', label: 'people managed' },
     ],
@@ -111,14 +111,14 @@ export const contentEn: SiteContent = {
       value: 60,
       suffix: 'k',
       label: 'monthly active users',
-      detail: "On Barrière Play, the group's online gambling app · +2% every month",
+      detail: "On Barrière Play, the group's mobile app for casino customers · +2% every month",
       accent: 'iris',
     },
     {
       value: 8,
       suffix: 'M€',
-      label: 'in monthly revenue generated',
-      detail: 'Wagered by players through the app · +10% every month',
+      label: 'loaded onto digital wallets',
+      detail: 'Topped up by customers through Barrière Play · +10% every month',
       accent: 'mint',
     },
     {
@@ -181,13 +181,13 @@ export const contentEn: SiteContent = {
       {
         company: 'Groupe Barrière',
         logo: 'barriere',
-        context: 'Casinos, hotels & online gambling · consumer product',
+        context: 'Casinos & hotels · consumer product',
         period: 'Since 2024',
         roles: [
           {
             title: 'Head of Product Casino',
             summary:
-              "I run the group's online gambling product (casino, slots, sports betting). I lead a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
+              "I run Barrière Play, the mobile app our casino customers use on-site: a loyalty program and a digital wallet connected to the slot machines, letting them top up and cash out their winnings without cash. I lead a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
           },
         ],
         responsibilities: [
@@ -197,10 +197,10 @@ export const contentEn: SiteContent = {
         ],
         wins: [
           {
-            headline: "Launch of Barrière Play, the group's mobile online gambling app",
+            headline: "Launch of Barrière Play, the group's mobile app for casino customers",
             metrics: [
               "60,000 active players per month, 40% of the group's customer base (+2%/month)",
-              '€8M wagered every month by players through the app (+10%/month)',
+              '€8M loaded every month by players onto their digital wallet (+10%/month)',
             ],
           },
           {
@@ -220,14 +220,14 @@ export const contentEn: SiteContent = {
         },
         caseStudy: {
           context:
-            "The group's online gambling division ran on siloed teams and product processes that varied from one brand to the next: each casino managed its own backlog, with no shared prioritization or methodology. My mission: unify the product vision and industrialize the pace of feature releases on Barrière Play, the group's mobile app.",
+            "The digital experience for the group's casino customers ran on siloed teams and product processes that varied from one brand to the next: each casino managed its own backlog, with no shared prioritization or methodology. My mission: unify the product vision and industrialize the pace of feature releases on Barrière Play, the group's mobile app (loyalty, digital wallet connected to the slot machines).",
           approach: [
             'Shared OKR-based steering across the 4 Product Managers, aligning priorities without breaking their autonomy on their own scope',
             'Deployed AI agents into the product process: drafting and reviewing specs, per-product user stories, release notes',
             'Structured a shared product methodology (rituals, templates, a "definition of done") adopted by every team',
           ],
           impact:
-            "The app became the group's reference digital entry point for players: 60,000 monthly active users, growing steadily at +2%/month, with €8M wagered through the app every month. The internal AI assistant now handles most day-to-day product questions, freeing up Product Managers' time for higher-value decisions.",
+            "The app became the group's reference digital entry point for players: 60,000 monthly active users, growing steadily at +2%/month, with €8M loaded onto digital wallets through the app every month. The internal AI assistant now handles most day-to-day product questions, freeing up Product Managers' time for higher-value decisions.",
           image: {
             src: '/experience/barriere-account.webp',
             alt: 'Screenshot of the Barrière Play app, My Account screen',
