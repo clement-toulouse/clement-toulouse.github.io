@@ -5,6 +5,7 @@ import Spotlight from './ui/Spotlight'
 import Magnetic from './ui/Magnetic'
 import Tilt from './ui/Tilt'
 import Icon, { type IconName } from './ui/Icon'
+import RecipeArt from './ui/RecipeArt'
 import type { SavorFeature } from '../data/content.types'
 
 const featureIcon: Record<SavorFeature['key'], IconName> = {
@@ -93,21 +94,16 @@ export default function Savor() {
                     <span className="ml-1.5 truncate text-[10px] text-ink-mute">savor-nine.vercel.app</span>
                   </div>
                   <div className="p-4">
-                    <div
-                      className="relative h-24 w-full overflow-hidden rounded-xl"
-                      style={{ background: 'linear-gradient(135deg, #184d34, #4c8a63 55%, #cfe0b8)' }}
-                    >
-                      <Icon
-                        name="cutlery"
-                        size={26}
-                        className="absolute bottom-3 right-3 text-white/85"
-                      />
-                    </div>
-                    <div className="mt-4 h-2.5 w-3/4 rounded-full bg-ink/10" aria-hidden="true" />
-                    <div className="mt-2 h-2 w-1/2 rounded-full bg-ink/10" aria-hidden="true" />
-                    <div className="mt-4 flex gap-1.5">
-                      <span className="chip !px-2.5 !py-1 !text-[10px]">20 min</span>
-                      <span className="chip !px-2.5 !py-1 !text-[10px]">Facile</span>
+                    <RecipeArt className="h-24 w-full overflow-hidden rounded-xl" />
+                    <h5 className="mt-4 text-[13.5px] font-semibold leading-snug">
+                      {t.savor.mockup.title}
+                    </h5>
+                    <p className="mt-1 text-[11.5px] leading-snug text-ink-mute">
+                      {t.savor.mockup.desc}
+                    </p>
+                    <div className="mt-3 flex gap-1.5">
+                      <span className="chip !px-2.5 !py-1 !text-[10px]">{t.savor.mockup.time}</span>
+                      <span className="chip !px-2.5 !py-1 !text-[10px]">{t.savor.mockup.difficulty}</span>
                     </div>
                   </div>
                 </div>

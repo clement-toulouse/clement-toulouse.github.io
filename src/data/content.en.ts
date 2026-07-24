@@ -311,6 +311,12 @@ export const contentEn: SiteContent = {
     ],
     stack: ['Next.js', 'AI extraction', 'Supabase', 'Vercel'],
     ctaLabel: 'Try Savor online',
+    mockup: {
+      title: 'Mediterranean bowl',
+      desc: 'Chickpeas, feta, sun-dried tomatoes, lemon',
+      time: '20 min',
+      difficulty: 'Easy',
+    },
   },
 
   skills: [
