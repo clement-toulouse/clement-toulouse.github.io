@@ -80,11 +80,11 @@ export const contentEn: SiteContent = {
     impact: {
       eyebrow: 'What it delivered',
       title: 'Impact before talk',
-      lead: "A roadmap you can't measure is just a wish list. Here's what my teams and I have shipped over the last three years, in numbers.",
+      lead: "A roadmap you can't measure is just a wish list. Here's what my teams and I have shipped at Barrière over the last three years, in numbers.",
     },
     ia: {
       eyebrow: 'AI, hands-on',
-      title: 'AI in the process, not bolted on',
+      title: 'AI in the process and the delivery, not bolted on',
       lead: "I don't treat AI as a marketing layer on top of a product. I use it to shorten the loop between a hunch and a decision, for myself and for my teams.",
     },
     parcours: {
@@ -142,29 +142,31 @@ export const contentEn: SiteContent = {
     {
       kicker: 'AI-assisted development',
       title: 'Claude Code',
-      body: "I code, prototype, and automate my own work with Claude Code every day. Turning a product idea into a clickable mockup in a single session changes how decisions get made: you decide on something real, not a slide.",
+      body: "I code, prototype, and automate my own work with Claude Code every day, and I turn to Google AI Studio when a quick visual mockup is all it takes to decide. Turning a product idea into a clickable mockup in a single session changes how decisions get made: you decide on something real, not a slide.",
       points: [
         'Rapid prototyping to settle a discovery hypothesis',
+        'Visual mockups with Google AI Studio when look and feel matter more than logic',
         'Automating repetitive product tasks (specs, analyses, scripts)',
         'Training the team and spreading the practice',
       ],
       proof:
         'The proof is right in front of you: this site was entirely designed and built with Claude Code, from the design system to the prerendering.',
-      logo: 'claude',
+      logos: ['claude', 'aistudio'],
       accent: 'iris',
       span: 'lg:col-span-3 lg:row-span-2',
     },
     {
       kicker: 'Assistants & product process',
       title: 'AI Ops at Barrière',
-      body: "I deploy AI assistants (via the Dust platform) connected to the company's documentation and tools, and I put AI at the heart of product work: I automate what's repetitive in specification and documentation, so Product Managers can save their energy for decisions.",
+      body: "I deploy AI assistants (via Dust and Gemini) connected to the company's documentation and tools, and I put AI at the heart of product work: I automate what's repetitive in specification and documentation, so Product Managers can save their energy for decisions.",
       points: [
         "Dust business assistants wired into product documentation",
+        'Gemini assistants for day-to-day product process writing and analysis',
         'Automated drafting and review of functional specifications',
         'User story writing agent, specialized per product',
         'Automatically generated release notes',
       ],
-      logo: 'dust',
+      logos: ['dust', 'gemini'],
       accent: 'ember',
       span: 'lg:col-span-3 lg:row-span-2',
     },
@@ -194,6 +196,9 @@ export const contentEn: SiteContent = {
           'Define the product vision and digital strategy for the business, tracked through OKRs',
           'Challenge and coach the Product Managers to maximize the quality and value of their products',
           'Structure and align cross-team processes by combining AI agent deployment with product methodology',
+          "Own the development of the group's online gambling product (online casino, sports betting)",
+          "Own CZAM, the internal staff tool for managing casino entries and supporting the customer experience",
+          'Lead the strategic thinking on a shared customer account and sign-up flow across the mobile app, the website, and the future online gambling product',
         ],
         wins: [
           {

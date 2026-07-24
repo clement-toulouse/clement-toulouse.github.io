@@ -45,14 +45,19 @@ export default function AiSection() {
                 />
 
                 <div className="relative flex items-center gap-3">
-                  {card.logo ? (
-                    <CompanyLogo
-                      name={card.title}
-                      slug={card.logo}
-                      chipClass="h-10 w-10 shrink-0 rounded-xl p-1.5"
-                      imgClass="max-h-full max-w-full"
-                      labelClass="text-[9px] text-center leading-tight"
-                    />
+                  {card.logos && card.logos.length > 0 ? (
+                    <div className="flex -space-x-2.5">
+                      {card.logos.map((logo) => (
+                        <CompanyLogo
+                          key={logo}
+                          name={card.title}
+                          slug={logo}
+                          chipClass="h-10 w-10 shrink-0 rounded-xl p-1.5 ring-2 ring-canvas"
+                          imgClass="max-h-full max-w-full"
+                          labelClass="text-[9px] text-center leading-tight"
+                        />
+                      ))}
+                    </div>
                   ) : (
                     <span className={`grid h-10 w-10 place-items-center rounded-xl border border-line bg-surface-2 ${a.text}`}>
                       <Icon name={a.icon} size={19} />

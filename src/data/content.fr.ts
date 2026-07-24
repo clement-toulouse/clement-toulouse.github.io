@@ -80,11 +80,11 @@ export const contentFr: SiteContent = {
     impact: {
       eyebrow: 'Ce que ça a produit',
       title: "L'impact avant le discours",
-      lead: "Une roadmap qui ne se mesure pas n'est qu'une liste d'envies. Voici ce que mes équipes et moi avons livré ces trois dernières années, en chiffres.",
+      lead: "Une roadmap qui ne se mesure pas n'est qu'une liste d'envies. Voici ce que mes équipes et moi avons livré chez Barrière ces trois dernières années, en chiffres.",
     },
     ia: {
       eyebrow: 'Appétence IA',
-      title: "L'IA dans le process, pas à côté",
+      title: "L'IA dans le process et le delivery, pas à côté",
       lead: "Je ne fais pas de l'IA une couche marketing posée sur un produit. Je l'utilise pour raccourcir la boucle entre une intuition et une décision, pour moi comme pour mes équipes.",
     },
     parcours: {
@@ -142,29 +142,31 @@ export const contentFr: SiteContent = {
     {
       kicker: 'Développement assisté par IA',
       title: 'Claude Code',
-      body: "Je code, prototype et automatise mon travail avec Claude Code au quotidien. Passer d'une idée produit à une maquette cliquable en une seule session change la façon de décider : on tranche sur du concret, pas sur un slide.",
+      body: "Je code, prototype et automatise mon travail avec Claude Code au quotidien, et je m'appuie sur Google AI Studio quand une maquette visuelle rapide suffit à trancher. Passer d'une idée produit à une maquette cliquable en une seule session change la façon de décider : on tranche sur du concret, pas sur un slide.",
       points: [
         'Prototypage rapide pour trancher une hypothèse de discovery',
+        "Maquettes visuelles avec Google AI Studio quand le rendu prime sur la logique",
         'Automatisation de tâches produit répétitives (specs, analyses, scripts)',
         "Formation et diffusion de la pratique auprès de l'équipe",
       ],
       proof:
         "La démonstration est sous vos yeux : ce site a été entièrement conçu et développé avec Claude Code, du design system au prérendu.",
-      logo: 'claude',
+      logos: ['claude', 'aistudio'],
       accent: 'iris',
       span: 'lg:col-span-3 lg:row-span-2',
     },
     {
       kicker: 'Assistants & process produit',
       title: 'IA Ops chez Barrière',
-      body: "Je déploie des assistants IA (via la plateforme Dust) connectés à la documentation et aux outils de l'entreprise, et je mets l'IA au cœur du travail produit : j'automatise ce qui est répétitif dans la spécification et la documentation, pour que les Product Managers gardent leur énergie pour les décisions.",
+      body: "Je déploie des assistants IA (via Dust et Gemini) connectés à la documentation et aux outils de l'entreprise, et je mets l'IA au cœur du travail produit : j'automatise ce qui est répétitif dans la spécification et la documentation, pour que les Product Managers gardent leur énergie pour les décisions.",
       points: [
         'Assistants métier Dust branchés sur la documentation produit',
+        'Assistants Gemini pour la rédaction et l\'analyse dans les process produit du quotidien',
         'Création et relecture de la spécification fonctionnelle automatisées',
         'Agent de rédaction de User Stories, spécialisé par produit',
         'Release notes générées automatiquement',
       ],
-      logo: 'dust',
+      logos: ['dust', 'gemini'],
       accent: 'ember',
       span: 'lg:col-span-3 lg:row-span-2',
     },
@@ -194,6 +196,9 @@ export const contentFr: SiteContent = {
           "Définir la vision produit et la stratégie digitale de l'activité, avec un pilotage par OKR",
           'Challenger et accompagner les Product Managers pour maximiser la qualité et la valeur de leurs produits',
           "Structurer et harmoniser les processus inter-équipes en combinant déploiement d'agents IA et animation des méthodologies produit",
+          'Piloter le développement du jeu en ligne du groupe (casino en ligne, paris sportifs)',
+          "Piloter CZAM, l'outil interne des collaborateurs pour gérer les entrées en casino et accompagner l'expérience client",
+          "Mener la réflexion stratégique sur un compte client et un parcours d'inscription communs entre l'application mobile, le site web et le futur jeu en ligne",
         ],
         wins: [
           {
