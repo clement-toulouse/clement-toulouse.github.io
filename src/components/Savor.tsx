@@ -95,9 +95,11 @@ export default function Savor() {
                   </div>
                   <div className="p-4">
                     <RecipeArt className="h-24 w-full overflow-hidden rounded-xl" />
-                    <h5 className="mt-4 text-[13.5px] font-semibold leading-snug">
+                    {/* Fausse recette illustrative : un <p> plutôt qu'un titre,
+                        pour ne pas casser la hiérarchie des headings de la page. */}
+                    <p className="mt-4 text-[13.5px] font-semibold leading-snug">
                       {t.savor.mockup.title}
-                    </h5>
+                    </p>
                     <p className="mt-1 text-[11.5px] leading-snug text-ink-mute">
                       {t.savor.mockup.desc}
                     </p>
