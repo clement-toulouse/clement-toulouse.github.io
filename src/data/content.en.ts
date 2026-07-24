@@ -172,8 +172,8 @@ export const contentEn: SiteContent = {
 
   experience: {
     responsibilitiesLabel: 'Key responsibilities',
-    moreLabel: 'Read more',
-    lessLabel: 'Show less',
+    moreLabel: 'Use Case',
+    lessLabel: 'Close',
     contextLabel: 'Context',
     approachLabel: 'Approach',
     impactLabel: 'Impact',

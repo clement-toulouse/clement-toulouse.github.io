@@ -121,29 +121,29 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
               ))}
             </div>
 
-            <div className="mt-7 flex flex-wrap items-center gap-2 border-t border-line pt-6">
+            <div className="mt-7 flex flex-wrap gap-2 border-t border-line pt-6">
               {xp.tags.map((tag) => (
                 <span key={tag} className="chip">
                   {tag}
                 </span>
               ))}
-
-              {xp.caseStudy && (
-                <button
-                  type="button"
-                  onClick={() => setOpen((v) => !v)}
-                  aria-expanded={open}
-                  className="ml-auto flex cursor-pointer items-center gap-1.5 text-[13px] font-semibold text-ink-soft transition-colors duration-300 hover:text-ink"
-                >
-                  {open ? t.experience.lessLabel : t.experience.moreLabel}
-                  <Icon
-                    name="chevronDown"
-                    size={15}
-                    className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
-                  />
-                </button>
-              )}
             </div>
+
+            {xp.caseStudy && (
+              <button
+                type="button"
+                onClick={() => setOpen((v) => !v)}
+                aria-expanded={open}
+                className="mt-5 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-line-strong px-5 py-3 text-[13.5px] font-semibold text-iris-soft transition-colors duration-300 hover:border-iris hover:bg-surface-2 sm:w-auto"
+              >
+                {open ? t.experience.lessLabel : t.experience.moreLabel}
+                <Icon
+                  name="chevronDown"
+                  size={16}
+                  className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`}
+                />
+              </button>
+            )}
 
             {xp.caseStudy && (
               <div

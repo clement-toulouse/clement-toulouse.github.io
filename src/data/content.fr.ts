@@ -172,8 +172,8 @@ export const contentFr: SiteContent = {
 
   experience: {
     responsibilitiesLabel: 'Responsabilités clés',
-    moreLabel: 'En savoir plus',
-    lessLabel: 'Voir moins',
+    moreLabel: 'Use Case',
+    lessLabel: 'Fermer',
     contextLabel: 'Contexte',
     approachLabel: 'Approche',
     impactLabel: 'Impact',
