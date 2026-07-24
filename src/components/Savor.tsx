@@ -23,7 +23,7 @@ export default function Savor() {
         <SectionHeader
           eyebrow={savor.kicker}
           title="Savor"
-          lead="Parce qu'un Head of Product qui n'a jamais rien expédié seul finit par oublier ce que coûte une décision. Savor, c'est mon terrain d'entraînement : de l'idée au déploiement, sans équipe pour rattraper les arbitrages."
+          lead="Un Head of Product qui n'a jamais rien mené seul de bout en bout finit par oublier ce que coûte vraiment une décision. Savor est mon terrain d'entraînement : de l'idée à la mise en ligne, sans équipe pour rattraper mes choix."
         />
 
         <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-5">

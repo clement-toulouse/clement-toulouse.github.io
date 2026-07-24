@@ -19,7 +19,7 @@ export const profile = {
     "Je transforme une vision en delivery, et le delivery en chiffres.",
   ],
   intro:
-    "Passionné par les usages de l'IA pour améliorer l'efficacité des processus, structurer la réflexion produit et gagner en qualité. Aujourd'hui je pilote le produit digital Casino & Jeux en ligne du Groupe Barrière, avec 4 Product Managers, 2 QA, et une conviction : un bon produit se mesure.",
+    "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige le produit des jeux d'argent en ligne du Groupe Barrière, avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
 } as const
 
 /**
@@ -29,7 +29,7 @@ export const profile = {
 export const heroProofs = [
   { value: '60 k', label: 'utilisateurs actifs' },
   { value: '8 M€', label: 'de CA mensuel' },
-  { value: '95 %', label: 'qualité agent IA' },
+  { value: '95 %', label: 'réponses IA justes' },
   { value: '6', label: 'personnes managées' },
 ] as const
 
@@ -47,21 +47,21 @@ export const stats: Stat[] = [
     value: 60,
     suffix: 'k',
     label: 'utilisateurs actifs mensuels',
-    detail: "Barrière Play · 40 % de la base clients, +2 % chaque mois",
+    detail: "Sur Barrière Play, l'app mobile de jeux en ligne du groupe · +2 % par mois",
     accent: 'iris',
   },
   {
     value: 8,
     suffix: 'M€',
     label: 'de CA mensuel généré',
-    detail: 'Sur les wallets clients, +10 % chaque mois',
+    detail: 'Misé par les joueurs via l\'app · +10 % par mois',
     accent: 'mint',
   },
   {
     value: 95,
     suffix: '%',
-    label: 'de qualité de réponse',
-    detail: "Agent chatbot IA interne, en production",
+    label: 'de réponses justes',
+    detail: "Chatbot IA interne que j'ai déployé en production",
     accent: 'ember',
   },
   {
@@ -87,13 +87,13 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     company: 'Groupe Barrière',
-    context: 'Casino & Jeux en ligne · B2C',
+    context: 'Casinos, hôtels & jeux en ligne · produit grand public',
     period: 'Depuis 2024',
     roles: [
       {
         title: 'Head of Product Casino',
         summary:
-          "Pilotage et développement des produits digitaux de l'activité Casino & Jeux en ligne. Je supervise une équipe de 4 Product Managers et 2 QA, en garantissant la cohérence, la performance et l'excellence de l'expérience utilisateur sur l'ensemble des plateformes.",
+          "Je dirige le produit digital des jeux d'argent en ligne du groupe (casino, machines à sous, paris). J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
       },
     ],
     responsibilities: [
@@ -103,18 +103,18 @@ export const experiences: Experience[] = [
     ],
     wins: [
       {
-        headline: "Lancement de l'application mobile B2C Barrière Play",
+        headline: "Lancement de Barrière Play, l'app mobile de jeux d'argent en ligne du groupe",
         metrics: [
-          '60 000 utilisateurs actifs mensuels (40 % de la base clients, +2 %/mois)',
-          '8 M€ de CA mensuel généré sur les wallets clients (+10 %/mois)',
+          '60 000 joueurs actifs par mois, soit 40 % des clients du groupe (+2 %/mois)',
+          '8 M€ misés chaque mois par les joueurs via l\'app (+10 %/mois)',
         ],
       },
       {
-        headline: "Déploiement d'un agent chatbot IA interne en production",
+        headline: "Déploiement en production d'un assistant IA interne pour les équipes",
         metrics: [
-          '95 % de taux de qualité des réponses',
-          '30 utilisateurs actifs quotidiens',
-          "Productivité interne et accès à l'information nettement améliorés",
+          '95 % de réponses justes',
+          '30 collaborateurs l\'utilisent chaque jour',
+          "Accès à l'information et productivité nettement améliorés",
         ],
       },
     ],
@@ -122,55 +122,58 @@ export const experiences: Experience[] = [
   },
   {
     company: 'Partoo',
-    context: 'Scale-up SaaS B2B · référencement en ligne des points de vente',
+    context: 'Logiciel qui aide les enseignes à réseaux à soigner leur présence en ligne (Google, Maps, avis clients)',
     period: '2019 · 2023',
     roles: [
       {
         title: 'Lead Product Manager',
         duration: '2 ans',
         summary:
-          "Direction de la Tribe Empowering : 2 impact teams, 13 collaborateurs aux expertises variées (PM, Design, QA, Data, Engineering).",
+          "À la tête d'une organisation produit de 13 personnes, réparties en 2 équipes pluridisciplinaires (Product, Design, QA, Data, Développement).",
       },
       {
         title: 'Product Manager',
         duration: '3 ans',
         summary:
-          "Pilotage de fonctionnalités à forte valeur, de la discovery à la mise en production, avec une approche centrée utilisateur.",
+          "Développement de fonctionnalités à fort impact, de l'idée à la mise en ligne, en partant toujours des besoins réels des utilisateurs.",
       },
     ],
     responsibilities: [
-      "Porter la vision produit et stratégique de la Tribe, alignée sur la stratégie globale de Partoo",
-      'Établir, suivre et garantir l\'atteinte des objectifs (OKR et KPI)',
-      'Challenger et accompagner les impact teams pour maximiser la valeur délivrée',
+      "Définir la vision produit de mon périmètre, alignée sur la stratégie globale de Partoo",
+      'Fixer les objectifs, les suivre et garantir leur atteinte (OKR et KPI)',
+      'Challenger et accompagner les équipes pour maximiser la valeur livrée aux clients',
     ],
     wins: [
       {
-        headline: "Interface admin & refonte de l'onboarding client",
+        headline: "Nouveau back-office et refonte de l'arrivée des nouveaux clients",
         metrics: [
-          "−60 % de temps d'onboarding des clients",
-          '+40 % de succès de diffusion multi-plateformes',
+          "−60 % de temps pour mettre un nouveau client en route",
+          '+40 % d\'informations magasins correctement publiées en ligne',
         ],
       },
       {
-        headline: 'Templates de réponses aux avis',
-        metrics: ['+30 % de taux de réponse aux avis', "70 % de taux d'adoption client"],
+        headline: 'Réponses types aux avis clients',
+        metrics: ['+30 % de taux de réponse aux avis', "70 % des clients ont adopté l'outil"],
       },
       {
-        headline: 'Refonte du système de diffusion + intégration Apple Plans & Waze',
-        metrics: ['+60 % de succès de diffusion', '95 % de succès sur les nouveaux canaux'],
+        headline: 'Refonte de la publication des infos magasins + intégration Apple Plans & Waze',
+        metrics: [
+          '+60 % d\'informations publiées avec succès sur les plateformes',
+          '95 % de réussite sur les nouveaux canaux (Apple Plans, Waze)',
+        ],
       },
     ],
-    tags: ['SaaS B2B', 'Lead PM', 'Discovery', 'Onboarding', 'Intégrations', 'Data'],
+    tags: ['SaaS B2B', 'Lead PM', 'Product Discovery', 'Expérience client', 'Intégrations', 'Data'],
   },
   {
     company: 'IpsoSenso',
-    context: 'ESN · agence & régie',
+    context: 'Société de conseil en informatique · projets pour de grandes entreprises',
     period: '2017 · 2018',
     roles: [
       {
         title: 'Product Owner',
         summary:
-          "Premiers pas côté produit, entre agence et régie, sur des projets web et mobiles grands comptes.",
+          "Premiers pas côté produit sur des projets web et mobiles pour de grands comptes, d'abord en agence puis directement dans les équipes du client.",
       },
     ],
     wins: [
@@ -179,7 +182,7 @@ export const experiences: Experience[] = [
         metrics: ['Conception et pilotage de 3 projets web pour Veolia, Gerep et Scor'],
       },
       {
-        headline: 'En régie chez GRDF (1 an)',
+        headline: 'Intégré aux équipes de GRDF (1 an)',
         metrics: [
           'Cadrage, priorisation et suivi du développement de fonctionnalités web et mobile',
         ],
@@ -202,9 +205,9 @@ export type AiCard = {
 
 export const aiCards: AiCard[] = [
   {
-    kicker: 'Agents & build',
+    kicker: 'Développement assisté par IA',
     title: 'Claude Code',
-    body: "Je code, prototype et outille avec Claude Code au quotidien. Passer d'une intuition produit à un prototype cliquable en une session change la nature des arbitrages : on décide sur du réel, pas sur du slide.",
+    body: "Je code, prototype et automatise mon travail avec Claude Code au quotidien. Passer d'une idée produit à une maquette cliquable en une seule session change la façon de décider : on tranche sur du concret, pas sur un slide.",
     points: [
       'Prototypage rapide pour trancher une hypothèse de discovery',
       'Automatisation de tâches produit répétitives (specs, analyses, scripts)',
@@ -216,12 +219,12 @@ export const aiCards: AiCard[] = [
     span: 'lg:col-span-3 lg:row-span-2',
   },
   {
-    kicker: 'Plateforme IA interne',
+    kicker: 'Assistants IA internes',
     title: 'Dust',
-    body: "Déploiement d'assistants Dust connectés aux sources de vérité de l'entreprise, pour que la bonne information arrive avant la question.",
+    body: "Je déploie des assistants IA (via la plateforme Dust) connectés à la documentation et aux outils de l'entreprise, pour que la bonne information arrive avant même qu'on la cherche.",
     points: [
-      'Assistants métier connectés à la documentation produit',
-      "Réduction du temps d'accès à l'information",
+      'Assistants métier branchés sur la documentation produit',
+      "Moins de temps perdu à chercher l'information",
     ],
     accent: 'mint',
     span: 'lg:col-span-3',
@@ -229,11 +232,11 @@ export const aiCards: AiCard[] = [
   {
     kicker: 'Process',
     title: 'IA Ops chez Barrière',
-    body: "Structurer et harmoniser les processus inter-équipes en combinant agents IA et méthodologies produit : l'IA n'est pas un gadget posé à côté du process, elle est dans le process.",
+    body: "Je structure et harmonise les façons de travailler entre équipes en combinant assistants IA et méthodes produit : l'IA n'est pas un gadget posé à côté du travail, elle est dans le travail.",
     points: [
-      'Agent chatbot interne en production : 95 % de qualité de réponse',
-      'Harmonisation des rituels et livrables entre équipes',
-      'Gains de productivité mesurés, pas déclarés',
+      'Chatbot interne en production : 95 % de réponses justes',
+      'Mêmes rituels et mêmes livrables pour toutes les équipes',
+      'Gains de productivité mesurés, pas seulement annoncés',
     ],
     accent: 'ember',
     span: 'lg:col-span-3',
@@ -286,7 +289,7 @@ export const skills = [
       'Structuration d\'équipe',
       'Coaching & mentorat',
       'Rituels agiles',
-      'Alignement stakeholders',
+      'Alignement des parties prenantes',
     ],
   },
   {

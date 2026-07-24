@@ -30,7 +30,7 @@ export default function Experience() {
       <SectionHeader
         eyebrow="Parcours"
         title="Neuf ans, trois maisons"
-        lead="De l'ESN à la scale-up, de la scale-up au groupe : à chaque étape, plus de périmètre et plus de responsabilité sur le résultat."
+        lead="Du conseil à la start-up en forte croissance, puis à un grand groupe : à chaque étape, plus de périmètre et plus de responsabilité sur les résultats."
       />
 
       <div ref={list} className="relative mt-16">
