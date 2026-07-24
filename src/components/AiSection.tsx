@@ -3,6 +3,7 @@ import { useReveal } from '../hooks/useMotion'
 import Spotlight from './ui/Spotlight'
 import SectionHeader from './ui/SectionHeader'
 import Icon, { type IconName } from './ui/Icon'
+import CompanyLogo from './ui/CompanyLogo'
 
 const accent = {
   iris: { text: 'text-iris-soft', glow: 'var(--c-iris)', icon: 'terminal' as IconName },
@@ -44,9 +45,19 @@ export default function AiSection() {
                 />
 
                 <div className="relative flex items-center gap-3">
-                  <span className={`grid h-10 w-10 place-items-center rounded-xl border border-line bg-surface-2 ${a.text}`}>
-                    <Icon name={a.icon} size={19} />
-                  </span>
+                  {card.logo ? (
+                    <CompanyLogo
+                      name={card.title}
+                      slug={card.logo}
+                      chipClass="h-10 w-10 shrink-0 rounded-xl p-1.5"
+                      imgClass="max-h-full max-w-full"
+                      labelClass="text-[9px] text-center leading-tight"
+                    />
+                  ) : (
+                    <span className={`grid h-10 w-10 place-items-center rounded-xl border border-line bg-surface-2 ${a.text}`}>
+                      <Icon name={a.icon} size={19} />
+                    </span>
+                  )}
                   <p className="eyebrow !text-[0.68rem]">{card.kicker}</p>
                 </div>
 
