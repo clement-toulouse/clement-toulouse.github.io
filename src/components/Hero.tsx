@@ -176,16 +176,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Indice de scroll */}
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-7 flex justify-center print:hidden"
-        aria-hidden="true"
-      >
-        <div className="flex h-10 w-6 items-start justify-center rounded-full border border-line-strong p-1.5">
-          <span className="h-2 w-1 animate-bounce rounded-full bg-ink-soft" />
-        </div>
-      </div>
     </section>
   )
 }
