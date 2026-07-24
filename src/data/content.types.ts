@@ -67,6 +67,8 @@ export interface NavItem {
 }
 
 export interface SavorFeature {
+  /** Clé stable pour le choix d'icône — le libellé `title`, lui, se traduit. */
+  key: 'extract' | 'library' | 'cook' | 'plan'
   title: string
   desc: string
 }

@@ -289,18 +289,22 @@ export const contentFr: SiteContent = {
     body: "Savor extrait automatiquement ingrédients et étapes depuis Instagram, TikTok, un blog ou une photo de carnet. Conçu, designé et développé de bout en bout, de l'idée au déploiement.",
     features: [
       {
+        key: 'extract',
         title: 'Extraction automatique',
         desc: "Un lien ou une photo, et l'IA structure ingrédients, étapes, temps et difficulté en quelques secondes.",
       },
       {
+        key: 'library',
         title: 'Bibliothèque personnelle',
         desc: 'Collections, filtres par difficulté ou tag, suivi des recettes testées et notées.',
       },
       {
+        key: 'cook',
         title: 'Mode cuisine guidé',
         desc: 'Étape par étape sur grand écran, minuteur intégré, plus besoin de scroller les mains pleines de farine.',
       },
       {
+        key: 'plan',
         title: 'Planning & liste de courses',
         desc: 'Glisse tes recettes dans le calendrier, la liste de courses se génère, cumulée et rangée par rayon.',
       },
