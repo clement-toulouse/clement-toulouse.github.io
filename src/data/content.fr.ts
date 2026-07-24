@@ -24,7 +24,7 @@ export const contentFr: SiteContent = {
       "Je transforme une vision en delivery, et le delivery en chiffres.",
     ],
     intro:
-      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige Barrière Play, l'application mobile des clients de casino du Groupe Barrière, avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
+      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige les produits digitaux du pôle casino du Groupe Barrière (Barrière Play, jeu en ligne, CZAM), avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
   },
 
   hero: {
@@ -189,7 +189,7 @@ export const contentFr: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "Je dirige Barrière Play, l'application mobile utilisée par les clients dans nos casinos : programme de fidélité et wallet digital connecté aux machines à sous pour créditer et retirer leurs gains sans cash. J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
+              "Je pilote l'ensemble des produits digitaux du pôle casino du groupe : Barrière Play (fidélité et wallet digital en casino), le jeu en ligne, CZAM (l'outil collaborateur de gestion des entrées) et la stratégie de compte client commun entre nos plateformes. J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
           },
         ],
         responsibilities: [

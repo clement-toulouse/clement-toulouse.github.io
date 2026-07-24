@@ -24,7 +24,7 @@ export const contentEn: SiteContent = {
       'I turn vision into delivery, and delivery into numbers.',
     ],
     intro:
-      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run Barrière Play, the mobile app for Groupe Barrière's casino customers, with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
+      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run the digital products of Groupe Barrière's casino division (Barrière Play, online gambling, CZAM), with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
   },
 
   hero: {
@@ -189,7 +189,7 @@ export const contentEn: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "I run Barrière Play, the mobile app our casino customers use on-site: a loyalty program and a digital wallet connected to the slot machines, letting them top up and cash out their winnings without cash. I lead a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
+              "I own every digital product of the group's casino division: Barrière Play (loyalty and digital wallet in-venue), online gambling, CZAM (the staff tool for managing entries) and the shared customer account strategy across our platforms. I lead a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
           },
         ],
         responsibilities: [
