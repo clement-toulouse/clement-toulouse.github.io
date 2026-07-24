@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 
+import { LanguageProvider, useLanguage } from './i18n/LanguageContext'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Marquee from './components/Marquee'
@@ -12,6 +13,18 @@ import Profil from './components/Profil'
 import Contact from './components/Contact'
 
 export type Theme = 'dark' | 'light'
+
+function SkipLink() {
+  const { t } = useLanguage()
+  return (
+    <a
+      href="#impact"
+      className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-canvas"
+    >
+      {t.meta.skipToContent}
+    </a>
+  )
+}
 
 export default function App() {
   // Le thème réel est déjà posé sur <html> par le script inline de index.html
@@ -36,13 +49,8 @@ export default function App() {
   }, [theme, mounted])
 
   return (
-    <>
-      <a
-        href="#impact"
-        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-100 focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-canvas"
-      >
-        Aller au contenu
-      </a>
+    <LanguageProvider>
+      <SkipLink />
 
       <Nav onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))} />
 
@@ -58,6 +66,6 @@ export default function App() {
       </main>
 
       <Contact />
-    </>
+    </LanguageProvider>
   )
 }

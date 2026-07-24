@@ -1,4 +1,4 @@
-import { savor } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
 import { useReveal } from '../hooks/useMotion'
 import SectionHeader from './ui/SectionHeader'
 import Spotlight from './ui/Spotlight'
@@ -6,6 +6,7 @@ import Magnetic from './ui/Magnetic'
 import Icon from './ui/Icon'
 
 export default function Savor() {
+  const { t } = useLanguage()
   const grid = useReveal<HTMLDivElement>()
 
   return (
@@ -21,9 +22,9 @@ export default function Savor() {
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader
-          eyebrow={savor.kicker}
+          eyebrow={t.sections.savor.eyebrow}
           title="Savor"
-          lead="Un Head of Product qui n'a jamais rien mené seul de bout en bout finit par oublier ce que coûte vraiment une décision. Savor est mon terrain d'entraînement : de l'idée à la mise en ligne, sans équipe pour rattraper mes choix."
+          lead={t.sections.savor.lead}
         />
 
         <div className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-5">
@@ -34,15 +35,15 @@ export default function Savor() {
               <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#184d34] text-white shadow-[0_2px_8px_-2px_rgba(24,77,52,0.5)]">
                 <Icon name="cutlery" size={22} />
               </span>
-              <h3 className="display mt-6 text-[clamp(1.8rem,4vw,2.8rem)]">{savor.pitch}</h3>
+              <h3 className="display mt-6 text-[clamp(1.8rem,4vw,2.8rem)]">{t.savor.pitch}</h3>
               <p className="mt-5 max-w-lg text-[15px] leading-relaxed text-ink-soft">
-                {savor.body}
+                {t.savor.body}
               </p>
             </div>
 
             <div>
               <div className="flex flex-wrap gap-2">
-                {savor.stack.map((s) => (
+                {t.savor.stack.map((s) => (
                   <span key={s} className="chip">
                     {s}
                   </span>
@@ -51,12 +52,12 @@ export default function Savor() {
 
               <Magnetic strength={0.3}>
                 <a
-                  href={savor.url}
+                  href={t.savor.url}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="group mt-7 inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_0_40px_-8px] hover:shadow-ember"
                 >
-                  Tester Savor en ligne
+                  {t.savor.ctaLabel}
                   <Icon
                     name="arrowUpRight"
                     size={16}
@@ -69,7 +70,7 @@ export default function Savor() {
 
           {/* Features */}
           <div ref={grid} className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-2">
-            {savor.features.map((f, i) => (
+            {t.savor.features.map((f, i) => (
               <Spotlight key={f.title} className="p-6">
                 <p className="font-mono text-[11px] text-ink-mute">
                   {String(i + 1).padStart(2, '0')}

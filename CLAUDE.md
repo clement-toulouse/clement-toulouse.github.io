@@ -7,7 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 A single-page CV/portfolio site for Clément Toulouse (Head of Product). React 19 +
 TypeScript + Vite + Tailwind v4, prerendered to static HTML at build time.
 
-**All user-facing content and code comments are in French.** Match that when editing.
+**Code comments are in French.** The site is bilingual (French default, English
+opt-in via the header selector) — match the language of whichever content file
+you're editing.
 
 ## Commands
 
@@ -23,15 +25,27 @@ There is no test suite. `npx tsc --noEmit` typechecks without building.
 
 ## Architecture
 
-### Content lives in one file
+### Content lives in two mirrored files (i18n)
 
-[`src/data/profile.ts`](src/data/profile.ts) is the single source of truth for every
-string on the site — identity, stats, experiences, AI cards, the Savor project,
-skills, education, languages, nav items. Components contain no hardcoded copy.
-Edit content there, never in the components.
+[`src/data/content.fr.ts`](src/data/content.fr.ts) and
+[`src/data/content.en.ts`](src/data/content.en.ts) are the single source of truth
+for every string on the site — identity, stats, experiences, AI cards, the Savor
+project, skills, education, languages, nav items. Both implement the
+[`SiteContent`](src/data/content.types.ts) interface, so TypeScript fails the build
+if either file drifts from the other's shape. Components contain no hardcoded
+copy — they call `useLanguage()` (from
+[`src/i18n/LanguageContext.tsx`](src/i18n/LanguageContext.tsx)) and read `t.*`.
+Edit content in the two files, never in the components.
+
+French is the default locale **and** the one prerendered — see the hydration
+contract below. `LanguageProvider` starts at `locale: 'fr'` regardless of any
+saved preference, then corrects after mount (same `mounted`-flag pattern as
+theme). Adding a field: extend `SiteContent` first, then both content files —
+the compiler is the checklist.
 
 Share metadata (`og:*`, `canonical`, JSON-LD `Person`) lives in
-[`index.html`](index.html) and must be updated alongside `profile.ts`.
+[`index.html`](index.html), always in French (it's baked into the prerendered
+HTML, never regenerated client-side) — update it alongside `content.fr.ts`.
 
 ### Prerendering and the hydration contract
 
@@ -98,6 +112,21 @@ emits `public/clement.webp`, `public/clement.jpg` and the 1200×630 `public/og.j
 
 ## Gotchas discovered the hard way
 
+- **`vite.config.ts` importing a `src/` file pulls that file's own relative
+  imports into `nodenext` resolution.** `tsconfig.node.json` (which governs
+  `vite.config.ts`) uses `"module": "nodenext"`, requiring explicit file
+  extensions. `tsconfig.app.json` (which governs `src/`) uses `"moduleResolution":
+  "bundler"` and doesn't. Plain `tsc --noEmit` won't catch this — only `tsc -b`
+  (what `npm run build` runs) walks project references and surfaces it, as
+  `TS2307: Cannot find module` on the *imported* file's own extensionless
+  imports, not on the import in `vite.config.ts` itself. Fix: add `.ts` to the
+  relative imports in the file `vite.config.ts` reaches into (see
+  `content.fr.ts` importing `content.types.ts`) — not to the whole `src/` tree.
+- **Bare `npx tsc --noEmit` at the repo root silently checks zero files.** The
+  root `tsconfig.json` only has `"references"` and `"files": []`; without `-b`
+  it's a no-op that exits clean regardless of real errors. Use `npm run build`
+  (which runs `tsc -b`) or `npx tsc --noEmit -p tsconfig.app.json` to actually
+  typecheck.
 - **Never use `background-attachment: fixed`.** Applied to many elements it made
   Chrome fail to paint the entire page — a blank screen with a perfectly healthy DOM.
 - **`background-clip: text` does not survive transformed children.** That is why
@@ -131,8 +160,9 @@ lint, typecheck, build and prerender, then publishes `dist/`.
 
 The absolute URLs in `index.html` are written as `__SITE_URL__` and substituted at
 build time by the `site-url` plugin in `vite.config.ts`, which reads
-`profile.siteUrl`. **That one field is the only place to change the domain** — don't
-reintroduce hardcoded absolute URLs in `index.html`.
+`contentFr.profile.siteUrl` (French is the prerendered locale — see i18n above).
+**That one field is the only place to change the domain** — don't reintroduce
+hardcoded absolute URLs in `index.html`.
 
 `base` in `vite.config.ts` is `/` because this is a GitHub *user* site
 (`<user>.github.io`). A project repo served from a subfolder needs `base: '/<repo>/'`.

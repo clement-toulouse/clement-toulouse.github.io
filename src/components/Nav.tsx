@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
-import { navItems, profile } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
 import { useActiveSection, useScrollProgress } from '../hooks/useMotion'
 import Icon from './ui/Icon'
 import Magnetic from './ui/Magnetic'
 
-const ids = navItems.map((n) => n.id)
-
 export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
+  const { locale, setLocale, t } = useLanguage()
+  const navItems = t.nav.items
+  const ids = navItems.map((n) => n.id)
+
   const progress = useScrollProgress()
   const active = useActiveSection(ids)
   const [open, setOpen] = useState(false)
@@ -40,6 +42,10 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
     document.getElementById(id)?.scrollIntoView({ block: 'start' })
     history.replaceState(null, '', `#${id}`)
   }
+
+  const toggleLocale = () => setLocale(locale === 'fr' ? 'en' : 'fr')
+  // Le bouton affiche la langue vers laquelle on bascule, pas la langue courante.
+  const nextLocaleCode = locale === 'fr' ? 'EN' : 'FR'
 
   return (
     <>
@@ -81,7 +87,7 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
               <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-mint shadow-[0_0_10px] shadow-mint" />
             </span>
             <span className="hidden text-sm font-semibold tracking-tight sm:block">
-              {profile.firstName} {profile.lastName}
+              {t.profile.firstName} {t.profile.lastName}
             </span>
           </a>
 
@@ -96,7 +102,7 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
                 ? 'border-transparent bg-transparent'
                 : 'border-line bg-surface/30 backdrop-blur-xl'
             }`}
-            aria-label="Navigation principale"
+            aria-label={t.nav.ariaMain}
           >
             {navItems.map((item) => (
               <a
@@ -119,8 +125,20 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
           <div className="flex items-center gap-2">
             <Magnetic strength={0.25}>
               <button
+                onClick={toggleLocale}
+                aria-label={t.nav.langToggleTo}
+                className={`grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line text-[12px] font-bold tracking-tight text-ink-soft transition-all duration-300 hover:border-line-strong hover:text-ink ${
+                  scrolled ? 'bg-transparent' : 'bg-surface/60 backdrop-blur-xl'
+                }`}
+              >
+                {nextLocaleCode}
+              </button>
+            </Magnetic>
+
+            <Magnetic strength={0.25}>
+              <button
                 onClick={onToggleTheme}
-                aria-label="Changer de thème"
+                aria-label={t.nav.themeToggle}
                 className={`grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line text-ink-soft transition-all duration-300 hover:border-line-strong hover:text-ink ${
                   scrolled ? 'bg-transparent' : 'bg-surface/60 backdrop-blur-xl'
                 }`}
@@ -133,16 +151,16 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
             </Magnetic>
 
             <a
-              href={`mailto:${profile.email}`}
+              href={`mailto:${t.profile.email}`}
               className="hidden cursor-pointer items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-[13px] font-semibold text-canvas transition-transform duration-300 hover:scale-[1.03] sm:flex"
             >
-              Me contacter
+              {t.nav.contact}
               <Icon name="arrowUpRight" size={15} />
             </a>
 
             <button
               onClick={() => setOpen(true)}
-              aria-label="Ouvrir le menu"
+              aria-label={t.nav.openMenu}
               aria-expanded={open}
               className={`grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line transition-colors duration-300 md:hidden ${
                 scrolled ? 'bg-transparent' : 'bg-surface/60 backdrop-blur-xl'
@@ -161,16 +179,23 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
         }`}
         inert={!open}
       >
-        <div className="flex items-center justify-end px-5 py-5">
+        <div className="flex items-center justify-between px-5 py-5">
+          <button
+            onClick={toggleLocale}
+            aria-label={t.nav.langToggleTo}
+            className="grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line text-[12px] font-bold tracking-tight"
+          >
+            {nextLocaleCode}
+          </button>
           <button
             onClick={() => setOpen(false)}
-            aria-label="Fermer le menu"
+            aria-label={t.nav.closeMenu}
             className="grid h-11 w-11 cursor-pointer place-items-center rounded-full border border-line"
           >
             <Icon name="close" size={18} />
           </button>
         </div>
-        <nav className="flex flex-col gap-1 px-6 pt-6" aria-label="Navigation mobile">
+        <nav className="flex flex-col gap-1 px-6 pt-6" aria-label={t.nav.ariaMobile}>
           {navItems.map((item, i) => (
             <a
               key={item.id}
@@ -183,19 +208,19 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
             </a>
           ))}
           <a
-            href={profile.linkedin}
+            href={t.profile.linkedin}
             target="_blank"
             rel="noreferrer noopener"
             className="mt-8 flex items-center justify-center gap-2 rounded-full border border-line px-5 py-4 font-semibold"
           >
             <Icon name="linkedin" size={16} />
-            Voir mon LinkedIn
+            {t.hero.ctaLinkedin}
           </a>
           <a
-            href={`mailto:${profile.email}`}
+            href={`mailto:${t.profile.email}`}
             className="mt-3 flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-4 font-semibold text-canvas"
           >
-            {profile.email}
+            {t.profile.email}
             <Icon name="arrowUpRight" size={16} />
           </a>
         </nav>

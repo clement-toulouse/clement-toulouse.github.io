@@ -1,4 +1,4 @@
-import { companies } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
 import CompanyLogo from './ui/CompanyLogo'
 
 /**
@@ -7,6 +7,8 @@ import CompanyLogo from './ui/CompanyLogo'
  * défilement inversé pour se distinguer du premier.
  */
 export default function CompanyMarquee() {
+  const { t } = useLanguage()
+
   return (
     <div className="marquee relative overflow-hidden border-b border-line py-8">
       <div
@@ -19,12 +21,12 @@ export default function CompanyMarquee() {
       />
 
       {/* Intitulé lu par les lecteurs d'écran, la piste elle-même est décorative. */}
-      <h2 className="sr-only">Entreprises et clients de mon parcours</h2>
+      <h2 className="sr-only">{t.companyMarquee.srLabel}</h2>
 
       <div className="marquee-track marquee-track--reverse" aria-hidden="true">
         {[0, 1].map((dup) => (
           <div key={dup} className="flex shrink-0 items-center">
-            {companies.map((c) => (
+            {t.companies.map((c) => (
               <span key={c.slug} className="px-4">
                 <CompanyLogo name={c.name} slug={c.slug} />
               </span>

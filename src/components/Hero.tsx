@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { heroProofs, profile } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
 import { useParallax } from '../hooks/useMotion'
 import SplitHeading from './ui/SplitHeading'
 import Magnetic from './ui/Magnetic'
@@ -8,6 +8,7 @@ import Tilt from './ui/Tilt'
 import Icon from './ui/Icon'
 
 export default function Hero() {
+  const { t } = useLanguage()
   const root = useRef<HTMLElement>(null)
   const auroraA = useRef<HTMLDivElement>(null)
   const auroraB = useRef<HTMLDivElement>(null)
@@ -75,14 +76,14 @@ export default function Hero() {
               <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
             </span>
             <span className="text-[12.5px] font-medium text-ink-soft">
-              {profile.role} · {profile.company}
+              {t.profile.role} · {t.profile.company}
             </span>
           </div>
 
           <SplitHeading
             as="h1"
             gradient
-            text={`${profile.firstName} ${profile.lastName}`}
+            text={`${t.profile.firstName} ${t.profile.lastName}`}
             delay={0.25}
             className="display text-[clamp(2.25rem,9vw,5.75rem)] text-gradient"
           />
@@ -91,8 +92,8 @@ export default function Hero() {
             style={{ '--d': 2 } as React.CSSProperties}
             className="intro-item mt-6 max-w-xl text-[clamp(1.05rem,2.2vw,1.35rem)] leading-[1.55] text-ink-soft"
           >
-            {profile.tagline[0]}{' '}
-            <span className="serif-accent text-ink">{profile.tagline[1]}</span>
+            {t.profile.tagline[0]}{' '}
+            <span className="serif-accent text-ink">{t.profile.tagline[1]}</span>
           </p>
 
           {/* Preuves chiffrées plutôt que mots-clés : c'est la première chose
@@ -101,7 +102,7 @@ export default function Hero() {
             style={{ '--d': 3 } as React.CSSProperties}
             className="intro-item mt-9 flex flex-wrap items-stretch gap-x-8 gap-y-4"
           >
-            {heroProofs.map((p) => (
+            {t.hero.proofs.map((p) => (
               <div key={p.label} className="border-l-2 border-iris/40 pl-3.5">
                 <p className="display text-[1.45rem] text-ink">{p.value}</p>
                 <p className="mt-0.5 text-[12px] leading-tight text-ink-mute">{p.label}</p>
@@ -118,7 +119,7 @@ export default function Hero() {
                 href="#impact"
                 className="group flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_0_40px_-8px] hover:shadow-iris"
               >
-                Voir mon impact
+                {t.hero.ctaImpact}
                 <Icon
                   name="arrowRight"
                   size={17}
@@ -129,13 +130,13 @@ export default function Hero() {
 
             <Magnetic strength={0.25}>
               <a
-                href={profile.linkedin}
+                href={t.profile.linkedin}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="flex cursor-pointer items-center gap-2.5 rounded-full border border-line bg-surface/50 px-6 py-3.5 text-sm font-semibold text-ink-soft backdrop-blur-xl transition-colors duration-300 hover:border-line-strong hover:text-ink"
               >
                 <Icon name="linkedin" size={17} />
-                Voir mon LinkedIn
+                {t.hero.ctaLinkedin}
               </a>
             </Magnetic>
           </div>
@@ -159,9 +160,9 @@ export default function Hero() {
               <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl border border-line bg-canvas/60 px-4 py-3 backdrop-blur-xl print:hidden">
                 <div>
                   <p className="text-[13px] font-semibold leading-tight">
-                    Paris · Rosny-sous-Bois
+                    {t.hero.locationCard.title}
                   </p>
-                  <p className="text-[11.5px] text-ink-mute">Ouvert aux échanges</p>
+                  <p className="text-[11.5px] text-ink-mute">{t.hero.locationCard.subtitle}</p>
                 </div>
                 <Icon name="mapPin" size={17} className="text-mint" />
               </div>
@@ -170,8 +171,8 @@ export default function Hero() {
 
           {/* Badge flottant */}
           <div className="absolute -left-4 top-8 hidden rounded-2xl border border-line bg-surface/80 px-4 py-3 backdrop-blur-xl lg:block">
-            <p className="display text-2xl text-mint">9+</p>
-            <p className="text-[11px] leading-tight text-ink-mute">ans de produit</p>
+            <p className="display text-2xl text-mint">{t.hero.badge.value}</p>
+            <p className="text-[11px] leading-tight text-ink-mute">{t.hero.badge.label}</p>
           </div>
         </div>
       </div>

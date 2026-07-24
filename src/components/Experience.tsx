@@ -1,4 +1,4 @@
-import { experiences } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
 import { useReveal } from '../hooks/useMotion'
 import SectionHeader from './ui/SectionHeader'
 import Spotlight from './ui/Spotlight'
@@ -6,7 +6,7 @@ import Icon from './ui/Icon'
 import CompanyLogo from './ui/CompanyLogo'
 
 /* Capture le chiffre en tête de métrique : « −60 % », « 8 M€ », « 60 000 »… */
-const METRIC_RE = /^([+\-−]?\d[\d\s .,]*(?:%|M€|€|k)?)/
+const METRIC_RE = /^([+\-−]?\d[\d\s .,]*(?:%|M€|€|k)?)/
 
 /** Met le chiffre en avant : c'est lui qu'un lecteur en diagonale doit voir. */
 function Metric({ text }: { text: string }) {
@@ -21,6 +21,7 @@ function Metric({ text }: { text: string }) {
 }
 
 export default function Experience() {
+  const { t } = useLanguage()
   const list = useReveal<HTMLDivElement>({ selector: '[data-xp]' })
 
   return (
@@ -29,9 +30,9 @@ export default function Experience() {
       className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32"
     >
       <SectionHeader
-        eyebrow="Parcours"
-        title="Neuf ans, trois maisons"
-        lead="Du conseil à la start-up en forte croissance, puis à un grand groupe : à chaque étape, plus de périmètre et plus de responsabilité sur les résultats."
+        eyebrow={t.sections.parcours.eyebrow}
+        title={t.sections.parcours.title}
+        lead={t.sections.parcours.lead}
       />
 
       <div ref={list} className="relative mt-16">
@@ -42,7 +43,7 @@ export default function Experience() {
         />
 
         <div className="flex flex-col gap-5">
-          {experiences.map((xp) => (
+          {t.experience.items.map((xp) => (
             <div key={xp.company} data-xp className="relative md:pl-12">
               {/* Point sur la timeline */}
               <span
@@ -92,7 +93,7 @@ export default function Experience() {
 
                 {xp.responsibilities && (
                   <div className="mt-8 rounded-2xl border border-line bg-surface-2/50 p-5 sm:p-6">
-                    <p className="eyebrow !text-[0.66rem]">Responsabilités clés</p>
+                    <p className="eyebrow !text-[0.66rem]">{t.experience.responsibilitiesLabel}</p>
                     <ul className="mt-4 space-y-2.5">
                       {xp.responsibilities.map((r) => (
                         <li
@@ -140,9 +141,9 @@ export default function Experience() {
                 </div>
 
                 <div className="mt-7 flex flex-wrap gap-2 border-t border-line pt-6">
-                  {xp.tags.map((t) => (
-                    <span key={t} className="chip">
-                      {t}
+                  {xp.tags.map((tag) => (
+                    <span key={tag} className="chip">
+                      {tag}
                     </span>
                   ))}
                 </div>

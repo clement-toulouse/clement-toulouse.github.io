@@ -1,4 +1,4 @@
-import { aiCards } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
 import { useReveal } from '../hooks/useMotion'
 import Spotlight from './ui/Spotlight'
 import SectionHeader from './ui/SectionHeader'
@@ -11,6 +11,7 @@ const accent = {
 }
 
 export default function AiSection() {
+  const { t } = useLanguage()
   const grid = useReveal<HTMLDivElement>()
 
   return (
@@ -26,13 +27,13 @@ export default function AiSection() {
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader
-          eyebrow="Appétence IA"
-          title="L'IA dans le process, pas à côté"
-          lead="Je ne fais pas de l'IA une couche marketing posée sur un produit. Je l'utilise pour raccourcir la boucle entre une intuition et une décision, pour moi comme pour mes équipes."
+          eyebrow={t.sections.ia.eyebrow}
+          title={t.sections.ia.title}
+          lead={t.sections.ia.lead}
         />
 
         <div ref={grid} className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-6">
-          {aiCards.map((card) => {
+          {t.aiCards.map((card) => {
             const a = accent[card.accent]
             return (
               <Spotlight key={card.title} className={`flex flex-col p-7 sm:p-8 ${card.span}`}>

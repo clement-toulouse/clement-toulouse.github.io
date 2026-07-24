@@ -1,22 +1,24 @@
-import { profile } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
 import SplitHeading from './ui/SplitHeading'
 import Magnetic from './ui/Magnetic'
 import Icon, { type IconName } from './ui/Icon'
 
-const links: { icon: IconName; label: string; value: string; href: string; external?: boolean }[] =
-  [
-    { icon: 'mail', label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
-    {
-      icon: 'linkedin',
-      label: 'LinkedIn',
-      value: '/in/clement-toulouse',
-      href: profile.linkedin,
-      external: true,
-    },
-    { icon: 'mapPin', label: 'Localisation', value: profile.location, href: '' },
-  ]
-
 export default function Contact() {
+  const { t } = useLanguage()
+
+  const links: { icon: IconName; label: string; value: string; href: string; external?: boolean }[] =
+    [
+      { icon: 'mail', label: t.contact.emailLabel, value: t.profile.email, href: `mailto:${t.profile.email}` },
+      {
+        icon: 'linkedin',
+        label: t.contact.linkedinLabel,
+        value: '/in/clement-toulouse',
+        href: t.profile.linkedin,
+        external: true,
+      },
+      { icon: 'mapPin', label: t.contact.locationLabel, value: t.profile.location, href: '' },
+    ]
+
   return (
     <footer
       id="contact"
@@ -30,25 +32,24 @@ export default function Contact() {
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <div className="text-center">
-          <p className="eyebrow">Et maintenant ?</p>
+          <p className="eyebrow">{t.contact.eyebrow}</p>
           <SplitHeading
             onScroll
             gradient
-            text="Parlons produit."
+            text={t.contact.title}
             className="display mt-5 text-[clamp(2.6rem,9vw,6rem)] text-gradient"
           />
           <p className="mx-auto mt-6 max-w-lg text-[1.05rem] leading-relaxed text-ink-soft">
-            Une opportunité, une question sur l'IA appliquée aux process, ou juste l'envie
-            d'échanger sur un produit : la porte est ouverte.
+            {t.contact.lead}
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3 print:hidden">
             <Magnetic strength={0.35}>
               <a
-                href={`mailto:${profile.email}`}
+                href={`mailto:${t.profile.email}`}
                 className="group inline-flex cursor-pointer items-center gap-3 rounded-full bg-ink px-8 py-4.5 text-[15px] font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_0_60px_-10px] hover:shadow-iris"
               >
-                {profile.email}
+                {t.profile.email}
                 <Icon
                   name="arrowUpRight"
                   size={18}
@@ -58,13 +59,13 @@ export default function Contact() {
             </Magnetic>
             <Magnetic strength={0.3}>
               <a
-                href={profile.linkedin}
+                href={t.profile.linkedin}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="inline-flex cursor-pointer items-center gap-2.5 rounded-full border border-line bg-surface/50 px-7 py-4.5 text-[15px] font-semibold text-ink-soft backdrop-blur-xl transition-colors duration-300 hover:border-line-strong hover:text-ink"
               >
                 <Icon name="linkedin" size={17} />
-                Voir mon LinkedIn
+                {t.hero.ctaLinkedin}
               </a>
             </Magnetic>
           </div>
@@ -100,7 +101,7 @@ export default function Contact() {
 
         <div className="mt-14 border-t border-line py-8">
           <p className="text-[13px] text-ink-mute">
-            © {new Date().getFullYear()} {profile.firstName} {profile.lastName} · {profile.role}
+            © {new Date().getFullYear()} {t.profile.firstName} {t.profile.lastName} · {t.profile.role}
           </p>
         </div>
       </div>

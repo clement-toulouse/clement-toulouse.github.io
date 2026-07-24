@@ -1,10 +1,17 @@
-import { education, languages, skills } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
 import { useReveal } from '../hooks/useMotion'
 import SectionHeader from './ui/SectionHeader'
 import Spotlight from './ui/Spotlight'
-import Icon from './ui/Icon'
+import Icon, { type IconName } from './ui/Icon'
+
+const skillIcon: Record<'product' | 'leadership' | 'ai', IconName> = {
+  product: 'target',
+  leadership: 'users',
+  ai: 'sparkles',
+}
 
 export default function Profil() {
+  const { t } = useLanguage()
   const grid = useReveal<HTMLDivElement>()
 
   return (
@@ -13,20 +20,17 @@ export default function Profil() {
       className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32"
     >
       <SectionHeader
-        eyebrow="Profil"
-        title="Ce que j'apporte"
-        lead="Un ingénieur qui a basculé côté produit, et qui a gardé le goût du concret : des systèmes qui tiennent, des équipes qui décident vite, des chiffres qui bougent."
+        eyebrow={t.sections.profil.eyebrow}
+        title={t.sections.profil.title}
+        lead={t.sections.profil.lead}
       />
 
       <div ref={grid} className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-3">
-        {skills.map((s) => (
-          <Spotlight key={s.group} className="p-7">
+        {t.skills.map((s) => (
+          <Spotlight key={s.key} className="p-7">
             <div className="flex items-center gap-3">
               <span className="grid h-9 w-9 place-items-center rounded-xl border border-line bg-surface-2 text-iris-soft">
-                <Icon
-                  name={s.group === 'Produit' ? 'target' : s.group === 'Leadership' ? 'users' : 'sparkles'}
-                  size={17}
-                />
+                <Icon name={skillIcon[s.key]} size={17} />
               </span>
               <h3 className="text-[15px] font-semibold">{s.group}</h3>
             </div>
@@ -48,10 +52,10 @@ export default function Profil() {
             <span className="grid h-9 w-9 place-items-center rounded-xl border border-line bg-surface-2 text-mint">
               <Icon name="graduation" size={17} />
             </span>
-            <h3 className="text-[15px] font-semibold">Formation & certifications</h3>
+            <h3 className="text-[15px] font-semibold">{t.educationLabel}</h3>
           </div>
           <div className="mt-6 space-y-5">
-            {education.map((e) => (
+            {t.education.map((e) => (
               <div key={e.title} className="border-l border-line pl-5">
                 <p className="flex flex-wrap items-baseline justify-between gap-2">
                   <span className="text-[15px] font-semibold">{e.title}</span>
@@ -69,10 +73,10 @@ export default function Profil() {
             <span className="grid h-9 w-9 place-items-center rounded-xl border border-line bg-surface-2 text-ember">
               <Icon name="layers" size={17} />
             </span>
-            <h3 className="text-[15px] font-semibold">Langues</h3>
+            <h3 className="text-[15px] font-semibold">{t.languagesLabel}</h3>
           </div>
           <div className="mt-6 space-y-6">
-            {languages.map((l) => (
+            {t.languages.map((l) => (
               <div key={l.name}>
                 <p className="flex items-baseline justify-between gap-3">
                   <span className="text-[15px] font-semibold">{l.name}</span>

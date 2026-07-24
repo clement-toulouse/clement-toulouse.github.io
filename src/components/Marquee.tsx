@@ -1,21 +1,9 @@
-const words = [
-  'Vision produit',
-  'Discovery',
-  'OKR',
-  'Claude Code',
-  'Barrière Play',
-  'Agents IA',
-  'Dust',
-  'Management',
-  'Delivery',
-  'IA Ops',
-  'B2C mobile',
-  'SaaS B2B',
-  'Impact mesuré',
-]
+import { useLanguage } from '../i18n/LanguageContext'
 
 /** Bande défilante — respiration entre le hero et le contenu dense. */
 export default function Marquee() {
+  const { t } = useLanguage()
+
   return (
     <div className="marquee relative overflow-hidden border-y border-line py-5">
       <div
@@ -29,7 +17,7 @@ export default function Marquee() {
       <div className="marquee-track" aria-hidden="true">
         {[0, 1].map((dup) => (
           <div key={dup} className="flex shrink-0 items-center">
-            {words.map((w) => (
+            {t.marquee.map((w) => (
               <span key={w} className="flex items-center">
                 <span className="px-6 text-[clamp(1rem,2vw,1.5rem)] font-medium tracking-tight text-ink-soft">
                   {w}

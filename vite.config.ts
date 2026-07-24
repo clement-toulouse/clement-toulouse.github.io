@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { profile } from './src/data/profile.ts'
+import { contentFr } from './src/data/content.fr.ts'
 
 /**
- * Remplace `__SITE_URL__` dans index.html par `profile.siteUrl`.
+ * Remplace `__SITE_URL__` dans index.html par l'URL du site (français : la
+ * langue par défaut et celle du prérendu, donc du HTML statique livré).
  *
  * Les URL de partage (canonical, og:image, JSON-LD) doivent être absolues pour
  * que les aperçus de lien fonctionnent. Les centraliser ici évite d'avoir à les
@@ -14,7 +15,7 @@ function siteUrl() {
   return {
     name: 'site-url',
     transformIndexHtml(html: string) {
-      return html.replaceAll('__SITE_URL__', profile.siteUrl.replace(/\/$/, ''))
+      return html.replaceAll('__SITE_URL__', contentFr.profile.siteUrl.replace(/\/$/, ''))
     },
   }
 }

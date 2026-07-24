@@ -1,4 +1,5 @@
-import { profile, stats, type Stat } from '../data/profile'
+import { useLanguage } from '../i18n/LanguageContext'
+import type { Stat } from '../data/content'
 import { useCountUp, useReveal } from '../hooks/useMotion'
 import Spotlight from './ui/Spotlight'
 import SectionHeader from './ui/SectionHeader'
@@ -35,6 +36,7 @@ function StatCard({ stat }: { stat: Stat }) {
 }
 
 export default function Impact() {
+  const { t } = useLanguage()
   const grid = useReveal<HTMLDivElement>()
 
   return (
@@ -43,13 +45,13 @@ export default function Impact() {
       className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32"
     >
       <SectionHeader
-        eyebrow="Ce que ça a produit"
-        title="L'impact avant le discours"
-        lead="Une roadmap qui ne se mesure pas n'est qu'une liste d'envies. Voici ce que mes équipes et moi avons livré ces trois dernières années, en chiffres."
+        eyebrow={t.sections.impact.eyebrow}
+        title={t.sections.impact.title}
+        lead={t.sections.impact.lead}
       />
 
       <div ref={grid} className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {stats.map((s) => (
+        {t.stats.map((s) => (
           <StatCard key={s.label} stat={s} />
         ))}
       </div>
@@ -61,11 +63,10 @@ export default function Impact() {
         </div>
         <div>
           <p className="serif-accent text-[clamp(1.35rem,3vw,2rem)] leading-[1.35] text-ink">
-            « Un bon produit, c'est une décision qu'on peut défendre avec un chiffre, et une
-            équipe qui comprend pourquoi on l'a prise. »
+            {t.impactQuote}
           </p>
           <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
-            {profile.intro}
+            {t.profile.intro}
           </p>
         </div>
       </Spotlight>
