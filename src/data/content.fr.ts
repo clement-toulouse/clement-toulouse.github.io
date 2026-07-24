@@ -195,10 +195,8 @@ export const contentFr: SiteContent = {
         responsibilities: [
           "Définir la vision produit et la stratégie digitale de l'activité, avec un pilotage par OKR",
           'Challenger et accompagner les Product Managers pour maximiser la qualité et la valeur de leurs produits',
-          "Structurer et harmoniser les processus inter-équipes en combinant déploiement d'agents IA et animation des méthodologies produit",
-          'Piloter le développement du jeu en ligne du groupe (casino en ligne, paris sportifs)',
-          "Piloter CZAM, l'outil interne des collaborateurs pour gérer les entrées en casino et accompagner l'expérience client",
-          "Mener la réflexion stratégique sur un compte client et un parcours d'inscription communs entre l'application mobile, le site web et le futur jeu en ligne",
+          'Piloter le portefeuille de produits du pôle : le jeu en ligne du groupe (casino en ligne, paris sportifs) et CZAM, l\'outil collaborateur de gestion des entrées en casino',
+          "Structurer les processus inter-équipes (déploiement d'agents IA, méthodologies produit) et mener la réflexion stratégique sur un compte client et un parcours d'inscription communs entre nos plateformes",
         ],
         wins: [
           {

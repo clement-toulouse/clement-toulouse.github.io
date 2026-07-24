@@ -24,8 +24,18 @@ function Metric({ text }: { text: string }) {
   )
 }
 
+/** Identifiant DOM stable pour relier le bouton "Use Case" à la région qu'il contrôle. */
+function slugify(s: string) {
+  return s
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/\p{Diacritic}/gu, '')
+    .replace(/[^a-z0-9]+/g, '-')
+}
+
 function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
   const [open, setOpen] = useState(false)
+  const caseStudyId = `case-study-${slugify(xp.company)}`
 
   return (
     <div data-xp className="relative md:pl-12">
@@ -134,6 +144,7 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
                 type="button"
                 onClick={() => setOpen((v) => !v)}
                 aria-expanded={open}
+                aria-controls={caseStudyId}
                 className="mt-5 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-line-strong px-5 py-3 text-[13.5px] font-semibold text-iris-soft transition-colors duration-300 hover:border-iris hover:bg-surface-2 sm:w-auto"
               >
                 {open ? t.experience.lessLabel : t.experience.moreLabel}
@@ -147,6 +158,7 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
 
             {xp.caseStudy && (
               <div
+                id={caseStudyId}
                 className={`case-study grid transition-[grid-template-rows] duration-500 ease-out ${
                   open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
                 }`}

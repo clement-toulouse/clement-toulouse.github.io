@@ -195,10 +195,8 @@ export const contentEn: SiteContent = {
         responsibilities: [
           'Define the product vision and digital strategy for the business, tracked through OKRs',
           'Challenge and coach the Product Managers to maximize the quality and value of their products',
-          'Structure and align cross-team processes by combining AI agent deployment with product methodology',
-          "Own the development of the group's online gambling product (online casino, sports betting)",
-          "Own CZAM, the internal staff tool for managing casino entries and supporting the customer experience",
-          'Lead the strategic thinking on a shared customer account and sign-up flow across the mobile app, the website, and the future online gambling product',
+          "Own the pole's product portfolio: the group's online gambling product (online casino, sports betting) and CZAM, the staff tool for managing casino entries",
+          'Structure cross-team processes (AI agent deployment, product methodology) and lead the strategic thinking on a shared customer account and sign-up flow across our platforms',
         ],
         wins: [
           {
