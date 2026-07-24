@@ -21,6 +21,14 @@ export interface Experience {
   responsibilities?: string[]
   wins: { headline: string; metrics: string[] }[]
   tags: string[]
+  /** Capture d'écran réelle du produit, encadrée en mockup navigateur ou téléphone. */
+  screenshot?: {
+    src: string
+    alt: string
+    frame: 'browser' | 'phone'
+    /** Barre d'url affichée pour le cadre navigateur. */
+    url?: string
+  }
 }
 
 export interface AiCard {

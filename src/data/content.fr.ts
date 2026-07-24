@@ -208,6 +208,11 @@ export const contentFr: SiteContent = {
           },
         ],
         tags: ['Vision produit', 'OKR', 'Management', 'Mobile B2C', 'Agents IA', 'QA'],
+        screenshot: {
+          src: '/experience/barriere-play.webp',
+          alt: "Capture d'écran de l'application Barrière Play, carte de fidélité Carré VIP",
+          frame: 'phone',
+        },
       },
       {
         company: 'Partoo',
@@ -255,6 +260,12 @@ export const contentFr: SiteContent = {
           },
         ],
         tags: ['SaaS B2B', 'Lead PM', 'Product Discovery', 'Expérience client', 'Intégrations', 'Data'],
+        screenshot: {
+          src: '/experience/partoo-diffusion.webp',
+          alt: "Capture d'écran du tableau de diffusion Partoo, taux de publication par plateforme",
+          frame: 'browser',
+          url: 'app.partoo.co',
+        },
       },
       {
         company: 'IpsoSenso',

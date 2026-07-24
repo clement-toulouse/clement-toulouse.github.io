@@ -4,6 +4,8 @@ import SectionHeader from './ui/SectionHeader'
 import Spotlight from './ui/Spotlight'
 import Icon from './ui/Icon'
 import CompanyLogo from './ui/CompanyLogo'
+import ScreenshotFrame from './ui/ScreenshotFrame'
+import Tilt from './ui/Tilt'
 
 /* Capture le chiffre en tête de métrique : « −60 % », « 8 M€ », « 60 000 »… */
 const METRIC_RE = /^([+\-−]?\d[\d\s .,]*(?:%|M€|€|k)?)/
@@ -75,77 +77,96 @@ export default function Experience() {
                   <p className="chip !border-line-strong">{xp.period}</p>
                 </header>
 
-                <div className="mt-7 space-y-5">
-                  {xp.roles.map((role) => (
-                    <div key={role.title}>
-                      <p className="flex flex-wrap items-baseline gap-2.5">
-                        <span className="text-[15.5px] font-semibold text-ink">{role.title}</span>
-                        {role.duration && (
-                          <span className="text-[12.5px] text-ink-mute">· {role.duration}</span>
-                        )}
-                      </p>
-                      <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-soft">
-                        {role.summary}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                {xp.responsibilities && (
-                  <div className="mt-8 rounded-2xl border border-line bg-surface-2/50 p-5 sm:p-6">
-                    <p className="eyebrow !text-[0.66rem]">{t.experience.responsibilitiesLabel}</p>
-                    <ul className="mt-4 space-y-2.5">
-                      {xp.responsibilities.map((r) => (
-                        <li
-                          key={r}
-                          className="flex gap-3 text-[14px] leading-snug text-ink-soft"
-                        >
-                          <Icon
-                            name="target"
-                            size={15}
-                            className="mt-0.5 shrink-0 text-ink-mute"
-                          />
-                          {r}
-                        </li>
+                <div className="mt-7 lg:flex lg:items-start lg:gap-8">
+                  <div className="min-w-0 flex-1">
+                    <div className="space-y-5">
+                      {xp.roles.map((role) => (
+                        <div key={role.title}>
+                          <p className="flex flex-wrap items-baseline gap-2.5">
+                            <span className="text-[15.5px] font-semibold text-ink">
+                              {role.title}
+                            </span>
+                            {role.duration && (
+                              <span className="text-[12.5px] text-ink-mute">· {role.duration}</span>
+                            )}
+                          </p>
+                          <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-soft">
+                            {role.summary}
+                          </p>
+                        </div>
                       ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Un nombre impair de réalisations laisserait la dernière
-                    carte orpheline : elle occupe alors toute la largeur. */}
-                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:[&>*:last-child:nth-child(odd)]:col-span-2">
-                  {xp.wins.map((win) => (
-                    <div
-                      key={win.headline}
-                      className="rounded-2xl border border-line bg-canvas/40 p-5"
-                    >
-                      <div className="flex items-start gap-2.5">
-                        <Icon name="trending" size={16} className="mt-1 shrink-0 text-mint" />
-                        <p className="text-[14.5px] font-semibold leading-snug">
-                          {win.headline}
-                        </p>
-                      </div>
-                      <ul className="mt-3.5 space-y-2 pl-[26px]">
-                        {win.metrics.map((m) => (
-                          <li
-                            key={m}
-                            className="relative text-[13.5px] leading-snug text-ink-soft before:absolute before:-left-[14px] before:top-2 before:h-1 before:w-1 before:rounded-full before:bg-mint/70"
-                          >
-                            <Metric text={m} />
-                          </li>
-                        ))}
-                      </ul>
                     </div>
-                  ))}
-                </div>
 
-                <div className="mt-7 flex flex-wrap gap-2 border-t border-line pt-6">
-                  {xp.tags.map((tag) => (
-                    <span key={tag} className="chip">
-                      {tag}
-                    </span>
-                  ))}
+                    {xp.responsibilities && (
+                      <div className="mt-8 rounded-2xl border border-line bg-surface-2/50 p-5 sm:p-6">
+                        <p className="eyebrow !text-[0.66rem]">
+                          {t.experience.responsibilitiesLabel}
+                        </p>
+                        <ul className="mt-4 space-y-2.5">
+                          {xp.responsibilities.map((r) => (
+                            <li
+                              key={r}
+                              className="flex gap-3 text-[14px] leading-snug text-ink-soft"
+                            >
+                              <Icon
+                                name="target"
+                                size={15}
+                                className="mt-0.5 shrink-0 text-ink-mute"
+                              />
+                              {r}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Un nombre impair de réalisations laisserait la dernière
+                        carte orpheline : elle occupe alors toute la largeur. */}
+                    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:[&>*:last-child:nth-child(odd)]:col-span-2">
+                      {xp.wins.map((win) => (
+                        <div
+                          key={win.headline}
+                          className="rounded-2xl border border-line bg-canvas/40 p-5"
+                        >
+                          <div className="flex items-start gap-2.5">
+                            <Icon name="trending" size={16} className="mt-1 shrink-0 text-mint" />
+                            <p className="text-[14.5px] font-semibold leading-snug">
+                              {win.headline}
+                            </p>
+                          </div>
+                          <ul className="mt-3.5 space-y-2 pl-[26px]">
+                            {win.metrics.map((m) => (
+                              <li
+                                key={m}
+                                className="relative text-[13.5px] leading-snug text-ink-soft before:absolute before:-left-[14px] before:top-2 before:h-1 before:w-1 before:rounded-full before:bg-mint/70"
+                              >
+                                <Metric text={m} />
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="mt-7 flex flex-wrap gap-2 border-t border-line pt-6">
+                      {xp.tags.map((tag) => (
+                        <span key={tag} className="chip">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {xp.screenshot && (
+                    <Tilt max={5} className="hidden shrink-0 lg:block lg:w-[200px]">
+                      <ScreenshotFrame
+                        src={xp.screenshot.src}
+                        alt={xp.screenshot.alt}
+                        frame={xp.screenshot.frame}
+                        url={xp.screenshot.url}
+                      />
+                    </Tilt>
+                  )}
                 </div>
               </Spotlight>
             </div>
