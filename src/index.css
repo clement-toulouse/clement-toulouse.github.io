@@ -172,10 +172,11 @@ body::after {
   color: transparent;
 }
 
-/* Variante hero : sur un titre multi-lignes qui n'atteint pas le bord droit,
-   on incline le dégradé vers le bas pour que l'iris tombe sur les lettres
-   (mêmes couleurs que `.text-gradient`, seule l'orientation change). */
-.text-gradient-hero {
+/* Variante titres : dégradé incliné vers le bas, pour que l'iris tombe sur les
+   lettres même quand le titre est court ou n'atteint pas le bord droit (mêmes
+   couleurs que `.text-gradient`, seule l'orientation change). Utilisée sur tous
+   les titres principaux du site (hero, sections, contact) pour un rendu uniforme. */
+.text-gradient-title {
   background-image: linear-gradient(
     160deg,
     var(--c-ink) 0%,

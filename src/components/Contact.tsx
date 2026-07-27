@@ -37,7 +37,7 @@ export default function Contact() {
             onScroll
             gradient
             text={t.contact.title}
-            className="display mt-5 text-[clamp(2.6rem,9vw,6rem)] text-gradient"
+            className="display mt-5 text-[clamp(2.6rem,9vw,6rem)] text-gradient text-gradient-title"
           />
           <p className="mx-auto mt-6 max-w-lg text-[1.05rem] leading-relaxed text-ink-soft">
             {t.contact.lead}

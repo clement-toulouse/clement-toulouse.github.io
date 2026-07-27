@@ -100,7 +100,7 @@ export default function Hero() {
             gradient
             text={`${t.profile.firstName} ${t.profile.lastName}`}
             delay={0.25}
-            className="display text-[clamp(2.25rem,9vw,5.75rem)] text-gradient text-gradient-hero"
+            className="display text-[clamp(2.25rem,9vw,5.75rem)] text-gradient text-gradient-title"
           />
 
           <p

@@ -19,8 +19,9 @@ export default function SectionHeader({
       </div>
       <SplitHeading
         onScroll
+        gradient
         text={title}
-        className="display mt-4 text-[clamp(2rem,5vw,3.4rem)]"
+        className="display mt-4 text-[clamp(2rem,5vw,3.4rem)] text-gradient text-gradient-title"
       />
       {lead && <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">{lead}</p>}
     </div>
