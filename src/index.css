@@ -183,6 +183,12 @@ body::after {
     var(--c-ink) 35%,
     var(--c-iris) 100%
   );
+  /* `background-clip: text` ne peint que dans la boîte de l'élément. Le
+     `line-height` du `.display` étant plus petit que la police, les descendantes
+     (p, y, j, q) dépassent sous la boîte et resteraient transparentes : on
+     rallonge la boîte, et la marge négative annule l'effet sur la mise en page. */
+  padding-bottom: 0.16em;
+  margin-bottom: -0.16em;
 }
 
 /* ----------------------------------------------------------------- motion
