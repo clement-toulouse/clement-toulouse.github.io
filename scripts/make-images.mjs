@@ -14,8 +14,8 @@ const at = (p) => fileURLToPath(new URL(`../${p}`, import.meta.url))
 
 /* ------------------------------------------------------------------ portrait */
 
-// L'original est un plan large : ce cadrage resserre sur le sujet en ratio 4:5.
-const CROP = { left: 60, top: 250, width: 800, height: 1000 }
+// L'original (1600×2400) est un plan large : ce cadrage resserre sur le sujet en ratio 4:5.
+const CROP = { left: 28, top: 18, width: 1544, height: 1930 }
 const PORTRAIT = { width: 880, height: 1100 }
 
 const portrait = sharp(at('Profil.png')).extract(CROP).resize(PORTRAIT.width, PORTRAIT.height)
