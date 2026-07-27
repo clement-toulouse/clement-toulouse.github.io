@@ -188,6 +188,7 @@ export const contentEn: SiteContent = {
         ],
         responsibilities: [
           'Define the product vision and digital strategy for the business, tracked through OKRs',
+          "Build each product's metric tree — North Star Metric, OKRs and objectives — aligned with the group's various departments and stakeholders",
           'Challenge and coach the Product Managers to maximize the quality and value of their products',
           "Own the pole's product portfolio: CZAM, the staff tool for managing casino entries, and an online gambling product still under wraps and in development",
           'Structure cross-team processes (AI agent deployment, product methodology) and lead the strategic thinking on a shared customer account and sign-up flow across our platforms',
@@ -371,6 +372,7 @@ export const contentEn: SiteContent = {
       items: [
         'Product vision & strategy',
         'Discovery',
+        'Metric tree & North Star Metric',
         'OKR & KPI',
         'Roadmapping',
         'Continuous Product Discovery',

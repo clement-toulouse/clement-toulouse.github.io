@@ -188,6 +188,7 @@ export const contentFr: SiteContent = {
         ],
         responsibilities: [
           "Définir la vision produit et la stratégie digitale de l'activité, avec un pilotage par OKR",
+          "Construire le metric tree de chaque produit — North Star Metric, OKR et objectifs — aligné avec les différentes directions et parties prenantes du groupe",
           'Challenger et accompagner les Product Managers pour maximiser la qualité et la valeur de leurs produits',
           "Piloter le portefeuille de produits du pôle : CZAM, l'outil collaborateur de gestion des entrées en casino, et un jeu en ligne encore en construction, sous confidentialité",
           "Structurer les processus inter-équipes (déploiement d'agents IA, méthodologies produit) et mener la réflexion stratégique sur un compte client et un parcours d'inscription communs entre nos plateformes",
@@ -371,6 +372,7 @@ export const contentFr: SiteContent = {
       items: [
         'Vision & stratégie produit',
         'Discovery',
+        'Metric tree & North Star Metric',
         'OKR & KPI',
         'Roadmapping',
         'Product Discovery continue',
