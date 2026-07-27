@@ -85,7 +85,6 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
           >
             <span className="relative grid h-9 w-9 place-items-center rounded-xl border border-line bg-surface-2 text-[13px] font-bold tracking-tight transition-colors duration-300 group-hover:border-iris">
               CT
-              <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-mint shadow-[0_0_10px] shadow-mint" />
             </span>
             <span className="hidden text-sm font-semibold tracking-tight sm:block">
               {t.profile.firstName} {t.profile.lastName}
