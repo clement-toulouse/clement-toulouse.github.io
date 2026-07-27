@@ -414,6 +414,11 @@ export const contentEn: SiteContent = {
       detail: 'AI Discipline · certification',
       period: 'Sep. 2025',
     },
+    {
+      title: 'Claude Code for Product Managers',
+      detail: 'AI Discipline · certification',
+      period: 'Jul. 2026',
+    },
   ],
 
   languagesLabel: 'Languages',

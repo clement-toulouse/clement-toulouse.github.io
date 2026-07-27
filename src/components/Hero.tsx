@@ -100,7 +100,7 @@ export default function Hero() {
             gradient
             text={`${t.profile.firstName} ${t.profile.lastName}`}
             delay={0.25}
-            className="display text-[clamp(2.25rem,9vw,5.75rem)] text-gradient"
+            className="display text-[clamp(2.25rem,9vw,5.75rem)] text-gradient text-gradient-hero"
           />
 
           <p
@@ -178,6 +178,16 @@ export default function Hero() {
             <p className="display text-2xl text-mint">{t.hero.badge.value}</p>
             <p className="text-[11px] leading-tight text-ink-mute">{t.hero.badge.label}</p>
           </div>
+        </div>
+      </div>
+
+      {/* Indice de scroll */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-7 flex justify-center print:hidden"
+        aria-hidden="true"
+      >
+        <div className="flex h-10 w-6 items-start justify-center rounded-full border border-line-strong p-1.5">
+          <span className="h-2 w-1 animate-bounce rounded-full bg-ink-soft" />
         </div>
       </div>
     </section>
