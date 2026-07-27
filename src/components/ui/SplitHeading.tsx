@@ -51,6 +51,12 @@ export default function SplitHeading({
       return () => clearTimeout(t)
     }
 
+    // Un titre en dégradé est masqué par `clip-path` (voir `.wipe-up`), et le
+    // clip entre dans le calcul d'intersection : l'observer ne verrait jamais
+    // l'élément et le titre resterait invisible. On observe donc son parent,
+    // qui n'est pas clippé.
+    const target = (gradient ? el.parentElement : el) ?? el
+
     const io = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
@@ -60,9 +66,9 @@ export default function SplitHeading({
       },
       { rootMargin: '0px 0px -12% 0px' },
     )
-    io.observe(el)
+    io.observe(target)
     return () => io.disconnect()
-  }, [onScroll, delay])
+  }, [onScroll, delay, gradient])
 
   if (gradient) {
     return (
