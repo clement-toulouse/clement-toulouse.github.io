@@ -142,14 +142,14 @@ export const contentFr: SiteContent = {
 
   aiCards: [
     {
-      kicker: 'Production de code & de prototypes',
-      title: 'Claude Code',
-      body: "Avec Claude Code, je produis du code au quotidien ; avec Google AI Studio, je génère des maquettes visuelles quand un rendu rapide suffit à trancher. Passer d'une idée produit à un prototype cliquable en une seule session change la façon de décider : on tranche sur du concret, pas sur un slide.",
+      kicker: 'Développement & prototypage',
+      title: 'Coder et prototyper avec l\'IA',
+      body: "J'utilise Claude Code pour développer et Google AI Studio pour maquetter. En une seule session, une idée produit devient un prototype cliquable : on décide sur du concret, pas sur un slide.",
       points: [
-        'Prototypage rapide pour trancher une hypothèse de discovery',
-        "Maquettes visuelles avec Google AI Studio quand le rendu prime sur la logique",
+        'Prototypes cliquables pour trancher une hypothèse de discovery',
+        'Maquettes visuelles avec Google AI Studio quand le rendu prime',
         "Développement de sites et d'outils, du design au déploiement",
-        "Formation et diffusion de la pratique auprès de l'équipe",
+        "Formation de l'équipe et diffusion de la pratique",
       ],
       proof:
         "La démonstration est sous vos yeux : ce site a été entièrement conçu et développé avec Claude Code, du design system au prérendu.",
@@ -159,8 +159,8 @@ export const contentFr: SiteContent = {
     },
     {
       kicker: 'Process des équipes produit',
-      title: 'IA Ops chez Barrière',
-      body: "Chez Barrière, je mets l'IA au cœur du travail des équipes produit : via Dust et Gemini, j'automatise ce qui est répétitif dans la spécification et la documentation, pour que les Product Managers gardent leur énergie pour les décisions.",
+      title: 'Automatiser le travail produit',
+      body: "Chez Barrière, je branche des assistants IA (Dust, Gemini) sur la documentation et les outils produit. Ils prennent en charge le répétitif — spécifications, user stories, release notes — pour que les Product Managers gardent leur énergie pour les décisions.",
       points: [
         'Spécification fonctionnelle automatisée',
         'Release notes générées automatiquement',

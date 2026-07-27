@@ -142,12 +142,12 @@ export const contentEn: SiteContent = {
 
   aiCards: [
     {
-      kicker: 'Building code & prototypes',
-      title: 'Claude Code',
-      body: "With Claude Code I ship code every day; with Google AI Studio I generate visual mockups when a quick look and feel is all it takes to decide. Turning a product idea into a clickable prototype in a single session changes how decisions get made: you decide on something real, not a slide.",
+      kicker: 'Development & prototyping',
+      title: 'Coding and prototyping with AI',
+      body: "I use Claude Code to build and Google AI Studio to mock up. In a single session, a product idea becomes a clickable prototype: you decide on something real, not a slide.",
       points: [
-        'Rapid prototyping to settle a discovery hypothesis',
-        'Visual mockups with Google AI Studio when look and feel matter more than logic',
+        'Clickable prototypes to settle a discovery hypothesis',
+        'Visual mockups with Google AI Studio when look and feel come first',
         'Building sites and tools, from design to deployment',
         'Training the team and spreading the practice',
       ],
@@ -159,8 +159,8 @@ export const contentEn: SiteContent = {
     },
     {
       kicker: 'Product team processes',
-      title: 'AI Ops at Barrière',
-      body: "At Barrière I put AI at the heart of the product teams' work: via Dust and Gemini, I automate what's repetitive in specification and documentation, so Product Managers can save their energy for decisions.",
+      title: 'Automating product work',
+      body: "At Barrière, I wire AI assistants (Dust, Gemini) into product documentation and tools. They take on the repetitive work — specs, user stories, release notes — so Product Managers can save their energy for decisions.",
       points: [
         'Automated functional specifications',
         'Automatically generated release notes',
