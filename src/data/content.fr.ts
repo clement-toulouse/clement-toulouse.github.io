@@ -93,7 +93,7 @@ export const contentFr: SiteContent = {
     profil: {
       eyebrow: 'Profil',
       title: "Ce que j'apporte",
-      lead: "Un ingénieur qui a basculé côté produit, et qui a gardé le goût du concret : des systèmes qui tiennent, des équipes qui décident vite, des chiffres qui bougent.",
+      lead: "9 ans à cadrer, prioriser et livrer, avec toujours la même exigence : une vision claire, une équipe qui sait pourquoi elle avance, et un résultat qui se mesure.",
     },
   },
 
@@ -105,7 +105,7 @@ export const contentFr: SiteContent = {
       value: 60,
       suffix: 'k',
       label: 'utilisateurs actifs mensuels',
-      detail: "Sur Barrière Play, la nouvelle app mobile des clients de casino du groupe que j'ai lancée",
+      detail: "Sur Barrière Play, la nouvelle application mobile des clients de casino du groupe que j'ai lancée",
       note: '+2 % par mois',
       accent: 'iris',
     },
@@ -183,19 +183,19 @@ export const contentFr: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "Je pilote l'ensemble des produits digitaux du pôle casino du groupe : Barrière Play (fidélité et wallet digital en casino), CZAM (l'outil collaborateur de gestion des entrées), un jeu en ligne encore en construction et confidentiel, et la stratégie de compte client commun entre nos plateformes. J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
+              "Je pilote l'ensemble des produits digitaux du pôle casino du groupe : Barrière Play (application mobile client pour gérer leur fidélité et avoir un wallet digital en casino), CZAM (l'outil collaborateur unique en casino pour la gestion des entrées et le pilotage opérationnel de la salle), le développement de l'activité de jeu en ligne du groupe encore en construction et confidentiel, et la stratégie du parcours d'inscription et du compte client commun entre nos différentes plateformes. J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
           },
         ],
         responsibilities: [
           "Définir la vision produit et la stratégie digitale de l'activité, avec un pilotage par OKR",
-          "Construire le metric tree de chaque produit — North Star Metric, OKR et objectifs — aligné avec les différentes directions et parties prenantes du groupe",
+          "Construire le metric tree de chaque produit (North Star Metric, OKR et objectifs), aligné avec les différentes directions et parties prenantes du groupe",
           'Challenger et accompagner les Product Managers pour maximiser la qualité et la valeur de leurs produits',
           "Piloter le portefeuille de produits du pôle : CZAM, l'outil collaborateur de gestion des entrées en casino, et un jeu en ligne encore en construction, sous confidentialité",
           "Structurer les processus inter-équipes (déploiement d'agents IA, méthodologies produit) et mener la réflexion stratégique sur un compte client et un parcours d'inscription communs entre nos plateformes",
         ],
         wins: [
           {
-            headline: "Lancement de Barrière Play, l'app mobile des clients de casino du groupe",
+            headline: "Lancement de Barrière Play, l'application mobile des clients de casino du groupe",
             metrics: [
               '60 000 joueurs actifs par mois, soit 40 % des clients du groupe (+2 %/mois)',
               "8 M€ chargés chaque mois par les joueurs sur leur wallet digital (+10 %/mois)",
@@ -310,6 +310,7 @@ export const contentFr: SiteContent = {
         roles: [
           {
             title: 'Product Owner',
+            duration: '2 ans',
             summary:
               "Premiers pas côté produit sur des projets web et mobiles pour de grands comptes, d'abord en agence puis directement dans les équipes du client.",
           },
