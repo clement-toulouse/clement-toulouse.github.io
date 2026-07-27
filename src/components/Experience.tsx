@@ -131,13 +131,6 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
               ))}
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-2 border-t border-line pt-6">
-              {xp.tags.map((tag) => (
-                <span key={tag} className="chip">
-                  {tag}
-                </span>
-              ))}
-            </div>
 
             {xp.caseStudy && (
               <button
@@ -145,7 +138,7 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
                 onClick={() => setOpen((v) => !v)}
                 aria-expanded={open}
                 aria-controls={caseStudyId}
-                className="mt-5 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-line-strong px-5 py-3 text-[13.5px] font-semibold text-iris-soft transition-colors duration-300 hover:border-iris hover:bg-surface-2 sm:w-auto"
+                className="mt-5 flex w-full cursor-pointer items-center justify-center gap-2 rounded-full border border-line-strong px-5 py-3 text-[13.5px] font-semibold text-iris-soft transition-colors duration-300 hover:border-iris hover:bg-surface-2 sm:mx-auto sm:w-auto"
               >
                 {open ? t.experience.lessLabel : t.experience.moreLabel}
                 <Icon

@@ -60,7 +60,6 @@ export const contentEn: SiteContent = {
     'Discovery',
     'OKR',
     'Claude Code',
-    'Barrière Play',
     'AI agents',
     'Dust',
     'Management',

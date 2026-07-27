@@ -195,12 +195,14 @@ body::after {
 /* Reveal en volet, pour les titres en dégradé : background-clip: text ne
    traverse pas des enfants transformés, on anime donc le bloc entier. */
 .wipe-up {
-  clip-path: inset(105% 0 0 0);
+  /* La marge basse négative évite de rogner les descendantes (p, y, j, q) :
+     le `.display` a un line-height < font-size, elles débordent sous la boîte. */
+  clip-path: inset(105% 0 -25% 0);
   transform: translateY(0.14em);
 }
 
 .wipe-up.is-in {
-  clip-path: inset(-25% 0 0 0);
+  clip-path: inset(-25% 0 -25% 0);
   transform: translateY(0);
   transition:
     clip-path 1.1s var(--ease-expo),
