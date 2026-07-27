@@ -54,7 +54,7 @@ export const contentEn: SiteContent = {
       { id: 'impact', label: 'Impact' },
       { id: 'ia', label: 'AI' },
       { id: 'parcours', label: 'Experience' },
-      { id: 'savor', label: 'Personal project' },
+      { id: 'projet-perso', label: 'Personal project' },
       { id: 'profil', label: 'Profile' },
       { id: 'contact', label: 'Contact' },
     ],
@@ -142,13 +142,13 @@ export const contentEn: SiteContent = {
 
   aiCards: [
     {
-      kicker: 'AI-assisted development',
+      kicker: 'Building code & prototypes',
       title: 'Claude Code',
-      body: "I code, prototype, and automate my own work with Claude Code every day, and I turn to Google AI Studio when a quick visual mockup is all it takes to decide. Turning a product idea into a clickable mockup in a single session changes how decisions get made: you decide on something real, not a slide.",
+      body: "With Claude Code I ship code every day; with Google AI Studio I generate visual mockups when a quick look and feel is all it takes to decide. Turning a product idea into a clickable prototype in a single session changes how decisions get made: you decide on something real, not a slide.",
       points: [
         'Rapid prototyping to settle a discovery hypothesis',
         'Visual mockups with Google AI Studio when look and feel matter more than logic',
-        'Automating repetitive product tasks (specs, analyses, scripts)',
+        'Building sites and tools, from design to deployment',
         'Training the team and spreading the practice',
       ],
       proof:
@@ -158,15 +158,14 @@ export const contentEn: SiteContent = {
       span: 'lg:col-span-3 lg:row-span-2',
     },
     {
-      kicker: 'Assistants & product process',
+      kicker: 'Product team processes',
       title: 'AI Ops at Barrière',
-      body: "I deploy AI assistants (via Dust and Gemini) connected to the company's documentation and tools, and I put AI at the heart of product work: I automate what's repetitive in specification and documentation, so Product Managers can save their energy for decisions.",
+      body: "At Barrière I put AI at the heart of the product teams' work: via Dust and Gemini, I automate what's repetitive in specification and documentation, so Product Managers can save their energy for decisions.",
       points: [
-        "Dust business assistants wired into product documentation",
-        'Gemini assistants for day-to-day product process writing and analysis',
-        'Automated drafting and review of functional specifications',
-        'User story writing agent, specialized per product',
+        'Automated functional specifications',
         'Automatically generated release notes',
+        'User story writing agent, specialized per product',
+        'Dust business assistants wired into product documentation',
       ],
       logos: ['dust', 'gemini'],
       accent: 'ember',

@@ -54,7 +54,7 @@ export const contentFr: SiteContent = {
       { id: 'impact', label: 'Impact' },
       { id: 'ia', label: 'IA' },
       { id: 'parcours', label: 'Parcours' },
-      { id: 'savor', label: 'Projet perso' },
+      { id: 'projet-perso', label: 'Projet perso' },
       { id: 'profil', label: 'Profil' },
       { id: 'contact', label: 'Contact' },
     ],
@@ -142,13 +142,13 @@ export const contentFr: SiteContent = {
 
   aiCards: [
     {
-      kicker: 'Développement assisté par IA',
+      kicker: 'Production de code & de prototypes',
       title: 'Claude Code',
-      body: "Je code, prototype et automatise mon travail avec Claude Code au quotidien, et je m'appuie sur Google AI Studio quand une maquette visuelle rapide suffit à trancher. Passer d'une idée produit à une maquette cliquable en une seule session change la façon de décider : on tranche sur du concret, pas sur un slide.",
+      body: "Avec Claude Code, je produis du code au quotidien ; avec Google AI Studio, je génère des maquettes visuelles quand un rendu rapide suffit à trancher. Passer d'une idée produit à un prototype cliquable en une seule session change la façon de décider : on tranche sur du concret, pas sur un slide.",
       points: [
         'Prototypage rapide pour trancher une hypothèse de discovery',
         "Maquettes visuelles avec Google AI Studio quand le rendu prime sur la logique",
-        'Automatisation de tâches produit répétitives (specs, analyses, scripts)',
+        "Développement de sites et d'outils, du design au déploiement",
         "Formation et diffusion de la pratique auprès de l'équipe",
       ],
       proof:
@@ -158,15 +158,14 @@ export const contentFr: SiteContent = {
       span: 'lg:col-span-3 lg:row-span-2',
     },
     {
-      kicker: 'Assistants & process produit',
+      kicker: 'Process des équipes produit',
       title: 'IA Ops chez Barrière',
-      body: "Je déploie des assistants IA (via Dust et Gemini) connectés à la documentation et aux outils de l'entreprise, et je mets l'IA au cœur du travail produit : j'automatise ce qui est répétitif dans la spécification et la documentation, pour que les Product Managers gardent leur énergie pour les décisions.",
+      body: "Chez Barrière, je mets l'IA au cœur du travail des équipes produit : via Dust et Gemini, j'automatise ce qui est répétitif dans la spécification et la documentation, pour que les Product Managers gardent leur énergie pour les décisions.",
       points: [
-        'Assistants métier Dust branchés sur la documentation produit',
-        'Assistants Gemini pour la rédaction et l\'analyse dans les process produit du quotidien',
-        'Création et relecture de la spécification fonctionnelle automatisées',
-        'Agent de rédaction de User Stories, spécialisé par produit',
+        'Spécification fonctionnelle automatisée',
         'Release notes générées automatiquement',
+        'Agent de rédaction de User Stories, spécialisé par produit',
+        'Assistants métier Dust branchés sur la documentation produit',
       ],
       logos: ['dust', 'gemini'],
       accent: 'ember',

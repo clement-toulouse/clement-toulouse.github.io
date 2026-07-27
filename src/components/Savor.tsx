@@ -21,7 +21,7 @@ export default function Savor() {
 
   return (
     <section
-      id="savor"
+      id="projet-perso"
       className="relative scroll-mt-24 overflow-hidden border-y border-line py-24 sm:py-32"
     >
       <div
