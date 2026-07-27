@@ -331,7 +331,7 @@ export const contentEn: SiteContent = {
   savor: {
     url: 'https://savor-nine.vercel.app/',
     pitch: 'All your recipes, finally in one place.',
-    body: 'Savor automatically extracts ingredients and steps from Instagram, TikTok, a blog, or a photo of a handwritten notebook. Designed and built end to end, from idea to deployment.',
+    body: 'Savor automatically extracts ingredients and steps from Instagram, TikTok, a blog, or a photo of a handwritten notebook. A progressive web app (PWA), designed and built end to end, from idea to deployment.',
     features: [
       {
         key: 'extract',
@@ -354,7 +354,7 @@ export const contentEn: SiteContent = {
         desc: 'Drag your recipes into the calendar and the shopping list builds itself, combined and sorted by aisle.',
       },
     ],
-    stack: ['Next.js', 'AI extraction', 'Supabase', 'Vercel'],
+    stack: ['PWA', 'Next.js', 'AI extraction', 'Supabase', 'Vercel'],
     ctaLabel: 'Try Savor online',
     mockup: {
       title: 'Mediterranean bowl',

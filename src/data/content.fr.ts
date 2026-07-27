@@ -331,7 +331,7 @@ export const contentFr: SiteContent = {
   savor: {
     url: 'https://savor-nine.vercel.app/',
     pitch: 'Toutes tes recettes, enfin au même endroit.',
-    body: "Savor extrait automatiquement ingrédients et étapes depuis Instagram, TikTok, un blog ou une photo de carnet. Conçu, designé et développé de bout en bout, de l'idée au déploiement.",
+    body: "Savor extrait automatiquement ingrédients et étapes depuis Instagram, TikTok, un blog ou une photo de carnet. Progressive web app (PWA) conçue, designée et développée de bout en bout, de l'idée au déploiement.",
     features: [
       {
         key: 'extract',
@@ -354,7 +354,7 @@ export const contentFr: SiteContent = {
         desc: 'Glisse tes recettes dans le calendrier, la liste de courses se génère, cumulée et rangée par rayon.',
       },
     ],
-    stack: ['Next.js', "IA d'extraction", 'Supabase', 'Vercel'],
+    stack: ['PWA', 'Next.js', "IA d'extraction", 'Supabase', 'Vercel'],
     ctaLabel: 'Tester Savor en ligne',
     mockup: {
       title: 'Bowl méditerranéen',
