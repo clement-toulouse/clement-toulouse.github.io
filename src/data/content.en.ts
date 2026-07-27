@@ -26,8 +26,6 @@ export const contentEn: SiteContent = {
       'I turn vision into delivery, and delivery into numbers.',
     ],
     taglineHighlight: ['vision', 'delivery', 'numbers'],
-    intro:
-      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run the digital products of Groupe Barrière's casino division (Barrière Play, CZAM, and the development of the still-confidential online gambling product), with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
   },
 
   hero: {
@@ -81,7 +79,7 @@ export const contentEn: SiteContent = {
     ia: {
       eyebrow: 'AI, hands-on',
       title: 'AI in the process and the delivery, not bolted on',
-      lead: "I don't treat AI as a marketing layer on top of a product. I use it to shorten the loop between a hunch and a decision, for myself and for my teams.",
+      lead: 'Two concrete uses, not a marketing layer on top of a product: I code and prototype with AI to decide on something real, and I automate the repetitive parts of product work to give my teams back time for decisions.',
     },
     parcours: {
       eyebrow: 'Experience',
@@ -107,28 +105,32 @@ export const contentEn: SiteContent = {
       value: 60,
       suffix: 'k',
       label: 'monthly active users',
-      detail: "On Barrière Play, the group's new mobile app for casino customers that I launched · +2% every month",
+      detail: "On Barrière Play, the group's new mobile app for casino customers that I launched",
+      note: '+2% every month',
       accent: 'iris',
     },
     {
       value: 8,
       suffix: 'M€',
       label: 'loaded onto digital wallets',
-      detail: 'Topped up by customers through Barrière Play · +10% every month',
+      detail: 'Topped up by customers through Barrière Play',
+      note: '+10% every month',
       accent: 'mint',
     },
     {
       value: 30,
       suffix: '',
       label: 'daily users',
-      detail: 'AI chatbot on internal digital tools, used by casino staff · 95% accurate answers',
+      detail: 'AI chatbot on internal digital tools, used by casino staff',
+      note: '95% accurate answers',
       accent: 'ember',
     },
     {
       value: 33,
       suffix: '',
       label: 'casinos running the staff app',
-      detail: 'Redesigned the tool to help monitor on-site casino activity · 300+ users',
+      detail: 'Redesigned the tool to help monitor on-site casino activity',
+      note: '300+ users',
       accent: 'iris',
     },
   ],
@@ -142,7 +144,6 @@ export const contentEn: SiteContent = {
         'Clickable prototypes to settle a discovery hypothesis',
         'Visual mockups with Google AI Studio when look and feel come first',
         'Building sites and tools, from design to deployment',
-        'Training the team and spreading the practice',
       ],
       proof:
         'The proof is right in front of you: this site was entirely designed and built with Claude Code, from the design system to the prerendering.',
@@ -153,7 +154,7 @@ export const contentEn: SiteContent = {
     {
       kicker: 'Product team processes',
       title: 'Automating product work',
-      body: "At Barrière, I build and deploy AI assistants (on Dust, Gemini) so Product Managers can save their energy for decisions. I make sure these agents are adopted, used, and deliver real value.",
+      body: 'I build and deploy AI assistants (on Dust, Gemini) so Product Managers can save their energy for decisions. I make sure these agents are adopted, used, and deliver real value.',
       points: [
         'Automated functional specifications',
         'Automatically generated release notes',

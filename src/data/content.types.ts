@@ -8,6 +8,8 @@ export interface Stat {
   prefix?: string
   label: string
   detail: string
+  /** KPI secondaire ou progression, sur sa propre ligne en italique. */
+  note?: string
   accent?: Accent
 }
 
@@ -133,7 +135,6 @@ export interface SiteContent {
     tagline: [string, string]
     /** Mots de `tagline[1]` mis en avant dans l'accent iris (couleur du site). */
     taglineHighlight: string[]
-    intro: string
   }
   hero: {
     ctaImpact: string

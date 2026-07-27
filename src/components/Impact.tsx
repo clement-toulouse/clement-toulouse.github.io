@@ -19,7 +19,10 @@ function StatCard({ stat }: { stat: Stat }) {
   const accent = accentClass[stat.accent ?? 'iris']
 
   return (
-    <Spotlight className="flex flex-col justify-between p-6 sm:p-7">
+    // Pas de `justify-between` : le bloc de texte suit directement le chiffre,
+    // qui a la même hauteur partout — les libellés s'alignent d'une carte à
+    // l'autre, quelle que soit la longueur du détail.
+    <Spotlight className="flex flex-col p-6 sm:p-7">
       <p className="display text-[clamp(2.4rem,6vw,3.6rem)] tabular-nums">
         {stat.prefix}
         <span ref={ref} className={accent}>
@@ -30,6 +33,9 @@ function StatCard({ stat }: { stat: Stat }) {
       <div className="mt-4">
         <p className="text-[15px] font-semibold leading-snug">{stat.label}</p>
         <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-mute">{stat.detail}</p>
+        {stat.note && (
+          <p className="mt-1.5 text-[13.5px] italic leading-relaxed text-ink-mute">{stat.note}</p>
+        )}
       </div>
     </Spotlight>
   )
@@ -64,9 +70,6 @@ export default function Impact() {
         <div>
           <p className="serif-accent text-[clamp(1.35rem,3vw,2rem)] leading-[1.35] text-ink">
             {t.impactQuote}
-          </p>
-          <p className="mt-6 max-w-3xl text-[15px] leading-relaxed text-ink-soft">
-            {t.profile.intro}
           </p>
         </div>
       </Spotlight>

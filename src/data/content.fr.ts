@@ -26,8 +26,6 @@ export const contentFr: SiteContent = {
       "Je transforme une vision en delivery, et le delivery en chiffres.",
     ],
     taglineHighlight: ['vision', 'delivery', 'chiffres'],
-    intro:
-      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige les produits digitaux du pôle casino du Groupe Barrière (Barrière Play, CZAM, et le développement du jeu en ligne encore confidentiel), avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
   },
 
   hero: {
@@ -81,7 +79,7 @@ export const contentFr: SiteContent = {
     ia: {
       eyebrow: 'Appétence IA',
       title: "L'IA dans le process et le delivery, pas à côté",
-      lead: "Je ne fais pas de l'IA une couche marketing posée sur un produit. Je l'utilise pour raccourcir la boucle entre une intuition et une décision, pour moi comme pour mes équipes.",
+      lead: "Deux usages concrets, pas une couche marketing posée sur un produit : je code et prototype avec l'IA pour trancher sur du réel, et j'automatise le travail répétitif des équipes produit pour leur rendre du temps de décision.",
     },
     parcours: {
       eyebrow: 'Parcours',
@@ -107,28 +105,32 @@ export const contentFr: SiteContent = {
       value: 60,
       suffix: 'k',
       label: 'utilisateurs actifs mensuels',
-      detail: "Sur Barrière Play, la nouvelle app mobile des clients de casino du groupe que j'ai lancée · +2 % par mois",
+      detail: "Sur Barrière Play, la nouvelle app mobile des clients de casino du groupe que j'ai lancée",
+      note: '+2 % par mois',
       accent: 'iris',
     },
     {
       value: 8,
       suffix: 'M€',
       label: 'chargés sur les wallets digitaux',
-      detail: "Rechargés par les clients via Barrière Play · +10 % par mois",
+      detail: 'Rechargés par les clients via Barrière Play',
+      note: '+10 % par mois',
       accent: 'mint',
     },
     {
       value: 30,
       suffix: '',
       label: 'utilisateurs quotidiens',
-      detail: "Chatbot IA sur les outils digitaux, utilisé par les collaborateurs en casino · 95 % de réponses justes",
+      detail: 'Chatbot IA sur les outils digitaux, utilisé par les collaborateurs en casino',
+      note: '95 % de réponses justes',
       accent: 'ember',
     },
     {
       value: 33,
       suffix: '',
       label: "casinos équipés de l'app collaborateur",
-      detail: "Refonte de l'outil pour aider au monitoring de l'activité en casino · 300+ utilisateurs",
+      detail: "Refonte de l'outil pour aider au monitoring de l'activité en casino",
+      note: '300+ utilisateurs',
       accent: 'iris',
     },
   ],
@@ -142,7 +144,6 @@ export const contentFr: SiteContent = {
         'Prototypes cliquables pour trancher une hypothèse de discovery',
         'Maquettes visuelles avec Google AI Studio quand le rendu prime',
         "Développement de sites et d'outils, du design au déploiement",
-        "Formation de l'équipe et diffusion de la pratique",
       ],
       proof:
         "La démonstration est sous vos yeux : ce site a été entièrement conçu et développé avec Claude Code, du design system au prérendu.",
@@ -153,7 +154,7 @@ export const contentFr: SiteContent = {
     {
       kicker: 'Process des équipes produit',
       title: 'Automatiser le travail produit',
-      body: "Chez Barrière, je crée et déploie des assistants IA (sur Dust, Gemini) pour que les Product Managers gardent leur énergie pour les décisions. Je m'assure de la bonne adoption, de la valeur ajoutée et de l'usage de ces agents.",
+      body: "Je crée et déploie des assistants IA (sur Dust, Gemini) pour que les Product Managers gardent leur énergie pour les décisions. Je m'assure de la bonne adoption, de la valeur ajoutée et de l'usage de ces agents.",
       points: [
         'Spécification fonctionnelle automatisée',
         'Release notes générées automatiquement',
