@@ -154,7 +154,7 @@ export const contentFr: SiteContent = {
     {
       kicker: 'Process des équipes produit',
       title: 'Automatiser le travail produit',
-      body: "Je crée et déploie des assistants IA (sur Dust, Gemini) pour que les Product Managers gardent leur énergie pour les décisions. Je m'assure de la bonne adoption, de la valeur ajoutée et de l'usage de ces agents.",
+      body: "Je crée et déploie des agents IA (sur Dust, Gemini) pour que les Product Managers gardent leur énergie pour les décisions. Je m'assure de leur bonne adoption, valeur ajoutée et usage.",
       points: [
         'Spécification fonctionnelle automatisée',
         'Release notes générées automatiquement',
@@ -443,7 +443,7 @@ export const contentFr: SiteContent = {
   contact: {
     eyebrow: 'Et maintenant ?',
     title: 'Parlons produit.',
-    lead: "Une opportunité, une question sur l'IA appliquée aux process, ou juste l'envie d'échanger sur un produit : la porte est ouverte.",
+    lead: "Une opportunité, une question sur l'IA appliquée aux process produit, ou juste l'envie d'échanger sur le produit : la porte est ouverte.",
     emailLabel: 'Email',
     linkedinLabel: 'LinkedIn',
     locationLabel: 'Localisation',

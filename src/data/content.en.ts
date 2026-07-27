@@ -154,7 +154,7 @@ export const contentEn: SiteContent = {
     {
       kicker: 'Product team processes',
       title: 'Automating product work',
-      body: 'I build and deploy AI assistants (on Dust, Gemini) so Product Managers can save their energy for decisions. I make sure these agents are adopted, used, and deliver real value.',
+      body: 'I build and deploy AI agents (on Dust, Gemini) so Product Managers can save their energy for decisions. I make sure they are properly adopted, add real value, and are actually used.',
       points: [
         'Automated functional specifications',
         'Automatically generated release notes',
@@ -443,7 +443,7 @@ export const contentEn: SiteContent = {
   contact: {
     eyebrow: "What's next?",
     title: "Let's talk product.",
-    lead: 'An opportunity, a question about applying AI to process, or just the urge to talk shop: the door is open.',
+    lead: 'An opportunity, a question about applying AI to product process, or just the urge to talk shop: the door is open.',
     emailLabel: 'Email',
     linkedinLabel: 'LinkedIn',
     locationLabel: 'Location',
