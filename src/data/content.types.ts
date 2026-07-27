@@ -131,10 +131,11 @@ export interface SiteContent {
      */
     goatCounterCode: string
     tagline: [string, string]
+    /** Mots de `tagline[1]` mis en avant dans l'accent iris (couleur du site). */
+    taglineHighlight: string[]
     intro: string
   }
   hero: {
-    proofs: { value: string; label: string }[]
     ctaImpact: string
     ctaLinkedin: string
     locationCard: { title: string; subtitle: string }

@@ -25,17 +25,12 @@ export const contentEn: SiteContent = {
       '9 years building B2B and B2C products that prove themselves in production.',
       'I turn vision into delivery, and delivery into numbers.',
     ],
+    taglineHighlight: ['vision', 'delivery', 'numbers'],
     intro:
-      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run the digital products of Groupe Barrière's casino division (Barrière Play, CZAM, and a still-confidential online gambling product), with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
+      "Passionate about using AI to make teams more effective, sharpen product decisions, and raise the bar on quality. Today I run the digital products of Groupe Barrière's casino division (Barrière Play, CZAM, and the development of the still-confidential online gambling product), with 4 Product Managers, 2 QA testers, and one conviction: a good product can be measured.",
   },
 
   hero: {
-    proofs: [
-      { value: '60K', label: 'active users' },
-      { value: '€8M', label: 'loaded onto wallets' },
-      { value: '95%', label: 'accurate AI answers' },
-      { value: '6', label: 'people managed' },
-    ],
     ctaImpact: 'See my impact',
     ctaLinkedin: 'View my LinkedIn',
     locationCard: { title: 'Paris', subtitle: 'Open to a conversation' },
@@ -106,14 +101,14 @@ export const contentEn: SiteContent = {
   },
 
   impactQuote:
-    '"A good product is a decision you can defend with a number, backed by a team that understands why it was made."',
+    '"Building a new feature or product is a decision you can defend with a number, backed by a team that understands why it was made."',
 
   stats: [
     {
       value: 60,
       suffix: 'k',
       label: 'monthly active users',
-      detail: "On Barrière Play, the group's mobile app for casino customers · +2% every month",
+      detail: "On Barrière Play, the group's new mobile app for casino customers that I launched · +2% every month",
       accent: 'iris',
     },
     {
@@ -124,10 +119,10 @@ export const contentEn: SiteContent = {
       accent: 'mint',
     },
     {
-      value: 95,
-      suffix: '%',
-      label: 'accurate answers',
-      detail: 'Internal AI chatbot I deployed to production',
+      value: 30,
+      suffix: '',
+      label: 'daily users',
+      detail: 'AI chatbot on internal digital tools, used by casino staff · 95% accurate answers',
       accent: 'ember',
     },
     {

@@ -7,6 +7,21 @@ import Portrait from './ui/Portrait'
 import Tilt from './ui/Tilt'
 import Icon from './ui/Icon'
 
+/** Rend une phrase en colorant en accent iris les mots listés (couleur du site). */
+function highlight(text: string, words: string[]) {
+  if (words.length === 0) return text
+  const pattern = new RegExp(`\\b(${words.join('|')})\\b`, 'g')
+  return text.split(pattern).map((part, i) =>
+    words.includes(part) ? (
+      <span key={i} className="text-iris">
+        {part}
+      </span>
+    ) : (
+      part
+    ),
+  )
+}
+
 export default function Hero() {
   const { t } = useLanguage()
   const root = useRef<HTMLElement>(null)
@@ -92,26 +107,15 @@ export default function Hero() {
             style={{ '--d': 2 } as React.CSSProperties}
             className="intro-item mt-6 max-w-xl text-[clamp(1.05rem,2.2vw,1.35rem)] leading-[1.55] text-ink-soft"
           >
-            {t.profile.tagline[0]}{' '}
-            <span className="serif-accent text-ink">{t.profile.tagline[1]}</span>
+            {t.profile.tagline[0]}
+            <br />
+            <span className="serif-accent text-ink">
+              {highlight(t.profile.tagline[1], t.profile.taglineHighlight)}
+            </span>
           </p>
 
-          {/* Preuves chiffrées plutôt que mots-clés : c'est la première chose
-              qu'un recruteur doit lire après le nom. */}
           <div
             style={{ '--d': 3 } as React.CSSProperties}
-            className="intro-item mt-9 flex flex-wrap items-stretch gap-x-8 gap-y-4"
-          >
-            {t.hero.proofs.map((p) => (
-              <div key={p.label} className="border-l-2 border-iris/40 pl-3.5">
-                <p className="display text-[1.45rem] text-ink">{p.value}</p>
-                <p className="mt-0.5 text-[12px] leading-tight text-ink-mute">{p.label}</p>
-              </div>
-            ))}
-          </div>
-
-          <div
-            style={{ '--d': 4 } as React.CSSProperties}
             className="intro-item mt-10 flex flex-wrap items-center gap-3 print:hidden"
           >
             <Magnetic strength={0.3}>

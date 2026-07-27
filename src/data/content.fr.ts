@@ -25,17 +25,12 @@ export const contentFr: SiteContent = {
       "9 ans à construire des produits B2B et B2C qui font leurs preuves en production.",
       "Je transforme une vision en delivery, et le delivery en chiffres.",
     ],
+    taglineHighlight: ['vision', 'delivery', 'chiffres'],
     intro:
-      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige les produits digitaux du pôle casino du Groupe Barrière (Barrière Play, CZAM, et un jeu en ligne encore confidentiel), avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
+      "Passionné par l'IA pour rendre les équipes plus efficaces, clarifier les décisions produit et gagner en qualité. Aujourd'hui je dirige les produits digitaux du pôle casino du Groupe Barrière (Barrière Play, CZAM, et le développement du jeu en ligne encore confidentiel), avec 4 Product Managers, 2 testeurs qualité, et une conviction : un bon produit se mesure.",
   },
 
   hero: {
-    proofs: [
-      { value: '60 k', label: 'utilisateurs actifs' },
-      { value: '8 M€', label: 'chargés sur les wallets' },
-      { value: '95 %', label: 'réponses IA justes' },
-      { value: '6', label: 'personnes managées' },
-    ],
     ctaImpact: 'Voir mon impact',
     ctaLinkedin: 'Voir mon LinkedIn',
     locationCard: { title: 'Paris', subtitle: 'Ouvert aux échanges' },
@@ -106,14 +101,14 @@ export const contentFr: SiteContent = {
   },
 
   impactQuote:
-    "« Un bon produit, c'est une décision qu'on peut défendre avec un chiffre, et une équipe qui comprend pourquoi on l'a prise. »",
+    "« Le développement d'une nouvelle fonctionnalité ou produit, c'est une décision qu'on peut défendre avec un chiffre, et une équipe qui comprend pourquoi on l'a prise. »",
 
   stats: [
     {
       value: 60,
       suffix: 'k',
       label: 'utilisateurs actifs mensuels',
-      detail: "Sur Barrière Play, l'app mobile des clients de casino du groupe · +2 % par mois",
+      detail: "Sur Barrière Play, la nouvelle app mobile des clients de casino du groupe que j'ai lancée · +2 % par mois",
       accent: 'iris',
     },
     {
@@ -124,10 +119,10 @@ export const contentFr: SiteContent = {
       accent: 'mint',
     },
     {
-      value: 95,
-      suffix: '%',
-      label: 'de réponses justes',
-      detail: "Chatbot IA interne que j'ai déployé en production",
+      value: 30,
+      suffix: '',
+      label: 'utilisateurs quotidiens',
+      detail: "Chatbot IA sur les outils digitaux, utilisé par les collaborateurs en casino · 95 % de réponses justes",
       accent: 'ember',
     },
     {
