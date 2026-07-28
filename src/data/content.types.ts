@@ -19,7 +19,13 @@ export interface Experience {
   logo?: string
   context?: string
   period: string
-  roles: { title: string; duration?: string; summary: string }[]
+  roles: {
+    title: string
+    duration?: string
+    summary: string
+    /** Puces optionnelles sous le résumé, ex. le périmètre produit détaillé. */
+    summaryPoints?: string[]
+  }[]
   responsibilities?: string[]
   wins: {
     headline: string

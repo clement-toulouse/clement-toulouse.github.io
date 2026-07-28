@@ -81,6 +81,22 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
                   <p className="mt-2 max-w-3xl text-[14.5px] leading-relaxed text-ink-soft">
                     {role.summary}
                   </p>
+                  {role.summaryPoints && (
+                    <ul className="mt-3 max-w-3xl space-y-2">
+                      {role.summaryPoints.map((point) => (
+                        <li
+                          key={point}
+                          className="flex gap-3 text-[14.5px] leading-relaxed text-ink-soft"
+                        >
+                          <span
+                            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink-mute"
+                            aria-hidden="true"
+                          />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>

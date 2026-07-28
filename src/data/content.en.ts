@@ -183,7 +183,13 @@ export const contentEn: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "I own every digital product of the group's casino division: Barrière Play (the customer mobile app to manage their loyalty and their in-venue digital wallet), CZAM (the single in-venue staff tool for managing entries and running floor operations), the development of the group's online gambling business, still in build and confidential, and the strategy for a shared sign-up journey and customer account across our different platforms. I lead a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
+              "I own every digital product of the group's casino division, leading a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
+            summaryPoints: [
+              "Barrière Play (the customer mobile app to manage their loyalty and use an in-venue digital wallet)",
+              'CZAM (the single in-venue staff tool for managing entries and running floor operations)',
+              "Sign-up journey and customer account shared across our different platforms",
+              "Development of the group's online gambling business, still in build and confidential",
+            ],
           },
         ],
         responsibilities: [

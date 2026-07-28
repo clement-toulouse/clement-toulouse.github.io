@@ -183,7 +183,13 @@ export const contentFr: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "Je pilote l'ensemble des produits digitaux du pôle casino du groupe : Barrière Play (application mobile client pour gérer leur fidélité et avoir un wallet digital en casino), CZAM (l'outil collaborateur unique en casino pour la gestion des entrées et le pilotage opérationnel de la salle), le développement de l'activité de jeu en ligne du groupe encore en construction et confidentiel, et la stratégie du parcours d'inscription et du compte client commun entre nos différentes plateformes. J'encadre une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
+              "Je pilote l'ensemble des produits digitaux du pôle Casino du groupe en encadrant une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
+            summaryPoints: [
+              "Barrière Play (l'application mobile client pour gérer leur fidélité et utiliser un wallet digital en casino)",
+              "CZAM (l'outil collaborateur unique en casino pour la gestion des entrées et le pilotage opérationnel de la salle)",
+              'Parcours d\'inscription et du compte client commun entre nos différentes plateformes',
+              "Développement de l'activité de jeu en ligne du groupe encore en construction et confidentiel",
+            ],
           },
         ],
         responsibilities: [
