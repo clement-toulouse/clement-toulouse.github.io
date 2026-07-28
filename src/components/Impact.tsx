@@ -31,7 +31,7 @@ function StatCard({ stat }: { stat: Stat }) {
         <span className={accent}>{stat.suffix}</span>
       </p>
       <div className="mt-4">
-        <p className="text-[15px] font-semibold leading-snug">{stat.label}</p>
+        <p className={`text-[15px] font-semibold leading-snug ${accent}`}>{stat.label}</p>
         <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-mute">{stat.detail}</p>
         {stat.note && (
           <p className="mt-1.5 text-[13.5px] italic leading-relaxed text-ink-mute">{stat.note}</p>
