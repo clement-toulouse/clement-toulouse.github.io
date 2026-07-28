@@ -122,7 +122,7 @@ export const contentEn: SiteContent = {
       prefix: '-',
       suffix: '%',
       label: 'in support requests',
-      detail: 'Internal AI chatbot answering staff knowledge questions about casino digital tools',
+      detail: 'Thanks to the internal AI chatbot answering staff knowledge questions about casino digital tools',
       note: '95% accurate answers, 30 daily users',
       accent: 'ember',
     },

@@ -24,7 +24,7 @@ function StatCard({ stat }: { stat: Stat }) {
     // l'autre, quelle que soit la longueur du détail.
     <Spotlight className="flex flex-col p-6 sm:p-7">
       <p className="display text-[clamp(2.4rem,6vw,3.6rem)] tabular-nums">
-        {stat.prefix}
+        <span className={accent}>{stat.prefix}</span>
         <span ref={ref} className={accent}>
           {stat.value}
         </span>

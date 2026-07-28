@@ -122,7 +122,7 @@ export const contentFr: SiteContent = {
       prefix: '-',
       suffix: '%',
       label: 'de demandes au support',
-      detail: "Chatbot IA interne, qui répond aux questions de connaissance des collaborateurs sur les outils digitaux casino",
+      detail: "Grâce au chatbot IA interne, qui répond aux questions de connaissance des collaborateurs sur les outils digitaux casino",
       note: '95 % de réponses justes, 30 utilisateurs quotidiens',
       accent: 'ember',
     },
