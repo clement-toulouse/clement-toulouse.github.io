@@ -181,9 +181,11 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Indice de scroll */}
+      {/* Indice de scroll. Masqué sur mobile : le hero y dépasse la hauteur de
+          l'écran, l'indice tombe sous la ligne de flottaison et ne serait vu
+          qu'après avoir scrollé — exactement ce qu'il est censé déclencher. */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-7 flex justify-center print:hidden"
+        className="pointer-events-none absolute inset-x-0 bottom-7 hidden justify-center sm:flex print:hidden"
         aria-hidden="true"
       >
         <div className="flex h-10 w-6 items-start justify-center rounded-full border border-line-strong p-1.5">

@@ -71,7 +71,10 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
         <div
           className={`absolute inset-0 -z-10 border-b transition-[background-color,border-color,backdrop-filter] duration-500 ${
             scrolled
-              ? 'border-line bg-canvas/80 backdrop-blur-xl'
+              ? // Fond opaque sur mobile : en translucide, le contenu qui défile
+                // dessous transparaît en bavure, et iOS rend mal `backdrop-filter`
+                // sur un élément fixe. Le verre dépoli reste sur écrans larges.
+                'border-line bg-canvas sm:bg-canvas/80 sm:backdrop-blur-xl'
               : 'border-transparent bg-transparent'
           }`}
           aria-hidden="true"
