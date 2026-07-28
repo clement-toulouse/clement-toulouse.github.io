@@ -270,7 +270,7 @@ export const contentFr: SiteContent = {
         ],
         wins: [
           {
-            headline: "Nouveau back-office et refonte de l'arrivée des nouveaux clients",
+            headline: "Nouveau back-office collaborateur et refonte de l'arrivée des nouveaux clients",
             metrics: [
               "−60 % de temps pour mettre un nouveau client en route",
               "+40 % d'informations magasins correctement publiées en ligne",
@@ -278,7 +278,10 @@ export const contentFr: SiteContent = {
           },
           {
             headline: 'Template de réponse aux avis clients',
-            metrics: ['+30 % de taux de réponse aux avis', "70 % des clients ont adopté l'outil"],
+            metrics: [
+              '+30 % de taux de réponse aux avis',
+              "70 % d'adoption clients 3 mois après le lancement",
+            ],
             screenshot: {
               src: '/experience/partoo-avis.webp',
               alt: "Capture d'écran d'une réponse à un avis Google depuis l'outil Partoo",

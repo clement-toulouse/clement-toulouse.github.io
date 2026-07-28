@@ -269,7 +269,7 @@ export const contentEn: SiteContent = {
         ],
         wins: [
           {
-            headline: 'New back office and revamped new-customer onboarding',
+            headline: 'New staff back office and revamped new-customer onboarding',
             metrics: [
               '−60% time to get a new customer up and running',
               '+40% of store information correctly published online',
@@ -277,7 +277,10 @@ export const contentEn: SiteContent = {
           },
           {
             headline: 'Template for replies to customer reviews',
-            metrics: ['+30% review response rate', '70% of customers adopted the tool'],
+            metrics: [
+              '+30% review response rate',
+              '70% customer adoption 3 months after launch',
+            ],
             screenshot: {
               src: '/experience/partoo-avis.webp',
               alt: 'Screenshot of a reply to a Google review from the Partoo tool',
