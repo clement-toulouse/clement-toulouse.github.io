@@ -11,12 +11,15 @@ const accentClass = {
   ember: 'text-ember',
 } as const
 
-function StatCard({ stat }: { stat: Stat }) {
+function StatCard({ stat, locale }: { stat: Stat; locale: string }) {
   // La vraie valeur est écrite dans le DOM : c'est elle que lisent les
   // crawlers, les lecteurs d'écran et les visiteurs sans JS. Le compteur ne
   // repart de zéro que si l'animation peut effectivement se jouer.
-  const ref = useCountUp(stat.value)
+  const ref = useCountUp(stat.value, locale)
   const accent = accentClass[stat.accent ?? 'iris']
+  // Écrit aussi la valeur au bon format dès le rendu : le prérendu et le mode
+  // « animations réduites » ne passent jamais par le compteur.
+  const value = locale === 'fr' ? String(stat.value).replace('.', ',') : String(stat.value)
 
   return (
     // Pas de `justify-between` : le bloc de texte suit directement le chiffre,
@@ -26,7 +29,7 @@ function StatCard({ stat }: { stat: Stat }) {
       <p className="display text-[clamp(2.4rem,6vw,3.6rem)] tabular-nums">
         <span className={accent}>{stat.prefix}</span>
         <span ref={ref} className={accent}>
-          {stat.value}
+          {value}
         </span>
         <span className={accent}>{stat.suffix}</span>
       </p>
@@ -42,7 +45,7 @@ function StatCard({ stat }: { stat: Stat }) {
 }
 
 export default function Impact() {
-  const { t } = useLanguage()
+  const { t, locale } = useLanguage()
   const grid = useReveal<HTMLDivElement>()
 
   return (
@@ -58,7 +61,7 @@ export default function Impact() {
 
       <div ref={grid} className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {t.stats.map((s) => (
-          <StatCard key={s.label} stat={s} />
+          <StatCard key={s.label} stat={s} locale={locale} />
         ))}
       </div>
 

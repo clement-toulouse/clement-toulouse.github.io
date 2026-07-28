@@ -99,18 +99,23 @@ export function useInView<T extends HTMLElement>(offset = 12) {
  * lecteurs d'écran et les visiteurs sans JS. On ne la remet à zéro qu'au moment
  * de lancer l'animation, dans un layout effect pour éviter tout scintillement.
  */
-export function useCountUp(target: number, duration = 1600) {
+export function useCountUp(target: number, locale = 'fr', duration = 1600) {
   const ref = useRef<HTMLSpanElement>(null)
 
   useIsomorphicLayoutEffect(() => {
     const el = ref.current
     if (!el || prefersReducedMotion()) return
 
-    el.textContent = '0'
     let raf = 0
     // Préserve les décimales de la cible (ex. 4.2) : `Math.round` seul les
-    // aurait effacées à la fin de l'animation.
+    // aurait effacées à la fin de l'animation. Le séparateur suit la langue
+    // (virgule en français), sans séparateur de milliers pour ne pas modifier
+    // l'écriture des autres chiffres.
     const decimals = (String(target).split('.')[1] ?? '').length
+    const fmt = (n: number) =>
+      n.toFixed(decimals).replace('.', locale === 'fr' ? ',' : '.')
+
+    el.textContent = fmt(0)
 
     const io = new IntersectionObserver(
       ([e]) => {
@@ -122,7 +127,7 @@ export function useCountUp(target: number, duration = 1600) {
           const t = Math.min((now - start) / duration, 1)
           // easeOutExpo
           const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t)
-          el.textContent = (target * eased).toFixed(decimals)
+          el.textContent = fmt(target * eased)
           if (t < 1) raf = requestAnimationFrame(tick)
         }
         raf = requestAnimationFrame(tick)
@@ -134,9 +139,9 @@ export function useCountUp(target: number, duration = 1600) {
     return () => {
       io.disconnect()
       cancelAnimationFrame(raf)
-      el.textContent = String(target)
+      el.textContent = fmt(target)
     }
-  }, [target, duration])
+  }, [target, locale, duration])
 
   return ref
 }
