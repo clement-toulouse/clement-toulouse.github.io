@@ -374,10 +374,8 @@ export const contentFr: SiteContent = {
       items: [
         'Vision & stratégie produit',
         'Discovery',
-        'Metric tree & North Star Metric',
         'OKR & KPI',
         'Roadmapping',
-        'Product Discovery continue',
         'User research',
       ],
     },
@@ -385,7 +383,7 @@ export const contentFr: SiteContent = {
       key: 'leadership',
       group: 'Leadership',
       items: [
-        'Management de PM',
+        'Management',
         "Structuration d'équipe",
         'Coaching & mentorat',
         'Rituels agiles',
@@ -398,7 +396,6 @@ export const contentFr: SiteContent = {
       items: [
         'Claude Code',
         'Dust',
-        'Agents IA en production',
         'IA Ops & process',
         'Prototypage',
         'Data & analytics',
