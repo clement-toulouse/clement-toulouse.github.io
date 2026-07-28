@@ -106,13 +106,13 @@ export const contentFr: SiteContent = {
       suffix: 'k',
       label: 'utilisateurs actifs mensuels',
       detail: "Sur Barrière Play, la nouvelle application mobile des clients de casino du groupe que j'ai lancée",
-      note: '+2 % par mois',
+      note: 'Soit 40 % des clients du groupe, +2 % par mois',
       accent: 'iris',
     },
     {
       value: 8,
       suffix: 'M€',
-      label: 'chargés sur les wallets digitaux',
+      label: 'chargés par mois sur les wallets digitaux',
       detail: 'Rechargés par les clients via Barrière Play',
       note: '+10 % par mois',
       accent: 'mint',
@@ -238,22 +238,6 @@ export const contentFr: SiteContent = {
           alt: "Capture d'écran de l'application Barrière Play, carte de fidélité Carré VIP",
           frame: 'phone',
         },
-        caseStudy: {
-          context:
-            "L'expérience digitale des clients de casino du groupe reposait sur des équipes cloisonnées et des processus produit hétérogènes d'une marque à l'autre : chaque casino gérait son propre backlog, sans priorisation commune ni méthodologie partagée. Ma mission : unifier la vision produit et industrialiser le rythme de sortie de nouvelles fonctionnalités sur Barrière Play, l'application mobile des clients de casino du groupe (fidélité, wallet digital connecté aux machines à sous).",
-          approach: [
-            'Pilotage par OKR partagé entre les 4 Product Managers, pour aligner les priorités sans casser leur autonomie sur leur périmètre',
-            "Déploiement d'agents IA dans le processus produit : rédaction et relecture des spécifications, User Stories par produit, release notes",
-            'Structuration d\'un socle méthodologique commun (rituels, templates, définition de "fini") repris par toutes les équipes',
-          ],
-          impact:
-            "L'app est devenue le point d'entrée numérique de référence pour les joueurs du groupe : 60 000 utilisateurs actifs mensuels, en progression continue de +2 %/mois, et 8 M€ chargés chaque mois sur les wallets digitaux via l'application. L'assistant IA interne traite désormais l'essentiel des questions produit du quotidien, libérant du temps aux Product Managers pour les décisions à plus forte valeur.",
-          image: {
-            src: '/experience/barriere-account.webp',
-            alt: "Capture d'écran de l'application Barrière Play, écran Mon Compte",
-            frame: 'phone',
-          },
-        },
       },
       {
         company: 'Partoo',
@@ -289,7 +273,7 @@ export const contentFr: SiteContent = {
             ],
           },
           {
-            headline: 'Réponses types aux avis clients',
+            headline: 'Template de réponse aux avis clients',
             metrics: ['+30 % de taux de réponse aux avis', "70 % des clients ont adopté l'outil"],
             screenshot: {
               src: '/experience/partoo-avis.webp',
@@ -297,7 +281,7 @@ export const contentFr: SiteContent = {
             },
           },
           {
-            headline: 'Refonte de la publication des infos magasins + intégration Apple Plans & Waze',
+            headline: "Refonte de la diffusion des informations des établissements + intégration Apple Plans & Waze",
             metrics: [
               "+60 % d'informations publiées avec succès sur les plateformes",
               '95 % de réussite sur les nouveaux canaux (Apple Plans, Waze)',
@@ -310,18 +294,6 @@ export const contentFr: SiteContent = {
           alt: "Capture d'écran du tableau de diffusion Partoo, taux de publication par plateforme",
           frame: 'browser',
           url: 'app.partoo.co',
-        },
-        caseStudy: {
-          context:
-            "Le produit Review Management gérait les avis clients de centaines d'enseignes à travers des API Google, Facebook et TripAdvisor incompatibles entre elles : formats de données différents, quotas et délais de mise à jour propres à chaque plateforme. L'arrivée d'un nouveau client prenait plusieurs jours, en grande partie manuels.",
-          approach: [
-            "Audit des points de friction de l'onboarding avec les équipes support, pour prioriser la refonte sur ce qui bloquait réellement les clients",
-            'Conception d\'un nouveau back-office unifiant la configuration des établissements, indépendamment de la plateforme de diffusion',
-            "Lancement de réponses types aux avis, coécrites avec l'équipe Care pour rester dans le ton de chaque enseigne",
-            "Intégration de nouveaux canaux de diffusion (Apple Plans, Waze) en s'appuyant sur l'architecture déjà unifiée",
-          ],
-          impact:
-            "La refonte du back-office et de l'arrivée des nouveaux clients a réduit de 60 % le temps de mise en route, tandis que les réponses types aux avis ont fait grimper le taux de réponse de 30 %, avec une adoption par 70 % des clients dès les premiers mois. Les nouveaux canaux ont atteint 95 % de réussite de publication dès leur lancement.",
         },
       },
       {

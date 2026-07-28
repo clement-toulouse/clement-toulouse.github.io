@@ -106,13 +106,13 @@ export const contentEn: SiteContent = {
       suffix: 'k',
       label: 'monthly active users',
       detail: "On Barrière Play, the group's new mobile app for casino customers that I launched",
-      note: '+2% every month',
+      note: "40% of the group's customers, +2% every month",
       accent: 'iris',
     },
     {
       value: 8,
       suffix: 'M€',
-      label: 'loaded onto digital wallets',
+      label: 'loaded onto digital wallets every month',
       detail: 'Topped up by customers through Barrière Play',
       note: '+10% every month',
       accent: 'mint',
@@ -237,22 +237,6 @@ export const contentEn: SiteContent = {
           alt: 'Screenshot of the Barrière Play app, Carré VIP loyalty card',
           frame: 'phone',
         },
-        caseStudy: {
-          context:
-            "The digital experience for the group's casino customers ran on siloed teams and product processes that varied from one brand to the next: each casino managed its own backlog, with no shared prioritization or methodology. My mission: unify the product vision and industrialize the pace of feature releases on Barrière Play, the group's mobile app (loyalty, digital wallet connected to the slot machines).",
-          approach: [
-            'Shared OKR-based steering across the 4 Product Managers, aligning priorities without breaking their autonomy on their own scope',
-            'Deployed AI agents into the product process: drafting and reviewing specs, per-product user stories, release notes',
-            'Structured a shared product methodology (rituals, templates, a "definition of done") adopted by every team',
-          ],
-          impact:
-            "The app became the group's reference digital entry point for players: 60,000 monthly active users, growing steadily at +2%/month, with €8M loaded onto digital wallets through the app every month. The internal AI assistant now handles most day-to-day product questions, freeing up Product Managers' time for higher-value decisions.",
-          image: {
-            src: '/experience/barriere-account.webp',
-            alt: 'Screenshot of the Barrière Play app, My Account screen',
-            frame: 'phone',
-          },
-        },
       },
       {
         company: 'Partoo',
@@ -288,7 +272,7 @@ export const contentEn: SiteContent = {
             ],
           },
           {
-            headline: 'Template replies to customer reviews',
+            headline: 'Template for replies to customer reviews',
             metrics: ['+30% review response rate', '70% of customers adopted the tool'],
             screenshot: {
               src: '/experience/partoo-avis.webp',
@@ -296,7 +280,7 @@ export const contentEn: SiteContent = {
             },
           },
           {
-            headline: 'Revamped store-info publishing + Apple Maps & Waze integration',
+            headline: 'Revamped distribution of store information + Apple Maps & Waze integration',
             metrics: [
               '+60% of information successfully published across platforms',
               '95% success rate on the new channels (Apple Maps, Waze)',
@@ -309,18 +293,6 @@ export const contentEn: SiteContent = {
           alt: 'Screenshot of the Partoo distribution dashboard, publication rate by platform',
           frame: 'browser',
           url: 'app.partoo.co',
-        },
-        caseStudy: {
-          context:
-            'The Review Management product handled customer reviews for hundreds of brands across Google, Facebook and TripAdvisor APIs that were incompatible with one another: different data formats, quotas and update delays on every platform. Onboarding a new client took several days, most of it manual.',
-          approach: [
-            'Audited onboarding friction points with the support teams, to prioritize the revamp on what actually blocked clients',
-            'Designed a new back office unifying store configuration, independent of the distribution platform',
-            'Launched template review replies, co-written with the Care team to stay on-brand for each client',
-            'Integrated new distribution channels (Apple Maps, Waze) building on the already-unified architecture',
-          ],
-          impact:
-            'The back-office and new-client onboarding revamp cut ramp-up time by 60%, while template review replies pushed the response rate up by 30%, with 70% of clients adopting the tool within the first few months. The new channels reached a 95% publication success rate from launch.',
         },
       },
       {
