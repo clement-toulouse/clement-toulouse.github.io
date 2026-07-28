@@ -9,8 +9,8 @@ import ScreenshotFrame from './ui/ScreenshotFrame'
 import Tilt from './ui/Tilt'
 import type { Experience as ExperienceItem, SiteContent } from '../data/content.types'
 
-/* Capture le chiffre en tête de métrique : « −60 % », « 8 M€ », « 60 000 »… */
-const METRIC_RE = /^([+\-−]?\d[\d\s .,]*(?:%|M€|€|k)?)/
+/* Capture le chiffre en tête de métrique : « −60 % », « 8 M€ », « 60 000 », « 4,2/5 »… */
+const METRIC_RE = /^([+\-−]?\d[\d\s .,]*(?:\/\d+)?(?:%|M€|€|k)?)/
 
 /** Met le chiffre en avant : c'est lui qu'un lecteur en diagonale doit voir. */
 function Metric({ text }: { text: string }) {

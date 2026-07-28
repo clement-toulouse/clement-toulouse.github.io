@@ -212,7 +212,8 @@ export const contentFr: SiteContent = {
             headline: "Déploiement en production d'un assistant IA interne pour les équipes",
             metrics: [
               '95 % de réponses justes',
-              "30 collaborateurs l'utilisent chaque jour",
+              '30 collaborateurs quotidiens',
+              '-30 % de demandes au support',
               "Accès à l'information et productivité nettement améliorés",
             ],
           },
@@ -220,17 +221,18 @@ export const contentFr: SiteContent = {
             headline:
               'Lancement de CZAM V2, bascule du client lourd historique du groupe vers une web app',
             metrics: [
-              'Adoption par tous les casinos français du groupe',
-              'Satisfaction collaborateur en nette hausse',
+              'Adoption par les 33 casinos français du groupe',
+              '4,2/5 de satisfaction collaborateur',
               'Meilleur suivi et accompagnement des joueurs dans le cadre du jeu responsable',
               "Pilotage des performances de la salle en temps réel, avec un outil d'aide à l'optimisation",
             ],
           },
           {
-            headline: "Développement et mise en production d'un compte client commun à tous nos outils",
+            headline: "Développement et mise en production d'une stratégie de compte client commun à tous nos outils",
             metrics: [
               "Jusqu'alors développé individuellement sur chaque produit",
-              "Réduit les efforts de maintenance et les écarts entre les outils",
+              'Réduit les efforts de maintenance',
+              'Élimine les écarts fonctionnels entre les outils',
             ],
           },
         ],
