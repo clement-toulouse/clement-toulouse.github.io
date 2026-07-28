@@ -273,7 +273,7 @@ export const contentFr: SiteContent = {
             headline: "Nouveau back-office collaborateur et refonte de l'arrivée des nouveaux clients",
             metrics: [
               "−60 % de temps pour mettre un nouveau client en route",
-              "+40 % d'informations magasins correctement publiées en ligne",
+              "+40 % d'informations établissements correctement publiées en ligne",
             ],
           },
           {
