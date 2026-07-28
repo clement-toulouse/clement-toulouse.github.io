@@ -236,7 +236,6 @@ export const contentFr: SiteContent = {
             ],
           },
         ],
-        tags: ['Vision produit', 'OKR', 'Management', 'Mobile B2C', 'Agents IA', 'QA'],
         screenshot: {
           src: '/experience/barriere-play.webp',
           alt: "Capture d'écran de l'application Barrière Play, carte de fidélité Carré VIP",
@@ -295,7 +294,6 @@ export const contentFr: SiteContent = {
             ],
           },
         ],
-        tags: ['SaaS B2B', 'Lead PM', 'Product Discovery', 'Expérience client', 'Intégrations', 'Data'],
         screenshot: {
           src: '/experience/partoo-diffusion.webp',
           alt: "Capture d'écran du tableau de diffusion Partoo, taux de publication par plateforme",
@@ -326,7 +324,6 @@ export const contentFr: SiteContent = {
             metrics: ['Cadrage, priorisation et suivi du développement de fonctionnalités web et mobile'],
           },
         ],
-        tags: ['Grands comptes', 'Cadrage', 'Priorisation', 'Web & Mobile'],
       },
     ],
   },

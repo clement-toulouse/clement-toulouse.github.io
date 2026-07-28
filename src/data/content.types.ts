@@ -33,7 +33,6 @@ export interface Experience {
     /** Capture d'écran illustrant cette réalisation précise, affichée dans la carte. */
     screenshot?: { src: string; alt: string }
   }[]
-  tags: string[]
   /** Capture d'écran réelle du produit, encadrée en mockup navigateur ou téléphone. */
   screenshot?: {
     src: string
