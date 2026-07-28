@@ -157,7 +157,7 @@ export const contentFr: SiteContent = {
       title: 'Automatiser le travail produit',
       body: "Je crée et déploie des agents IA (sur Dust, Gemini) pour que les Product Managers gardent leur énergie pour les décisions. Je m'assure de leur bonne adoption, valeur ajoutée et usage.",
       points: [
-        'Synthèse de benchmarks et de discovery à partir des interviews utilisateurs',
+        "Assistant Discovery : benchmark et synthèse d'interviews utilisateurs",
         'Spécification fonctionnelle automatisée',
         'Release notes générées automatiquement',
         'Agent de rédaction de User Stories, spécialisé par produit',
