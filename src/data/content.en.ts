@@ -131,7 +131,7 @@ export const contentEn: SiteContent = {
       suffix: '/5',
       label: 'staff satisfaction score',
       detail: 'On CZAM, the casino staff tool, completely redesigned',
-      note: '33 casinos live, 300+ users',
+      note: '27 casinos live, 300+ users',
       accent: 'iris',
     },
   ],
@@ -221,7 +221,7 @@ export const contentEn: SiteContent = {
             headline: "Launch of CZAM V2, moving the group's legacy desktop client to a web app",
             metrics: [
               '4.2/5 staff satisfaction',
-              'Adopted by all 33 French casinos in the group, +300 users',
+              'Adopted by all 27 French casinos in the group, +300 users',
               'Better player tracking and support for responsible gambling',
               'Real-time floor performance monitoring, with a tool to help optimize it',
             ],

@@ -131,7 +131,7 @@ export const contentFr: SiteContent = {
       suffix: '/5',
       label: 'de satisfaction des collaborateurs',
       detail: "Sur l'outil collaborateur casino CZAM, complètement refondu",
-      note: '33 casinos équipés, 300+ utilisateurs',
+      note: '27 casinos équipés, 300+ utilisateurs',
       accent: 'iris',
     },
   ],
@@ -222,7 +222,7 @@ export const contentFr: SiteContent = {
               'Lancement de CZAM V2, bascule du client lourd historique du groupe vers une web app',
             metrics: [
               '4,2/5 de satisfaction collaborateur',
-              'Adoption par les 33 casinos français du groupe, soit +300 utilisateurs',
+              'Adoption par les 27 casinos français du groupe, soit +300 utilisateurs',
               'Meilleur suivi et accompagnement des joueurs dans le cadre du jeu responsable',
               "Pilotage des performances de la salle en temps réel, avec un outil d'aide à l'optimisation",
             ],
