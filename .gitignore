@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# CV généré (contient le téléphone perso, et ce dépôt est public)
+cv
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
