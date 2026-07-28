@@ -119,10 +119,11 @@ export const contentEn: SiteContent = {
     },
     {
       value: 30,
-      suffix: '',
-      label: 'daily users',
-      detail: 'AI chatbot on internal digital tools, used by casino staff',
-      note: '95% accurate answers',
+      prefix: '-',
+      suffix: '%',
+      label: 'in support requests',
+      detail: 'Internal AI chatbot answering staff knowledge questions about casino digital tools',
+      note: '95% accurate answers, 30 daily users',
       accent: 'ember',
     },
     {

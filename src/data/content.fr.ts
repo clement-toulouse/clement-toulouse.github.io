@@ -119,10 +119,11 @@ export const contentFr: SiteContent = {
     },
     {
       value: 30,
-      suffix: '',
-      label: 'utilisateurs quotidiens',
-      detail: 'Chatbot IA sur les outils digitaux, utilisé par les collaborateurs en casino',
-      note: '95 % de réponses justes',
+      prefix: '-',
+      suffix: '%',
+      label: 'de demandes au support',
+      detail: "Chatbot IA interne, qui répond aux questions de connaissance des collaborateurs sur les outils digitaux casino",
+      note: '95 % de réponses justes, 30 utilisateurs quotidiens',
       accent: 'ember',
     },
     {
