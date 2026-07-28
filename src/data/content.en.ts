@@ -147,7 +147,7 @@ export const contentEn: SiteContent = {
         'Building sites and tools, from design to deployment',
       ],
       proof:
-        'The proof is right in front of you: this site was entirely designed and built with Claude Code, from the design system to the prerendering.',
+        'The proof is right in front of you: this site was entirely designed and built with Claude Code.',
       logos: ['claude', 'aistudio'],
       accent: 'iris',
       span: 'lg:col-span-3 lg:row-span-2',
