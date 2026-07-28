@@ -108,6 +108,9 @@ export function useCountUp(target: number, duration = 1600) {
 
     el.textContent = '0'
     let raf = 0
+    // Préserve les décimales de la cible (ex. 4.2) : `Math.round` seul les
+    // aurait effacées à la fin de l'animation.
+    const decimals = (String(target).split('.')[1] ?? '').length
 
     const io = new IntersectionObserver(
       ([e]) => {
@@ -119,7 +122,7 @@ export function useCountUp(target: number, duration = 1600) {
           const t = Math.min((now - start) / duration, 1)
           // easeOutExpo
           const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t)
-          el.textContent = String(Math.round(target * eased))
+          el.textContent = (target * eased).toFixed(decimals)
           if (t < 1) raf = requestAnimationFrame(tick)
         }
         raf = requestAnimationFrame(tick)
