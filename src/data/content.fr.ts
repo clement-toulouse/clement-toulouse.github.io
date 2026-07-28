@@ -221,14 +221,14 @@ export const contentFr: SiteContent = {
             headline:
               'Lancement de CZAM V2, bascule du client lourd historique du groupe vers une web app',
             metrics: [
-              'Adoption par les 33 casinos français du groupe',
               '4,2/5 de satisfaction collaborateur',
+              'Adoption par les 33 casinos français du groupe, soit +300 utilisateurs',
               'Meilleur suivi et accompagnement des joueurs dans le cadre du jeu responsable',
               "Pilotage des performances de la salle en temps réel, avec un outil d'aide à l'optimisation",
             ],
           },
           {
-            headline: "Développement et mise en production d'une stratégie de compte client commun à tous nos outils",
+            headline: "Développement et mise en production d'une stratégie de parcours d'inscription et compte client commun à tous nos outils",
             metrics: [
               "Jusqu'alors développé individuellement sur chaque produit",
               'Réduit les efforts de maintenance',

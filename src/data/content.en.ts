@@ -220,14 +220,14 @@ export const contentEn: SiteContent = {
           {
             headline: "Launch of CZAM V2, moving the group's legacy desktop client to a web app",
             metrics: [
-              'Adopted by all 33 French casinos in the group',
               '4.2/5 staff satisfaction',
+              'Adopted by all 33 French casinos in the group, +300 users',
               'Better player tracking and support for responsible gambling',
               'Real-time floor performance monitoring, with a tool to help optimize it',
             ],
           },
           {
-            headline: 'Built and shipped a shared customer account strategy across all our tools',
+            headline: 'Built and shipped a shared sign-up journey and customer account strategy across all our tools',
             metrics: [
               'Previously built individually on each product',
               'Cuts maintenance effort',
