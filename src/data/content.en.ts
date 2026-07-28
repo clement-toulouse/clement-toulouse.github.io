@@ -214,6 +214,22 @@ export const contentEn: SiteContent = {
               'Noticeably improved access to information and productivity',
             ],
           },
+          {
+            headline: "Launch of CZAM V2, moving the group's legacy desktop client to a web app",
+            metrics: [
+              'Adopted by every French casino in the group',
+              'Staff satisfaction markedly up',
+              'Better player tracking and support for responsible gambling',
+              'Real-time floor performance monitoring, with a tool to help optimize it',
+            ],
+          },
+          {
+            headline: 'Built and shipped a customer account shared across all our tools',
+            metrics: [
+              'Previously built individually on each product',
+              'Cuts maintenance effort and closes gaps between tools',
+            ],
+          },
         ],
         tags: ['Product vision', 'OKR', 'Management', 'Mobile B2C', 'AI agents', 'QA'],
         screenshot: {

@@ -214,6 +214,23 @@ export const contentFr: SiteContent = {
               "Accès à l'information et productivité nettement améliorés",
             ],
           },
+          {
+            headline:
+              'Lancement de CZAM V2, bascule du client lourd historique du groupe vers une web app',
+            metrics: [
+              'Adoption par tous les casinos français du groupe',
+              'Satisfaction collaborateur en nette hausse',
+              'Meilleur suivi et accompagnement des joueurs dans le cadre du jeu responsable',
+              "Pilotage des performances de la salle en temps réel, avec un outil d'aide à l'optimisation",
+            ],
+          },
+          {
+            headline: "Développement et mise en production d'un compte client commun à tous nos outils",
+            metrics: [
+              "Jusqu'alors développé individuellement sur chaque produit",
+              "Réduit les efforts de maintenance et les écarts entre les outils",
+            ],
+          },
         ],
         tags: ['Vision produit', 'OKR', 'Management', 'Mobile B2C', 'Agents IA', 'QA'],
         screenshot: {
