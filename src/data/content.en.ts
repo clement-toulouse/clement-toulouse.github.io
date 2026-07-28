@@ -209,7 +209,7 @@ export const contentEn: SiteContent = {
             ],
           },
           {
-            headline: 'Production rollout of an internal AI assistant for the teams',
+            headline: 'Production rollout of an internal AI chatbot for Casino operations staff',
             metrics: [
               '95% accurate answers',
               '30 daily users',

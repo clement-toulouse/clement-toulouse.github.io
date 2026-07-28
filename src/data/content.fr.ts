@@ -209,7 +209,7 @@ export const contentFr: SiteContent = {
             ],
           },
           {
-            headline: "Déploiement en production d'un assistant IA interne pour les équipes",
+            headline: "Déploiement en production d'un chatbot IA interne pour les collaborateurs opérationnels Casino",
             metrics: [
               '95 % de réponses justes',
               '30 collaborateurs quotidiens',
