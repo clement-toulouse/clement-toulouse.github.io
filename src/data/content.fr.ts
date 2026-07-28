@@ -254,12 +254,20 @@ export const contentFr: SiteContent = {
             duration: '2 ans',
             summary:
               "À la tête d'une organisation produit de 13 personnes, réparties en 2 équipes pluridisciplinaires (Product, Design, QA, Data, Développement).",
+            summaryPoints: [
+              "Périmètre : l'onboarding des clients et les outils collaborateurs",
+              "Objectifs : réduire le temps d'onboarding, et le temps de traitement des demandes et des tâches des équipes Customer Care",
+            ],
           },
           {
             title: 'Product Manager',
             duration: '3 ans',
             summary:
               "Développement de fonctionnalités à fort impact, de l'idée à la mise en ligne, en partant toujours des besoins réels des utilisateurs.",
+            summaryPoints: [
+              "Périmètre : le produit phare de Partoo, la multi-diffusion des informations des établissements sur les différents annuaires",
+              'Objectif : augmenter le score de visibilité en ligne des établissements',
+            ],
           },
         ],
         responsibilities: [

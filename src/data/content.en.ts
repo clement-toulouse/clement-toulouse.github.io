@@ -253,12 +253,20 @@ export const contentEn: SiteContent = {
             duration: '2 years',
             summary:
               'Led a 13-person product organization split into 2 cross-functional teams (Product, Design, QA, Data, Engineering).',
+            summaryPoints: [
+              'Scope: customer onboarding and internal staff tools',
+              'Goals: cut onboarding time, and cut the handling time of Customer Care requests and tasks',
+            ],
           },
           {
             title: 'Product Manager',
             duration: '3 years',
             summary:
               'Built high-impact features end to end, from idea to launch, always starting from real user needs.',
+            summaryPoints: [
+              "Scope: Partoo's flagship product, distributing store information across the various online directories",
+              'Goal: raise the online visibility score of each store',
+            ],
           },
         ],
         responsibilities: [
