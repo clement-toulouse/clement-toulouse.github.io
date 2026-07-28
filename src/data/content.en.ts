@@ -157,6 +157,7 @@ export const contentEn: SiteContent = {
       title: 'Automating product work',
       body: 'I build and deploy AI agents (on Dust, Gemini) so Product Managers can save their energy for decisions. I make sure they are properly adopted, add real value, and are actually used.',
       points: [
+        'Benchmark and discovery synthesis from user interviews',
         'Automated functional specifications',
         'Automatically generated release notes',
         'User story writing agent, specialized per product',
