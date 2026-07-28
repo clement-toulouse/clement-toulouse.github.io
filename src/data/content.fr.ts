@@ -130,7 +130,7 @@ export const contentFr: SiteContent = {
       value: 4.2,
       suffix: '/5',
       label: 'de satisfaction des collaborateurs',
-      detail: "Sur l'app collaborateur casino, refondue pour le monitoring de l'activité en salle",
+      detail: "Sur l'outil collaborateur casino CZAM, complètement refondu",
       note: '33 casinos équipés, 300+ utilisateurs',
       accent: 'iris',
     },

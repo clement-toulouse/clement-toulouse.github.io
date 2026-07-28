@@ -130,7 +130,7 @@ export const contentEn: SiteContent = {
       value: 4.2,
       suffix: '/5',
       label: 'staff satisfaction score',
-      detail: 'On the casino staff app, redesigned to monitor on-site activity',
+      detail: 'On CZAM, the casino staff tool, completely redesigned',
       note: '33 casinos live, 300+ users',
       accent: 'iris',
     },
