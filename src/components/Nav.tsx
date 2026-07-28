@@ -16,7 +16,9 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40)
+    // Seuil bas : au-delà, le contenu défilait derrière un header encore
+    // transparent et restait visible au travers.
+    const onScroll = () => setScrolled(window.scrollY > 8)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -68,8 +70,14 @@ export default function Nav({ onToggleTheme }: { onToggleTheme: () => void }) {
           n'apparaît qu'une fois la page défilée, pour laisser le hero
           respirer en haut.
         */}
+        {/*
+          Le fond déborde vers le haut (`-top-24`) : au scroll, iOS Safari
+          repositionne les éléments `fixed` avec un temps de retard pendant que
+          sa barre d'URL se rétracte, et un liseré de page apparaissait au-dessus
+          du header. Ce débordement est hors écran en rendu normal.
+        */}
         <div
-          className={`absolute inset-0 -z-10 border-b transition-[background-color,border-color,backdrop-filter] duration-500 ${
+          className={`absolute inset-x-0 -top-24 bottom-0 -z-10 border-b transition-[background-color,border-color,backdrop-filter] duration-500 ${
             scrolled
               ? // Fond opaque sur mobile : en translucide, le contenu qui défile
                 // dessous transparaît en bavure, et iOS rend mal `backdrop-filter`
