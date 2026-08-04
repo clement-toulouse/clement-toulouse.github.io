@@ -36,7 +36,6 @@ export default function AiSection() {
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader
-          eyebrow={t.sections.ia.eyebrow}
           title={t.sections.ia.title}
           lead={t.sections.ia.lead}
         />
@@ -71,7 +70,6 @@ export default function AiSection() {
                       <Icon name={a.icon} size={19} />
                     </span>
                   )}
-                  <p className="eyebrow !text-[0.68rem]">{card.kicker}</p>
                 </div>
 
                 <h3 className={`relative mt-5 display text-[clamp(1.6rem,3vw,2.2rem)] ${a.text}`}>

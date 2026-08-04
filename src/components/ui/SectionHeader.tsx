@@ -1,29 +1,36 @@
 import SplitHeading from './SplitHeading'
 
+/**
+ * En-tête de section. Pas d'eyebrow au-dessus du titre : le titre porte son
+ * propre poids, et le label répétait ce qu'il disait déjà. `meta` existe pour
+ * l'information réelle (une date, un statut) et se pose SOUS le titre.
+ */
 export default function SectionHeader({
-  eyebrow,
   title,
   lead,
+  meta,
   align = 'left',
 }: {
-  eyebrow: string
   title: string
   lead?: string
+  meta?: string
   align?: 'left' | 'center'
 }) {
   return (
     <div className={`max-w-2xl ${align === 'center' ? 'mx-auto text-center' : ''}`}>
-      <div className={`flex items-center gap-3 ${align === 'center' ? 'justify-center' : ''}`}>
-        <span className="h-px w-8 bg-linear-to-r from-iris to-transparent" />
-        <p className="eyebrow">{eyebrow}</p>
-      </div>
       <SplitHeading
         onScroll
-        gradient
         text={title}
-        className="display mt-4 text-[clamp(2rem,5vw,3.4rem)] text-gradient text-gradient-title"
+        className="display text-[clamp(2.1rem,5.2vw,3.6rem)] leading-[1.04] tracking-[-0.04em]"
       />
-      {lead && <p className="mt-5 text-[1.05rem] leading-relaxed text-ink-soft">{lead}</p>}
+      {meta && (
+        <p className="mt-3.5 text-[12.5px] font-semibold uppercase tracking-[0.16em] text-ink-mute">
+          {meta}
+        </p>
+      )}
+      {lead && (
+        <p className="mt-6 max-w-[62ch] text-[1.06rem] leading-[1.62] text-ink-soft">{lead}</p>
+      )}
     </div>
   )
 }

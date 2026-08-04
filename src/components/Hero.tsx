@@ -77,7 +77,6 @@ export default function Hero() {
     >
       {/* Décor */}
       <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div className="absolute inset-0 grid-bg" />
         <div
           ref={auroraA}
           className="aurora -left-20 top-0 h-[38rem] w-[38rem]"
@@ -113,10 +112,9 @@ export default function Hero() {
 
           <SplitHeading
             as="h1"
-            gradient
             text={`${t.profile.firstName} ${t.profile.lastName}`}
             delay={0.25}
-            className="display text-[clamp(2.25rem,9vw,5.75rem)] text-gradient text-gradient-title"
+            className="display text-[clamp(2.4rem,8.4vw,5.6rem)] leading-[0.98] tracking-[-0.045em]"
           />
 
           <p
@@ -216,7 +214,7 @@ export default function Hero() {
         aria-hidden="true"
       >
         <div className="flex h-10 w-6 items-start justify-center rounded-full border border-line-strong p-1.5">
-          <span className="h-2 w-1 animate-bounce rounded-full bg-ink-soft" />
+          <span className="scroll-dot h-2 w-1 rounded-full bg-ink-soft" />
         </div>
       </div>
     </section>

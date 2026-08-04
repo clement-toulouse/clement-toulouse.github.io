@@ -32,7 +32,7 @@ export default function Savor() {
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader
-          eyebrow={t.sections.savor.eyebrow}
+          meta={t.sections.savor.meta}
           title="Savor"
           lead={t.sections.savor.lead}
         />

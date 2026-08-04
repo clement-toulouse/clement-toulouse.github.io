@@ -32,12 +32,10 @@ export default function Contact() {
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <div className="text-center">
-          <p className="eyebrow">{t.contact.eyebrow}</p>
           <SplitHeading
             onScroll
-            gradient
             text={t.contact.title}
-            className="display mt-5 text-[clamp(2.6rem,9vw,6rem)] text-gradient text-gradient-title"
+            className="display text-[clamp(2.6rem,8vw,5.6rem)] leading-[1.02] tracking-[-0.045em]"
           />
           <p className="mx-auto mt-6 max-w-lg text-[1.05rem] leading-relaxed text-ink-soft">
             {t.contact.lead}

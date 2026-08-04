@@ -8,12 +8,6 @@ type Props = {
   delay?: number
   /** Anime à l'entrée dans le viewport plutôt qu'au chargement. */
   onScroll?: boolean
-  /**
-   * Le titre porte un dégradé (background-clip: text). Dans ce cas on ne
-   * découpe pas le texte : des enfants transformés cassent le clip et le
-   * texte devient invisible. On fait un reveal en volet sur le bloc entier.
-   */
-  gradient?: boolean
   as?: 'h1' | 'h2' | 'h3' | 'p'
 }
 
@@ -29,7 +23,6 @@ export default function SplitHeading({
   className = '',
   delay = 0,
   onScroll = false,
-  gradient = false,
   as: Tag = 'h2',
 }: Props) {
   const ref = useRef<HTMLElement>(null)
@@ -51,12 +44,6 @@ export default function SplitHeading({
       return () => clearTimeout(t)
     }
 
-    // Un titre en dégradé est masqué par `clip-path` (voir `.wipe-up`), et le
-    // clip entre dans le calcul d'intersection : l'observer ne verrait jamais
-    // l'élément et le titre resterait invisible. On observe donc son parent,
-    // qui n'est pas clippé.
-    const target = (gradient ? el.parentElement : el) ?? el
-
     const io = new IntersectionObserver(
       ([e]) => {
         if (e.isIntersecting) {
@@ -66,17 +53,10 @@ export default function SplitHeading({
       },
       { rootMargin: '0px 0px -12% 0px' },
     )
-    io.observe(target)
+    io.observe(el)
     return () => io.disconnect()
-  }, [onScroll, delay, gradient])
+  }, [onScroll, delay])
 
-  if (gradient) {
-    return (
-      <Tag ref={ref as never} className={`${className} wipe-up ${play ? 'is-in' : ''}`}>
-        {text}
-      </Tag>
-    )
-  }
 
   const words = text.split(' ')
   let index = 0

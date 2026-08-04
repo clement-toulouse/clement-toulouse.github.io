@@ -57,7 +57,6 @@ export interface Experience {
 
 export interface AiCard {
   title: string
-  kicker: string
   body: string
   points: string[]
   /** Encart de preuve mis en avant sous les points. */
@@ -162,11 +161,11 @@ export interface SiteContent {
   marquee: string[]
   companyMarquee: { srLabel: string }
   sections: {
-    impact: { eyebrow: string; title: string; lead: string }
-    ia: { eyebrow: string; title: string; lead: string }
-    parcours: { eyebrow: string; title: string; lead: string }
-    savor: { eyebrow: string; lead: string }
-    profil: { eyebrow: string; title: string; lead: string }
+    impact: { title: string; lead: string }
+    ia: { title: string; lead: string }
+    parcours: { title: string; lead: string }
+    savor: { meta: string; lead: string }
+    profil: { title: string; lead: string }
   }
   impactQuote: string
   stats: Stat[]
@@ -197,7 +196,6 @@ export interface SiteContent {
   languages: LanguageItem[]
   companies: Company[]
   contact: {
-    eyebrow: string
     title: string
     lead: string
     emailLabel: string

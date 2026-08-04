@@ -73,26 +73,22 @@ export const contentEn: SiteContent = {
 
   sections: {
     impact: {
-      eyebrow: 'What it delivered',
       title: 'Impact before talk',
       lead: "A roadmap you can't measure is just a wish list. Here's what my teams and I have shipped at Barrière over the last three years, in numbers.",
     },
     ia: {
-      eyebrow: 'AI, hands-on',
       title: 'AI in the process and the delivery, not bolted on',
       lead: 'Two concrete uses, not a marketing layer on top of a product: I code and prototype with AI to decide on something real, and I automate the repetitive parts of product work to give my teams back time for decisions.',
     },
     parcours: {
-      eyebrow: 'Experience',
       title: 'Nine years, three companies',
       lead: 'From consulting to a fast-growing start-up, then to a large group: at each step, more scope and more accountability for the results.',
     },
     savor: {
-      eyebrow: 'Personal project · 2026',
+      meta: 'Personal project · 2026',
       lead: "A Head of Product who never carries anything through alone eventually forgets what a decision really costs. Savor is my training ground: from idea to launch, with no team to catch my mistakes.",
     },
     profil: {
-      eyebrow: 'Profile',
       title: 'What I bring',
       lead: "9 years scoping, prioritizing, and shipping, with the same standard every time: a clear vision, a team that knows why it's moving, and a result you can measure.",
     },
@@ -139,7 +135,6 @@ export const contentEn: SiteContent = {
 
   aiCards: [
     {
-      kicker: 'Development & prototyping',
       title: 'Coding and prototyping with AI',
       body: "I use Claude Code to build and Google AI Studio to mock up. In a single session, a product idea becomes a clickable prototype: you decide on something real, not a slide.",
       points: [
@@ -154,7 +149,6 @@ export const contentEn: SiteContent = {
       span: 'lg:col-span-3 lg:row-span-2',
     },
     {
-      kicker: 'Product team processes',
       title: 'Automating product work',
       body: 'I build and deploy AI agents (on Dust, Gemini) so Product Managers can save their energy for decisions. I make sure they are properly adopted, add real value, and are actually used.',
       points: [
@@ -444,7 +438,6 @@ export const contentEn: SiteContent = {
   ],
 
   contact: {
-    eyebrow: "What's next?",
     title: "Let's talk product.",
     lead: 'An opportunity, a question about applying AI to product process, or just the urge to talk shop: the door is open.',
     emailLabel: 'Email',

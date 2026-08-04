@@ -20,7 +20,6 @@ export default function Profil() {
       className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32"
     >
       <SectionHeader
-        eyebrow={t.sections.profil.eyebrow}
         title={t.sections.profil.title}
         lead={t.sections.profil.lead}
       />

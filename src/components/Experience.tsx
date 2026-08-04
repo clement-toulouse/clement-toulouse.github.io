@@ -248,7 +248,6 @@ export default function Experience() {
       className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32"
     >
       <SectionHeader
-        eyebrow={t.sections.parcours.eyebrow}
         title={t.sections.parcours.title}
         lead={t.sections.parcours.lead}
       />

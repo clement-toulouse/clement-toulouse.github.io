@@ -159,61 +159,12 @@ body::after {
   color: var(--c-ink-mute);
 }
 
-/* Dégradé discret : encre sur l'essentiel, l'accent n'arrive qu'en fin. */
-.text-gradient {
-  background: linear-gradient(
-    100deg,
-    var(--c-ink) 0%,
-    var(--c-ink) 55%,
-    var(--c-iris) 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Variante titres : dégradé incliné vers le bas, pour que l'iris tombe sur les
-   lettres même quand le titre est court ou n'atteint pas le bord droit (mêmes
-   couleurs que `.text-gradient`, seule l'orientation change). Utilisée sur tous
-   les titres principaux du site (hero, sections, contact) pour un rendu uniforme. */
-.text-gradient-title {
-  background-image: linear-gradient(
-    160deg,
-    var(--c-ink) 0%,
-    var(--c-ink) 35%,
-    var(--c-iris) 100%
-  );
-  /* `background-clip: text` ne peint que dans la boîte de l'élément. Le
-     `line-height` du `.display` étant plus petit que la police, les descendantes
-     (p, y, j, q) dépassent sous la boîte et resteraient transparentes : on
-     rallonge la boîte, et la marge négative annule l'effet sur la mise en page. */
-  padding-bottom: 0.16em;
-  margin-bottom: -0.16em;
-}
-
 /* ----------------------------------------------------------------- motion
  *
  * Toutes les animations sont en CSS : le JS se contente d'ajouter `is-in`
  * quand un élément entre dans le viewport (IntersectionObserver). Aucun
  * moteur d'animation embarqué, et rien à jouer si le JS ne s'exécute pas.
  * ------------------------------------------------------------------------ */
-
-/* Reveal en volet, pour les titres en dégradé : background-clip: text ne
-   traverse pas des enfants transformés, on anime donc le bloc entier. */
-.wipe-up {
-  /* La marge basse négative évite de rogner les descendantes (p, y, j, q) :
-     le `.display` a un line-height < font-size, elles débordent sous la boîte. */
-  clip-path: inset(105% 0 -25% 0);
-  transform: translateY(0.14em);
-}
-
-.wipe-up.is-in {
-  clip-path: inset(-25% 0 -25% 0);
-  transform: translateY(0);
-  transition:
-    clip-path 1.1s var(--ease-expo),
-    transform 1.1s var(--ease-expo);
-}
 
 /* Reveal caractère par caractère : chaque .char porte son index dans --c. */
 .split .char {
@@ -273,6 +224,23 @@ body::after {
     opacity: 0;
     transform: translateY(22px);
   }
+}
+
+/* Indice de scroll : décélération exponentielle, jamais de rebond. */
+@keyframes scroll-dot {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  45% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+
+.scroll-dot {
+  animation: scroll-dot 2.1s var(--ease-expo) infinite;
 }
 
 .intro-item {
@@ -429,14 +397,6 @@ body::after {
   }
 }
 
-.grid-bg {
-  background-image:
-    linear-gradient(to right, var(--c-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--c-line) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(ellipse 90% 62% at 50% 0%, #000 20%, transparent 78%);
-}
-
 /* Bascule des icônes de thème, sans état React : évite tout écart entre le
    HTML prérendu et l'hydratation. */
 .only-light,
@@ -504,8 +464,7 @@ body::after {
 
   /* Rien ne doit rester masqué si les animations sont désactivées. */
   .reveal,
-  .split .char,
-  .wipe-up {
+  .split .char {
     opacity: 1;
     transform: none;
     clip-path: none;
@@ -516,8 +475,7 @@ body::after {
    contenu resterait invisible. */
 @media (scripting: none) {
   .reveal,
-  .split .char,
-  .wipe-up {
+  .split .char {
     opacity: 1;
     transform: none;
     clip-path: none;
@@ -557,7 +515,6 @@ body::after {
   body::after,
   header,
   .aurora,
-  .grid-bg,
   .marquee,
   .timeline-draw,
   [aria-hidden='true'] svg,
@@ -568,8 +525,24 @@ body::after {
   /* Rien ne doit rester masqué par une animation non jouée. */
   .reveal,
   .split .char,
-  .wipe-up,
-  .intro-item {
+  /* Indice de scroll : décélération exponentielle, jamais de rebond. */
+@keyframes scroll-dot {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
+  45% {
+    transform: translateY(7px);
+    opacity: 1;
+  }
+}
+
+.scroll-dot {
+  animation: scroll-dot 2.1s var(--ease-expo) infinite;
+}
+
+.intro-item {
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;
@@ -605,9 +578,4 @@ body::after {
   }
 
   /* Le dégradé de titre ne survit pas à l'impression : encre pleine. */
-  .text-gradient {
-    background: none !important;
-    color: #000 !important;
-    -webkit-text-fill-color: #000;
-  }
 }

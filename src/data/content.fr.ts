@@ -73,26 +73,22 @@ export const contentFr: SiteContent = {
 
   sections: {
     impact: {
-      eyebrow: 'Ce que ça a produit',
       title: "L'impact avant le discours",
       lead: "Une roadmap qui ne se mesure pas n'est qu'une liste d'envies. Voici ce que mes équipes et moi avons livré chez Barrière ces trois dernières années, en chiffres.",
     },
     ia: {
-      eyebrow: 'Appétence IA',
       title: "L'IA dans le process et le delivery, pas à côté",
       lead: "Deux usages concrets, pas une couche marketing posée sur un produit : je code et prototype avec l'IA pour trancher sur du réel, et j'automatise le travail répétitif des équipes produit pour leur rendre du temps de décision.",
     },
     parcours: {
-      eyebrow: 'Parcours',
       title: 'Neuf ans, trois maisons',
       lead: "Du conseil à la start-up en forte croissance, puis à un grand groupe : à chaque étape, plus de périmètre et plus de responsabilité sur les résultats.",
     },
     savor: {
-      eyebrow: 'Projet perso · 2026',
+      meta: 'Projet perso · 2026',
       lead: "Un Head of Product qui n'a jamais rien mené seul de bout en bout finit par oublier ce que coûte vraiment une décision. Savor est mon terrain d'entraînement : de l'idée à la mise en ligne, sans équipe pour rattraper mes choix.",
     },
     profil: {
-      eyebrow: 'Profil',
       title: "Ce que j'apporte",
       lead: "9 ans à cadrer, prioriser et livrer, avec toujours la même exigence : une vision claire, une équipe qui sait pourquoi elle avance, et un résultat qui se mesure.",
     },
@@ -139,7 +135,6 @@ export const contentFr: SiteContent = {
 
   aiCards: [
     {
-      kicker: 'Développement & prototypage',
       title: 'Coder et prototyper avec l\'IA',
       body: "J'utilise Claude Code pour développer et Google AI Studio pour maquetter. En une seule session, une idée produit devient un prototype cliquable : on décide sur du concret, pas sur un slide.",
       points: [
@@ -154,7 +149,6 @@ export const contentFr: SiteContent = {
       span: 'lg:col-span-3 lg:row-span-2',
     },
     {
-      kicker: 'Process des équipes produit',
       title: 'Automatiser le travail produit',
       body: "Je crée et déploie des agents IA (sur Dust, Gemini) pour que les Product Managers gardent leur énergie pour les décisions. Je m'assure de leur bonne adoption, valeur ajoutée et usage.",
       points: [
@@ -445,7 +439,6 @@ export const contentFr: SiteContent = {
   ],
 
   contact: {
-    eyebrow: 'Et maintenant ?',
     title: 'Parlons produit.',
     lead: "Une opportunité, une question sur l'IA appliquée aux process produit, ou juste l'envie d'échanger sur le produit : la porte est ouverte.",
     emailLabel: 'Email',

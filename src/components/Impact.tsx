@@ -11,7 +11,12 @@ const accentClass = {
   ember: 'text-ember',
 } as const
 
-function StatCard({ stat, locale }: { stat: Stat; locale: string }) {
+/**
+ * Une statistique. `lead` donne au chiffre de tête une échelle et une
+ * composition différentes : quatre cartes jumelles feraient de la grille la
+ * structure de la page, et rien ne dirait plus lequel de ces chiffres compte.
+ */
+function StatCard({ stat, locale, lead = false }: { stat: Stat; locale: string; lead?: boolean }) {
   // La vraie valeur est écrite dans le DOM : c'est elle que lisent les
   // crawlers, les lecteurs d'écran et les visiteurs sans JS. Le compteur ne
   // repart de zéro que si l'animation peut effectivement se jouer.
@@ -21,25 +26,58 @@ function StatCard({ stat, locale }: { stat: Stat; locale: string }) {
   // « animations réduites » ne passent jamais par le compteur.
   const value = locale === 'fr' ? String(stat.value).replace('.', ',') : String(stat.value)
 
-  return (
-    // Pas de `justify-between` : le bloc de texte suit directement le chiffre,
-    // qui a la même hauteur partout — les libellés s'alignent d'une carte à
-    // l'autre, quelle que soit la longueur du détail.
-    <Spotlight className="flex flex-col p-6 sm:p-7">
-      <p className="display text-[clamp(2.4rem,6vw,3.6rem)] tabular-nums">
-        <span className={accent}>{stat.prefix}</span>
-        <span ref={ref} className={accent}>
-          {value}
-        </span>
-        <span className={accent}>{stat.suffix}</span>
+  const number = (
+    <p
+      className={`display tabular-nums ${
+        lead ? 'text-[clamp(4rem,11vw,7.5rem)]' : 'text-[clamp(2.4rem,6vw,3.4rem)]'
+      }`}
+    >
+      <span className={accent}>{stat.prefix}</span>
+      <span ref={ref} className={accent}>
+        {value}
+      </span>
+      <span className={accent}>{stat.suffix}</span>
+    </p>
+  )
+
+  const text = (
+    <div className={lead ? 'max-w-sm' : 'mt-4'}>
+      <p className={`font-semibold leading-snug ${lead ? 'text-[19px]' : 'text-[15px]'} ${accent}`}>
+        {stat.label}
       </p>
-      <div className="mt-4">
-        <p className={`text-[15px] font-semibold leading-snug ${accent}`}>{stat.label}</p>
-        <p className="mt-1.5 text-[13.5px] leading-relaxed text-ink-mute">{stat.detail}</p>
-        {stat.note && (
-          <p className="mt-1.5 text-[13.5px] italic leading-relaxed text-ink-mute">{stat.note}</p>
-        )}
-      </div>
+      <p
+        className={`mt-2 leading-relaxed text-ink-mute ${lead ? 'text-[14.5px]' : 'text-[13.5px]'}`}
+      >
+        {stat.detail}
+      </p>
+      {stat.note && (
+        <p
+          className={`mt-1.5 italic leading-relaxed text-ink-mute ${
+            lead ? 'text-[14.5px]' : 'text-[13.5px]'
+          }`}
+        >
+          {stat.note}
+        </p>
+      )}
+    </div>
+  )
+
+  if (lead) {
+    return (
+      <Spotlight className="flex flex-col justify-between gap-6 p-7 sm:p-9 lg:col-span-3 lg:flex-row lg:items-end">
+        {number}
+        {text}
+      </Spotlight>
+    )
+  }
+
+  // Pas de `justify-between` : le bloc de texte suit directement le chiffre,
+  // qui a la même hauteur partout — les libellés s'alignent d'une carte à
+  // l'autre, quelle que soit la longueur du détail.
+  return (
+    <Spotlight className="flex flex-col p-6 sm:p-7">
+      {number}
+      {text}
     </Spotlight>
   )
 }
@@ -54,14 +92,15 @@ export default function Impact() {
       className="relative mx-auto max-w-6xl scroll-mt-24 px-5 py-24 sm:px-8 sm:py-32"
     >
       <SectionHeader
-        eyebrow={t.sections.impact.eyebrow}
         title={t.sections.impact.title}
         lead={t.sections.impact.lead}
       />
 
-      <div ref={grid} className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {t.stats.map((s) => (
-          <StatCard key={s.label} stat={s} locale={locale} />
+      {/* Le premier chiffre porte la section : il occupe toute la largeur et
+          une échelle à part, les trois autres le soutiennent en dessous. */}
+      <div ref={grid} className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {t.stats.map((s, i) => (
+          <StatCard key={s.label} stat={s} locale={locale} lead={i === 0} />
         ))}
       </div>
 
