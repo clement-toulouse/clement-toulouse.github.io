@@ -18,6 +18,7 @@ export const contentEn: SiteContent = {
     linkedin: 'https://www.linkedin.com/in/clement-toulouse/',
     photo: '/clement.jpg',
     photoWebp: '/clement.webp',
+    photoCutout: '/clement-cutout.webp',
     siteUrl: 'https://clement-toulouse.github.io',
     // Donnée de config (non traduite) : elle n'est lue qu'en français au build.
     goatCounterCode: '',

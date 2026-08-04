@@ -128,6 +128,8 @@ export interface SiteContent {
     linkedin: string
     photo: string
     photoWebp: string
+    /** Portrait détouré (fond transparent), utilisé animé dans le hero. */
+    photoCutout: string
     siteUrl: string
     /**
      * Code GoatCounter (analytics sans cookie, sans consentement requis).

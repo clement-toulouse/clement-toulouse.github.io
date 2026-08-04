@@ -18,6 +18,7 @@ export const contentFr: SiteContent = {
     linkedin: 'https://www.linkedin.com/in/clement-toulouse/',
     photo: '/clement.jpg',
     photoWebp: '/clement.webp',
+    photoCutout: '/clement-cutout.webp',
     siteUrl: 'https://clement-toulouse.github.io',
     // Vide = analytics désactivé. Voir goatCounterCode dans content.types.ts.
     goatCounterCode: '',

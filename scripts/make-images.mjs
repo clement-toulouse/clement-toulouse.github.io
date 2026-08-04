@@ -1,8 +1,16 @@
 /**
- * Génère les images du site à partir de l'original `Profil.png` (racine, non servi) :
+ * Génère les images du site à partir des originaux à la racine (non servis) :
  *
- *   public/clement.webp / .jpg   Portrait du hero, recadré 4:5 sur le sujet
+ *   public/clement.webp / .jpg   Portrait recadré 4:5 sur le sujet (fond noir)
+ *   public/clement-cutout.webp   Portrait détouré, fond transparent, pour le hero
  *   public/og.jpg                Vignette 1200×630 des aperçus de partage
+ *
+ * `Profil.png` est la photo brute ; `Profil-detoure.png` en est la version
+ * détourée. Le détourage vient d'une segmentation ML faite une fois hors
+ * projet (@imgly/background-removal-node) : un seuil sur la luminance ne
+ * suffisait pas, le fond du studio ayant par endroits la même valeur que la
+ * chemise. La dépendance n'est pas embarquée ici — elle télécharge ~40 Mo de
+ * modèles et ne servirait qu'en cas de changement de photo.
  *
  * Rejouer après avoir changé la photo ou le titre :  npm run images
  */
@@ -25,6 +33,16 @@ await portrait
   .clone()
   .jpeg({ quality: 82, progressive: true, mozjpeg: true })
   .toFile(at('public/clement.jpg'))
+
+/* ---------------------------------------------------------- portrait détouré */
+
+// On rogne les bords transparents pour que le sujet remplisse le cadre : le
+// composant peut alors le positionner sans marge morte imprévisible.
+await sharp(at('Profil-detoure.png'))
+  .trim({ threshold: 1 })
+  .resize({ width: 900, withoutEnlargement: true })
+  .webp({ quality: 88, effort: 6, alphaQuality: 100 })
+  .toFile(at('public/clement-cutout.webp'))
 
 /* ------------------------------------------------------------------------ og */
 

@@ -4,7 +4,6 @@ import { useParallax } from '../hooks/useMotion'
 import SplitHeading from './ui/SplitHeading'
 import Magnetic from './ui/Magnetic'
 import Portrait from './ui/Portrait'
-import Tilt from './ui/Tilt'
 import Icon from './ui/Icon'
 
 /** Rend une phrase en colorant en accent iris les mots listés (couleur du site). */
@@ -29,6 +28,8 @@ export default function Hero() {
   const auroraB = useRef<HTMLDivElement>(null)
   const auroraC = useRef<HTMLDivElement>(null)
   const portrait = useRef<HTMLDivElement>(null)
+  const follow = useRef<HTMLDivElement>(null)
+  const halo = useRef<HTMLDivElement>(null)
 
   // Parallaxe : les halos dérivent au scroll et suivent doucement la souris.
   // Une seule boucle rAF, uniquement des transforms (jamais de layout).
@@ -50,6 +51,21 @@ export default function Hero() {
     set(auroraC.current, 90, 30, 20)
     if (portrait.current) {
       portrait.current.style.transform = `translate3d(0, ${p * 70}px, 0)`
+    }
+
+    // Le portrait s'oriente vers le curseur. On n'écrit que des variables CSS :
+    // la feuille de style compose l'inclinaison avec la respiration, sans que
+    // les deux se disputent la propriété `transform`.
+    if (follow.current) {
+      const s = follow.current.style
+      s.setProperty('--tilt-y', String(mouseX * 17))
+      s.setProperty('--tilt-x', String(mouseY * -11))
+      s.setProperty('--shift-x', String(mouseX * 16))
+      s.setProperty('--shift-y', String(mouseY * 10))
+    }
+    // Le halo suit de plus loin : c'est ce décalage qui donne le relief.
+    if (halo.current) {
+      halo.current.style.transform = `translate3d(${mouseX * -26}px, ${mouseY * -16}px, 0)`
     }
   })
 
@@ -151,27 +167,38 @@ export default function Hero() {
           ref={portrait}
           className="relative mx-auto w-full max-w-sm lg:max-w-none print:mx-0 print:max-w-[190px]"
         >
-          <Tilt>
+          <div
+            style={{ '--d': 3 } as React.CSSProperties}
+            className="intro intro-item relative aspect-4/5"
+          >
+            {/* Halo derrière le sujet : il tient lieu de fond maintenant que la
+                photo est détourée, et dérive moins vite qu'elle pour créer de la
+                profondeur. */}
             <div
-              style={{ '--d': 3 } as React.CSSProperties}
-              className="intro intro-item relative aspect-4/5 overflow-hidden rounded-[26px] border border-line-strong"
-            >
-              <Portrait className="portrait-graded scale-105 transition-transform duration-[1.2s] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-110" />
-              {/* Fondu vers le fond, pour intégrer la photo à la page */}
-              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-canvas via-canvas/10 to-transparent" />
-              <div className="pointer-events-none absolute inset-0 mix-blend-soft-light bg-linear-135 from-iris/20 via-transparent to-mint/10" />
+              ref={halo}
+              className="portrait-halo pointer-events-none absolute inset-x-0 bottom-[6%] top-[8%] -z-10"
+              aria-hidden="true"
+            />
 
-              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl border border-line bg-canvas/60 px-4 py-3 backdrop-blur-xl print:hidden">
-                <div>
-                  <p className="text-[13px] font-semibold leading-tight">
-                    {t.hero.locationCard.title}
-                  </p>
-                  <p className="text-[11.5px] text-ink-mute">{t.hero.locationCard.subtitle}</p>
-                </div>
-                <Icon name="mapPin" size={17} className="text-mint" />
+            {/* `portrait-follow` reçoit l'inclinaison depuis la souris (JS),
+                `portrait-alive` porte la respiration (CSS) : deux éléments
+                distincts, sinon les deux transforms s'écraseraient. */}
+            <div ref={follow} className="portrait-follow h-full w-full">
+              <div className="portrait-alive h-full w-full">
+                <Portrait cutout className="portrait-graded" />
               </div>
             </div>
-          </Tilt>
+          </div>
+
+          <div className="pointer-events-none absolute bottom-6 left-0 flex items-center gap-6 rounded-2xl border border-line bg-canvas/70 px-4 py-3 backdrop-blur-xl print:hidden">
+            <div>
+              <p className="text-[13px] font-semibold leading-tight">
+                {t.hero.locationCard.title}
+              </p>
+              <p className="text-[11.5px] text-ink-mute">{t.hero.locationCard.subtitle}</p>
+            </div>
+            <Icon name="mapPin" size={17} className="text-mint" />
+          </div>
 
           {/* Badge flottant */}
           <div className="absolute -left-4 top-8 hidden rounded-2xl border border-line bg-surface/80 px-4 py-3 backdrop-blur-xl lg:block">

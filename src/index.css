@@ -348,10 +348,77 @@ body::after {
   will-change: transform;
 }
 
-/* Étalonnage léger du portrait : la photo est prise en extérieur, un fond très
-   saturé jurerait avec la palette sombre du site. */
+/* ------------------------------------------------------------- portrait vivant
+ *
+ * Le portrait est détouré : il flotte sur la page au lieu d'être encadré. Deux
+ * éléments imbriqués se partagent le mouvement, car une seule et même propriété
+ * `transform` ne peut pas porter à la fois une valeur écrite en JS et une
+ * animation CSS :
+ *   .portrait-follow  → inclinaison vers le curseur (variables posées en JS)
+ *   .portrait-alive   → respiration, en keyframes CSS
+ * ------------------------------------------------------------------------ */
+
+.portrait-follow {
+  --tilt-x: 0;
+  --tilt-y: 0;
+  --shift-x: 0;
+  --shift-y: 0;
+  transform: perspective(1100px) rotateX(calc(var(--tilt-x) * 1deg))
+    rotateY(calc(var(--tilt-y) * 1deg)) translate3d(calc(var(--shift-x) * 1px), calc(var(--shift-y) * 1px), 0);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.portrait-alive {
+  animation: breathe 7s ease-in-out infinite;
+  transform-origin: 50% 92%; /* pivot aux hanches : le buste bouge, pas les pieds */
+  will-change: transform;
+}
+
+/* Respiration : très faible amplitude, sinon l'effet vire au flottement. */
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  35% {
+    transform: translateY(-0.7%) scale(1.008) rotate(0.22deg);
+  }
+  70% {
+    transform: translateY(-0.25%) scale(1.003) rotate(-0.16deg);
+  }
+}
+
+/* Le halo remplace le fond noir supprimé : il détache le sujet de la page. */
+.portrait-halo {
+  background:
+    radial-gradient(58% 46% at 50% 34%, color-mix(in oklab, var(--c-iris) 26%, transparent), transparent 70%),
+    radial-gradient(52% 42% at 62% 72%, color-mix(in oklab, var(--c-mint) 20%, transparent), transparent 72%);
+  filter: blur(46px);
+  opacity: 0.85;
+  will-change: transform;
+}
+
+/* Le sujet se détache mieux avec une ombre portée douce, qui suit sa forme
+   (drop-shadow suit l'alpha, contrairement à box-shadow). Le dégradé du bas
+   évite la coupe nette au bord du recadrage : le buste se dissout dans la page. */
+.portrait-graded {
+  filter: drop-shadow(0 26px 38px color-mix(in oklab, var(--c-ink) 22%, transparent));
+  mask-image: linear-gradient(to bottom, #000 62%, transparent 96%);
+}
+
 [data-theme='dark'] .portrait-graded {
-  filter: saturate(0.88) contrast(1.06) brightness(0.94);
+  filter: saturate(0.88) contrast(1.06) brightness(0.94)
+    drop-shadow(0 26px 38px rgb(0 0 0 / 0.5));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portrait-alive {
+    animation: none;
+  }
+  .portrait-follow {
+    transform: none;
+  }
 }
 
 /* Sur petit écran les halos se chevauchent et ternissent le fond. */
