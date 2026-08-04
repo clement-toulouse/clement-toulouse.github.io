@@ -15,6 +15,9 @@ dist-ssr
 # CV généré (contient le téléphone perso, et ce dépôt est public)
 cv
 
+# Skills installés (outillage local, réinstallable : npx impeccable install)
+.claude/skills
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
