@@ -28,3 +28,6 @@ cv
 *.njsproj
 *.sln
 *.sw?
+
+# Captures et données de travail du skill impeccable
+.impeccable

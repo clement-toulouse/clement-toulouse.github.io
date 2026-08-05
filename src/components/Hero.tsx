@@ -24,15 +24,11 @@ function highlight(text: string, words: string[]) {
 export default function Hero() {
   const { t } = useLanguage()
   const root = useRef<HTMLElement>(null)
-  const auroraA = useRef<HTMLDivElement>(null)
-  const auroraB = useRef<HTMLDivElement>(null)
-  const auroraC = useRef<HTMLDivElement>(null)
   const portrait = useRef<HTMLDivElement>(null)
   const follow = useRef<HTMLDivElement>(null)
-  const halo = useRef<HTMLDivElement>(null)
 
-  // Parallaxe : les halos dérivent au scroll et suivent doucement la souris.
-  // Une seule boucle rAF, uniquement des transforms (jamais de layout).
+  // Le portrait dérive au scroll et s'oriente vers la souris. Une seule boucle
+  // rAF, uniquement des transforms et des variables CSS (jamais de layout).
   useParallax(({ scrollY, mouseX, mouseY }) => {
     const el = root.current
     if (!el) return
@@ -41,14 +37,6 @@ export default function Hero() {
     const p = Math.min(scrollY / h, 1)
     if (p >= 1) return // hero sorti du viewport : on arrête d'écrire
 
-    const set = (node: HTMLElement | null, drift: number, mx: number, my: number) => {
-      if (!node) return
-      node.style.transform = `translate3d(${mouseX * mx}px, ${p * drift + mouseY * my}px, 0)`
-    }
-
-    set(auroraA.current, 190, 70, 50)
-    set(auroraB.current, -120, -50, -35)
-    set(auroraC.current, 90, 30, 20)
     if (portrait.current) {
       portrait.current.style.transform = `translate3d(0, ${p * 70}px, 0)`
     }
@@ -63,10 +51,6 @@ export default function Hero() {
       s.setProperty('--shift-x', String(mouseX * 16))
       s.setProperty('--shift-y', String(mouseY * 10))
     }
-    // Le halo suit de plus loin : c'est ce décalage qui donne le relief.
-    if (halo.current) {
-      halo.current.style.transform = `translate3d(${mouseX * -26}px, ${mouseY * -16}px, 0)`
-    }
   })
 
   return (
@@ -75,47 +59,26 @@ export default function Hero() {
       id="accueil"
       className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-20"
     >
-      {/* Décor */}
-      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
-        <div
-          ref={auroraA}
-          className="aurora -left-20 top-0 h-[38rem] w-[38rem]"
-          style={{ background: 'radial-gradient(circle, var(--c-iris), transparent 65%)' }}
-        />
-        <div
-          ref={auroraB}
-          className="aurora right-0 top-40 h-[32rem] w-[32rem]"
-          style={{ background: 'radial-gradient(circle, var(--c-mint), transparent 65%)' }}
-        />
-        <div
-          ref={auroraC}
-          className="aurora left-1/3 bottom-0 h-[26rem] w-[26rem] opacity-40"
-          style={{ background: 'radial-gradient(circle, var(--c-ember), transparent 68%)' }}
-        />
-      </div>
 
       <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.25fr_0.75fr] lg:gap-16">
         {/* Colonne texte */}
         <div className="intro">
-          <div
-            style={{ '--d': 0 } as React.CSSProperties}
-            className="intro-item mb-7 inline-flex items-center gap-2.5 rounded-full border border-line bg-surface/50 py-1.5 pl-2 pr-4 backdrop-blur-xl"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint opacity-70" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
-            </span>
-            <span className="text-[12.5px] font-medium text-ink-soft">
-              {t.profile.role} · {t.profile.company}
-            </span>
-          </div>
-
           <SplitHeading
             as="h1"
             text={`${t.profile.firstName} ${t.profile.lastName}`}
             delay={0.25}
-            className="display text-[clamp(2.4rem,8.4vw,5.6rem)] leading-[0.98] tracking-[-0.045em]"
+            className="display text-[clamp(2.4rem,8.4vw,5.6rem)] leading-[0.98] tracking-[-0.04em]"
           />
+
+          {/* Le rôle se pose SOUS le nom : au-dessus, il redevenait l'eyebrow
+              que ce site refuse — et une pastille bordée à effet de verre
+              par-dessus. Même traitement `meta` que les en-têtes de section. */}
+          <p
+            style={{ '--d': 1 } as React.CSSProperties}
+            className="intro-item mt-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-ink-mute"
+          >
+            {t.profile.role} · {t.profile.company}
+          </p>
 
           <p
             style={{ '--d': 2 } as React.CSSProperties}
@@ -135,7 +98,7 @@ export default function Hero() {
             <Magnetic strength={0.3}>
               <a
                 href="#impact"
-                className="group flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_0_40px_-8px] hover:shadow-iris"
+                className="group flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_14px_30px_-12px] hover:shadow-iris"
               >
                 {t.hero.ctaImpact}
                 <Icon
@@ -169,14 +132,6 @@ export default function Hero() {
             style={{ '--d': 3 } as React.CSSProperties}
             className="intro intro-item relative aspect-4/5"
           >
-            {/* Halo derrière le sujet : il tient lieu de fond maintenant que la
-                photo est détourée, et dérive moins vite qu'elle pour créer de la
-                profondeur. */}
-            <div
-              ref={halo}
-              className="portrait-halo pointer-events-none absolute inset-x-0 bottom-[6%] top-[8%] -z-10"
-              aria-hidden="true"
-            />
 
             {/* `portrait-follow` reçoit l'inclinaison depuis la souris (JS),
                 `portrait-alive` porte la respiration (CSS) : deux éléments

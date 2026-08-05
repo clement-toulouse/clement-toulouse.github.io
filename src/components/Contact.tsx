@@ -24,11 +24,6 @@ export default function Contact() {
       id="contact"
       className="relative scroll-mt-24 overflow-hidden border-t border-line pt-24 sm:pt-32"
     >
-      <div
-        className="aurora left-1/2 -bottom-40 h-[34rem] w-[34rem] -translate-x-1/2"
-        style={{ background: 'radial-gradient(circle, var(--c-iris), transparent 68%)' }}
-        aria-hidden="true"
-      />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <div className="text-center">
@@ -45,7 +40,7 @@ export default function Contact() {
             <Magnetic strength={0.35}>
               <a
                 href={`mailto:${t.profile.email}`}
-                className="group inline-flex cursor-pointer items-center gap-3 rounded-full bg-ink px-8 py-4.5 text-[15px] font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_0_60px_-10px] hover:shadow-iris"
+                className="group inline-flex cursor-pointer items-center gap-3 rounded-full bg-ink px-8 py-4.5 text-[15px] font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_16px_34px_-14px] hover:shadow-iris"
               >
                 {t.profile.email}
                 <Icon

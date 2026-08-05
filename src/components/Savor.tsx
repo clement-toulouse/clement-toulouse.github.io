@@ -24,11 +24,6 @@ export default function Savor() {
       id="projet-perso"
       className="relative scroll-mt-24 overflow-hidden border-y border-line py-24 sm:py-32"
     >
-      <div
-        className="aurora -right-20 top-10 h-[30rem] w-[30rem] opacity-30"
-        style={{ background: 'radial-gradient(circle, var(--c-ember), transparent 68%)' }}
-        aria-hidden="true"
-      />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader
@@ -66,7 +61,7 @@ export default function Savor() {
                     href={t.savor.url}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="group mt-7 inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_0_40px_-8px] hover:shadow-ember"
+                    className="group mt-7 inline-flex cursor-pointer items-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-sm font-semibold text-canvas transition-shadow duration-300 hover:shadow-[0_14px_30px_-12px] hover:shadow-ember"
                   >
                     {t.savor.ctaLabel}
                     <Icon
