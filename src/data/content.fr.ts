@@ -359,12 +359,7 @@ export const contentFr: SiteContent = {
     ],
     stack: ['PWA', 'Next.js', "IA d'extraction", 'Supabase', 'Vercel'],
     ctaLabel: 'Tester Savor en ligne',
-    mockup: {
-      title: 'Bowl méditerranéen',
-      desc: 'Pois chiches, feta, tomates confites, citron',
-      time: '20 min',
-      difficulty: 'Facile',
-    },
+    screenshotAlt: "Capture de l'application Savor en ligne : page d'accueil et extraction de recettes",
   },
 
   skills: [

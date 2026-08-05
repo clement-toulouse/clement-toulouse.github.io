@@ -12,7 +12,7 @@ const skillIcon: Record<'product' | 'leadership' | 'ai', IconName> = {
 
 export default function Profil() {
   const { t } = useLanguage()
-  const grid = useReveal<HTMLDivElement>()
+  const grid = useReveal<HTMLDListElement>()
 
   return (
     <section
@@ -24,25 +24,24 @@ export default function Profil() {
         lead={t.sections.profil.lead}
       />
 
-      <div ref={grid} className="mt-14 grid grid-cols-1 gap-4 lg:grid-cols-3">
+      {/* Liste de définition, pas des cartes : le gabarit icône + titre + texte
+          servait déjà de structure ailleurs sur la page. Ici le libellé tient
+          la colonne de gauche et les compétences se lisent en continu. */}
+      <dl ref={grid} className="mt-14 divide-y divide-line border-y border-line">
         {t.skills.map((s) => (
-          <Spotlight key={s.key} className="p-7">
-            <div className="flex items-center gap-3">
-              <span className="grid h-9 w-9 place-items-center rounded-xl border border-line bg-surface-2 text-iris-soft">
-                <Icon name={skillIcon[s.key]} size={17} />
-              </span>
-              <h3 className="text-[15px] font-semibold">{s.group}</h3>
-            </div>
-            <ul className="mt-5 flex flex-wrap gap-2">
+          <div key={s.key} className="grid gap-x-8 gap-y-3 py-7 sm:grid-cols-[minmax(9rem,1fr)_3fr]">
+            <dt className="flex items-center gap-2.5 text-[15px] font-semibold">
+              <Icon name={skillIcon[s.key]} size={16} className="shrink-0 text-iris-soft" />
+              {s.group}
+            </dt>
+            <dd className="flex flex-wrap gap-x-5 gap-y-2 text-[15px] text-ink-soft">
               {s.items.map((i) => (
-                <li key={i} className="chip">
-                  {i}
-                </li>
+                <span key={i}>{i}</span>
               ))}
-            </ul>
-          </Spotlight>
+            </dd>
+          </div>
         ))}
-      </div>
+      </dl>
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
         {/* Formation */}
