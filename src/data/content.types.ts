@@ -186,8 +186,8 @@ export interface SiteContent {
     features: SavorFeature[]
     stack: string[]
     ctaLabel: string
-    /** Recette factice affichée dans le mockup produit — illustration, pas une vraie capture. */
-    mockup: { title: string; desc: string; time: string; difficulty: string }
+    /** Alt de la capture réelle de l'app en ligne. */
+    screenshotAlt: string
   }
   skills: SkillGroup[]
   educationLabel: string

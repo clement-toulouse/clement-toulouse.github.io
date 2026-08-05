@@ -38,11 +38,31 @@ await portrait
 
 // On rogne les bords transparents pour que le sujet remplisse le cadre : le
 // composant peut alors le positionner sans marge morte imprévisible.
-await sharp(at('Profil-detoure.png'))
+const trimmed = await sharp(at('Profil-detoure.png'))
   .trim({ threshold: 1 })
   .resize({ width: 900, withoutEnlargement: true })
-  .webp({ quality: 88, effort: 6, alphaQuality: 100 })
-  .toFile(at('public/clement-cutout.webp'))
+  .ensureAlpha()
+  .raw()
+  .toBuffer({ resolveWithObject: true })
+
+// Décontamination du bord. La segmentation laisse des pixels semi-transparents
+// dont la couleur contient encore le fond noir du studio : sur une page claire
+// ils forment un liseré gris. Pour un pixel d'opacité a, la couleur observée
+// vaut `a·F + (1-a)·noir`, donc la vraie couleur du sujet est `C / a`.
+{
+  const { data, info } = trimmed
+  for (let i = 0; i < info.width * info.height; i++) {
+    const a = data[i * 4 + 3]
+    if (a === 0 || a === 255) continue
+    const k = 255 / a
+    for (let c = 0; c < 3; c++) {
+      data[i * 4 + c] = Math.min(255, Math.round(data[i * 4 + c] * k))
+    }
+  }
+  await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
+    .webp({ quality: 88, effort: 6, alphaQuality: 100 })
+    .toFile(at('public/clement-cutout.webp'))
+}
 
 /* ------------------------------------------------------------------------ og */
 

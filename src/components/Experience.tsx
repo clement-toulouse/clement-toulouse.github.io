@@ -101,9 +101,14 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
               ))}
             </div>
 
+            {/* Ni encadré ni fond : la carte de l'expérience est déjà un
+                conteneur, en imbriquer un second dedans faisait trois niveaux.
+                Un filet et de l'espace suffisent à séparer. */}
             {xp.responsibilities && (
-              <div className="mt-8 rounded-2xl border border-line bg-surface-2/50 p-5 sm:p-6">
-                <p className="eyebrow !text-[0.66rem]">{t.experience.responsibilitiesLabel}</p>
+              <div className="mt-8 border-t border-line pt-6">
+                <h4 className="text-[13.5px] font-semibold text-ink">
+                  {t.experience.responsibilitiesLabel}
+                </h4>
                 <ul className="mt-4 space-y-2.5">
                   {xp.responsibilities.map((r) => (
                     <li key={r} className="flex gap-3 text-[14px] leading-snug text-ink-soft">
@@ -119,7 +124,7 @@ function ExperienceCard({ xp, t }: { xp: ExperienceItem; t: SiteContent }) {
                 carte orpheline : elle occupe alors toute la largeur. */}
             <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:[&>*:last-child:nth-child(odd)]:col-span-2">
               {xp.wins.map((win) => (
-                <div key={win.headline} className="rounded-2xl border border-line bg-canvas/40 p-5">
+                <div key={win.headline} className="border-t border-line pt-5">
                   <div className="flex items-start gap-2.5">
                     <Icon name="trending" size={16} className="mt-1 shrink-0 text-mint" />
                     <p className="text-[14.5px] font-semibold leading-snug">{win.headline}</p>

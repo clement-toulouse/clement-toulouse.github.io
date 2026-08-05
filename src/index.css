@@ -346,7 +346,7 @@ body::after {
    évite la coupe nette au bord du recadrage : le buste se dissout dans la page. */
 .portrait-graded {
   filter: drop-shadow(0 26px 38px color-mix(in oklab, var(--c-ink) 22%, transparent));
-  mask-image: linear-gradient(to bottom, #000 62%, transparent 96%);
+  mask-image: linear-gradient(to bottom, #000 88%, transparent 100%);
 }
 
 [data-theme='dark'] .portrait-graded {
