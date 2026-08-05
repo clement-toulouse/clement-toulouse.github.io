@@ -28,11 +28,6 @@ export default function AiSection() {
       id="ia"
       className="relative scroll-mt-24 overflow-hidden border-y border-line py-24 sm:py-32"
     >
-      <div
-        className="aurora left-1/2 top-1/4 h-[30rem] w-[30rem] -translate-x-1/2 opacity-25"
-        style={{ background: 'radial-gradient(circle, var(--c-iris), transparent 65%)' }}
-        aria-hidden="true"
-      />
 
       <div className="relative mx-auto max-w-6xl px-5 sm:px-8">
         <SectionHeader

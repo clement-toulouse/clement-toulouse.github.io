@@ -81,16 +81,9 @@ export default function Profil() {
                   <span className="text-[15px] font-semibold">{l.name}</span>
                   <span className="text-[12.5px] text-ink-mute">{l.level}</span>
                 </p>
-                {/* La valeur est aussi donnée en texte : la barre n'est pas le seul porteur d'info */}
-                <div
-                  className="mt-2.5 h-1 overflow-hidden rounded-full bg-surface-2"
-                  role="presentation"
-                >
-                  <div
-                    className="h-full rounded-full bg-linear-to-r from-iris to-mint transition-[width] duration-1000"
-                    style={{ width: `${l.pct}%` }}
-                  />
-                </div>
+                {/* Pas de jauge : le niveau est déjà écrit, et une barre
+                    inventerait une précision que « Langue maternelle » ou
+                    « Scolaire · A2 » n'ont jamais eue. */}
               </div>
             ))}
           </div>

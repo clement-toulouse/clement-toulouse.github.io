@@ -166,36 +166,29 @@ body::after {
  * moteur d'animation embarqué, et rien à jouer si le JS ne s'exécute pas.
  * ------------------------------------------------------------------------ */
 
-/* Reveal caractère par caractère : chaque .char porte son index dans --c. */
+/* Les révélations partent d'un état DÉJÀ LISIBLE : elles se posent, elles
+   n'apparaissent pas. Le contenu reste donc lisible si le JS ne s'exécute
+   jamais, et aucune section ne rejoue la même entrée spectaculaire. */
 .split .char {
   display: inline-block;
-  opacity: 0;
-  transform: translateY(0.9em) rotateX(-55deg);
-  will-change: transform, opacity;
+  opacity: 0.28;
+  will-change: opacity;
 }
 
 .split.is-in .char {
   opacity: 1;
-  transform: none;
-  transition:
-    opacity 0.7s var(--ease-expo),
-    transform 0.7s var(--ease-expo);
-  transition-delay: calc(var(--c) * 18ms);
+  transition: opacity 0.5s var(--ease-expo);
+  transition-delay: calc(var(--c) * 11ms);
 }
 
-/* Reveal générique au scroll, décalé par --i sur les enfants d'une grille. */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
+  opacity: 0.42;
 }
 
 .reveal.is-in {
   opacity: 1;
-  transform: none;
-  transition:
-    opacity 0.6s var(--ease-expo),
-    transform 0.6s var(--ease-expo);
-  transition-delay: calc(var(--i, 0) * 70ms);
+  transition: opacity 0.5s var(--ease-expo);
+  transition-delay: calc(var(--i, 0) * 55ms);
 }
 
 /* La ligne de temps du parcours se dessine au fil du scroll. Amélioration
@@ -307,15 +300,6 @@ body::after {
   white-space: nowrap;
 }
 
-.aurora {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: var(--glow);
-  pointer-events: none;
-  will-change: transform;
-}
-
 /* ------------------------------------------------------------- portrait vivant
  *
  * Le portrait est détouré : il flotte sur la page au lieu d'être encadré. Deux
@@ -357,16 +341,6 @@ body::after {
   }
 }
 
-/* Le halo remplace le fond noir supprimé : il détache le sujet de la page. */
-.portrait-halo {
-  background:
-    radial-gradient(58% 46% at 50% 34%, color-mix(in oklab, var(--c-iris) 26%, transparent), transparent 70%),
-    radial-gradient(52% 42% at 62% 72%, color-mix(in oklab, var(--c-mint) 20%, transparent), transparent 72%);
-  filter: blur(46px);
-  opacity: 0.85;
-  will-change: transform;
-}
-
 /* Le sujet se détache mieux avec une ombre portée douce, qui suit sa forme
    (drop-shadow suit l'alpha, contrairement à box-shadow). Le dégradé du bas
    évite la coupe nette au bord du recadrage : le buste se dissout dans la page. */
@@ -387,21 +361,6 @@ body::after {
   .portrait-follow {
     transform: none;
   }
-}
-
-/* Sur petit écran les halos se chevauchent et ternissent le fond. */
-@media (max-width: 640px) {
-  .aurora {
-    opacity: calc(var(--glow) * 0.55);
-    filter: blur(70px);
-  }
-}
-
-/* Bascule des icônes de thème, sans état React : évite tout écart entre le
-   HTML prérendu et l'hydratation. */
-.only-light,
-[data-theme='light'] .only-dark {
-  display: none;
 }
 
 [data-theme='light'] .only-light {
@@ -514,7 +473,6 @@ body::after {
   /* Décor, navigation et repères d'interaction : sans objet sur papier. */
   body::after,
   header,
-  .aurora,
   .marquee,
   .timeline-draw,
   [aria-hidden='true'] svg,
