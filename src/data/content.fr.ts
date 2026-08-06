@@ -334,7 +334,7 @@ export const contentFr: SiteContent = {
   savor: {
     url: 'https://savor-nine.vercel.app/',
     pitch: 'Conçue, designée et codée, de A à Z.',
-    body: "Une vraie PWA en production, que je fais évoluer au fil des idées. Du cadrage au déploiement, chaque décision produit, c'est moi qui l'ai prise, seul.",
+    body: 'Une vraie PWA en production, que je fais évoluer au fil des idées du cadrage au déploiement.',
     features: [
       {
         key: 'extract',
