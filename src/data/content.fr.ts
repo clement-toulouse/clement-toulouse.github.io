@@ -13,7 +13,7 @@ export const contentFr: SiteContent = {
     lastName: 'Toulouse',
     role: 'Head of Product',
     company: 'Groupe Barrière',
-    location: 'Paris',
+    location: 'Saint-Rémy-lès-Chevreuse (78)',
     email: 'ctoulous@gmail.com',
     linkedin: 'https://www.linkedin.com/in/clement-toulouse/',
     photo: '/clement.jpg',
@@ -23,17 +23,17 @@ export const contentFr: SiteContent = {
     // Analytics GoatCounter (dashboard : https://clement-toulouse.goatcounter.com).
     goatCounterCode: 'clement-toulouse',
     tagline: [
-      "9 ans à construire des produits B2B et B2C qui font leurs preuves en production.",
-      "Je transforme une vision en delivery, et le delivery en chiffres.",
+      "10 ans à construire des produits B2B et B2C qui font leurs preuves en production.",
+      "Je transforme une vision en delivery, et le delivery en résultats mesurés.",
     ],
-    taglineHighlight: ['vision', 'delivery', 'chiffres'],
+    taglineHighlight: ['vision', 'delivery', 'résultats mesurés'],
   },
 
   hero: {
     ctaImpact: 'Voir mon impact',
     ctaLinkedin: 'Voir mon LinkedIn',
-    locationCard: { title: 'Paris', subtitle: 'Ouvert aux échanges' },
-    badge: { value: '9+', label: 'ans de produit' },
+    locationCard: { title: 'Saint-Rémy-lès-Chevreuse (78)', subtitle: 'Ouvert aux échanges' },
+    badge: { value: '10', label: 'ans de produit' },
   },
 
   nav: {
@@ -77,11 +77,11 @@ export const contentFr: SiteContent = {
       lead: "Une roadmap qui ne se mesure pas n'est qu'une liste d'envies. Voici ce que mes équipes et moi avons livré chez Barrière ces trois dernières années, en chiffres.",
     },
     ia: {
-      title: "L'IA dans le process et le delivery, pas à côté",
-      lead: "Deux usages concrets, pas une couche marketing posée sur un produit : je code et prototype avec l'IA pour trancher sur du réel, et j'automatise le travail répétitif des équipes produit pour leur rendre du temps de décision.",
+      title: "Faire de l'IA un réflexe d'équipe",
+      lead: "Des agents IA déployés pour le produit, le support, le design et le marketing produit, qui font gagner 2 jours par PM chaque semaine. Et je pratique ce que je déploie : je code et prototype avec l'IA pour trancher sur du réel.",
     },
     parcours: {
-      title: 'Neuf ans, trois maisons',
+      title: 'Dix ans, trois maisons',
       lead: "Du conseil à la start-up en forte croissance, puis à un grand groupe : à chaque étape, plus de périmètre et plus de responsabilité sur les résultats.",
     },
     savor: {
@@ -90,7 +90,7 @@ export const contentFr: SiteContent = {
     },
     profil: {
       title: "Ce que j'apporte",
-      lead: "9 ans à cadrer, prioriser et livrer, avec toujours la même exigence : une vision claire, une équipe qui sait pourquoi elle avance, et un résultat qui se mesure.",
+      lead: "10 ans à cadrer, prioriser et livrer, avec toujours la même exigence : une vision claire, une équipe qui sait pourquoi elle avance, et un résultat qui se mesure.",
     },
   },
 
@@ -115,12 +115,11 @@ export const contentFr: SiteContent = {
       accent: 'mint',
     },
     {
-      value: 30,
-      prefix: '-',
-      suffix: '%',
-      label: 'de demandes au support',
-      detail: "Grâce au chatbot IA interne, qui répond aux questions de connaissance des collaborateurs sur les outils digitaux casino",
-      note: '95 % de réponses justes, 30 utilisateurs quotidiens',
+      value: 2,
+      suffix: ' j',
+      label: 'gagnés par PM chaque semaine',
+      detail: "Grâce aux agents IA (Dust, Gemini, Claude) déployés pour le produit, le support, le design et le marketing produit",
+      note: 'Tous agents confondus, avec un gain de qualité',
       accent: 'ember',
     },
     {
@@ -149,15 +148,16 @@ export const contentFr: SiteContent = {
       span: 'lg:col-span-3 lg:row-span-2',
     },
     {
-      title: 'Automatiser le travail produit',
-      body: "Je crée et déploie des agents IA (sur Dust, Gemini) pour que les Product Managers gardent leur énergie pour les décisions. Je m'assure de leur bonne adoption, valeur ajoutée et usage.",
+      title: 'Faire adopter l\'IA à toutes les équipes',
+      body: "Je crée et déploie des agents IA (sur Dust, Gemini, Claude) pour le produit, le support, le design et le marketing produit, afin que chacun garde son énergie pour les décisions. Je m'assure de leur bonne adoption, valeur ajoutée et usage.",
       points: [
-        "Assistant Discovery : benchmark et synthèse d'interviews utilisateurs",
-        'Spécification fonctionnelle automatisée',
-        'Release notes générées automatiquement',
-        'Agent de rédaction de User Stories, spécialisé par produit',
+        "Produit : assistant Discovery (benchmark, synthèse d'interviews), User Stories par produit, spécifications fonctionnelles",
+        'Support : récupération d\'insights et documentation fonctionnelle',
+        'Design : cadrage des sujets design',
+        'Marketing produit : release notes, contenus PMM et motion design',
       ],
-      logos: ['dust', 'gemini'],
+      proof: 'Résultat : 2 jours gagnés par PM chaque semaine, tous agents confondus, avec un gain de qualité.',
+      logos: ['dust', 'gemini', 'claude'],
       accent: 'ember',
       span: 'lg:col-span-3 lg:row-span-2',
     },
@@ -180,12 +180,12 @@ export const contentFr: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "Je pilote l'ensemble des produits digitaux du pôle Casino du groupe en encadrant une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications.",
+              "Je pilote l'ensemble des produits digitaux du pôle Casino du groupe en encadrant une équipe de 4 Product Managers et 2 testeurs qualité (QA), garante de la cohérence et de l'expérience sur toutes nos applications. Je pilote aussi l'adoption de l'IA dans les équipes du pôle.",
             summaryPoints: [
               "Barrière Play (l'application mobile client pour gérer leur fidélité et utiliser un wallet digital en casino)",
               "CZAM (l'outil collaborateur unique en casino pour la gestion des entrées et le pilotage opérationnel de la salle)",
               'Parcours d\'inscription et du compte client commun entre nos différentes plateformes',
-              "Développement de l'activité de jeu en ligne du groupe encore en construction et confidentiel",
+              "Préparation du casino et du poker en ligne : une plateforme prête à être déployée à l'ouverture des casinos en ligne en France",
             ],
           },
         ],
@@ -204,6 +204,14 @@ export const contentFr: SiteContent = {
             ],
           },
           {
+            headline: "Adoption de l'IA dans les équipes produit, support, design et marketing produit",
+            metrics: [
+              'Agents IA (Dust, Gemini, Claude) : release notes, PMM et motion design, documentation fonctionnelle, insights, User Stories, cadrage design et discovery',
+              '2 jours gagnés par PM chaque semaine, tous agents confondus',
+              'Un gain de qualité en plus du gain de temps',
+            ],
+          },
+          {
             headline: "Déploiement en production d'un chatbot IA interne pour les collaborateurs opérationnels Casino",
             metrics: [
               '95 % de réponses justes',
@@ -217,7 +225,7 @@ export const contentFr: SiteContent = {
               'Lancement de CZAM V2, bascule du client lourd historique du groupe vers une web app',
             metrics: [
               '4,2/5 de satisfaction collaborateur',
-              'Adoption par les 27 casinos français du groupe, soit +300 utilisateurs',
+              'Adoption par les 27 casinos français du groupe, soit 300+ utilisateurs',
               'Meilleur suivi et accompagnement des joueurs dans le cadre du jeu responsable',
               "Pilotage des performances de la salle en temps réel, avec un outil d'aide à l'optimisation",
             ],
@@ -225,6 +233,7 @@ export const contentFr: SiteContent = {
           {
             headline: "Développement et mise en production d'une stratégie de parcours d'inscription et compte client commun à tous nos outils",
             metrics: [
+              'Taux de conversion de 50 % (+10 %)',
               "Jusqu'alors développé individuellement sur chaque produit",
               'Réduit les efforts de maintenance',
               'Élimine les écarts fonctionnels entre les outils',
@@ -320,7 +329,7 @@ export const contentFr: SiteContent = {
         wins: [
           {
             headline: 'En agence (1 an)',
-            metrics: ['Conception et pilotage de projets web pour Veolia et Gerep'],
+            metrics: ['Conception et pilotage de 3 projets web pour Veolia, Gerep et Scor'],
           },
           {
             headline: 'Intégré aux équipes de GRDF (1 an)',
@@ -406,14 +415,14 @@ export const contentFr: SiteContent = {
       period: '2012 · 2017',
     },
     {
-      title: 'GenAI for Product Team',
-      detail: 'AI Discipline · certification',
-      period: 'Sept. 2025',
-    },
-    {
       title: 'Claude Code pour les Product Managers',
       detail: 'AI Discipline · certification',
       period: 'Juil. 2026',
+    },
+    {
+      title: 'GenAI for Product Team',
+      detail: 'AI Discipline · certification',
+      period: 'Sept. 2025',
     },
   ],
 
@@ -431,6 +440,7 @@ export const contentFr: SiteContent = {
     { name: 'Veolia', slug: 'veolia' },
     { name: 'GRDF', slug: 'grdf' },
     { name: 'Gerep', slug: 'gerep' },
+    { name: 'Scor', slug: 'scor' },
   ],
 
   contact: {

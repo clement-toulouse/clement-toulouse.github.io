@@ -13,7 +13,7 @@ export const contentEn: SiteContent = {
     lastName: 'Toulouse',
     role: 'Head of Product',
     company: 'Groupe Barrière',
-    location: 'Paris',
+    location: 'Saint-Rémy-lès-Chevreuse (78)',
     email: 'ctoulous@gmail.com',
     linkedin: 'https://www.linkedin.com/in/clement-toulouse/',
     photo: '/clement.jpg',
@@ -23,17 +23,17 @@ export const contentEn: SiteContent = {
     // Donnée de config (non traduite) : elle n'est lue qu'en français au build.
     goatCounterCode: '',
     tagline: [
-      '9 years building B2B and B2C products that prove themselves in production.',
-      'I turn vision into delivery, and delivery into numbers.',
+      '10 years building B2B and B2C products that prove themselves in production.',
+      'I turn vision into delivery, and delivery into measurable results.',
     ],
-    taglineHighlight: ['vision', 'delivery', 'numbers'],
+    taglineHighlight: ['vision', 'delivery', 'measurable results'],
   },
 
   hero: {
     ctaImpact: 'See my impact',
     ctaLinkedin: 'View my LinkedIn',
-    locationCard: { title: 'Paris', subtitle: 'Open to a conversation' },
-    badge: { value: '9+', label: 'years in product' },
+    locationCard: { title: 'Saint-Rémy-lès-Chevreuse (78)', subtitle: 'Open to a conversation' },
+    badge: { value: '10', label: 'years in product' },
   },
 
   nav: {
@@ -77,11 +77,11 @@ export const contentEn: SiteContent = {
       lead: "A roadmap you can't measure is just a wish list. Here's what my teams and I have shipped at Barrière over the last three years, in numbers.",
     },
     ia: {
-      title: 'AI in the process and the delivery, not bolted on',
-      lead: 'Two concrete uses, not a marketing layer on top of a product: I code and prototype with AI to decide on something real, and I automate the repetitive parts of product work to give my teams back time for decisions.',
+      title: 'Making AI a team reflex',
+      lead: 'AI agents deployed for product, support, design, and product marketing, saving each PM 2 days every week. And I practice what I deploy: I code and prototype with AI to decide on something real.',
     },
     parcours: {
-      title: 'Nine years, three companies',
+      title: 'Ten years, three companies',
       lead: 'From consulting to a fast-growing start-up, then to a large group: at each step, more scope and more accountability for the results.',
     },
     savor: {
@@ -90,7 +90,7 @@ export const contentEn: SiteContent = {
     },
     profil: {
       title: 'What I bring',
-      lead: "9 years scoping, prioritizing, and shipping, with the same standard every time: a clear vision, a team that knows why it's moving, and a result you can measure.",
+      lead: "10 years scoping, prioritizing, and shipping, with the same standard every time: a clear vision, a team that knows why it's moving, and a result you can measure.",
     },
   },
 
@@ -115,12 +115,11 @@ export const contentEn: SiteContent = {
       accent: 'mint',
     },
     {
-      value: 30,
-      prefix: '-',
-      suffix: '%',
-      label: 'in support requests',
-      detail: 'Thanks to the internal AI chatbot answering staff knowledge questions about casino digital tools',
-      note: '95% accurate answers, 30 daily users',
+      value: 2,
+      suffix: ' days',
+      label: 'saved per PM every week',
+      detail: 'Thanks to AI agents (Dust, Gemini, Claude) deployed for product, support, design, and product marketing',
+      note: 'Across all agents, with a quality gain on top',
       accent: 'ember',
     },
     {
@@ -149,15 +148,16 @@ export const contentEn: SiteContent = {
       span: 'lg:col-span-3 lg:row-span-2',
     },
     {
-      title: 'Automating product work',
-      body: 'I build and deploy AI agents (on Dust, Gemini) so Product Managers can save their energy for decisions. I make sure they are properly adopted, add real value, and are actually used.',
+      title: 'Getting every team to adopt AI',
+      body: 'I build and deploy AI agents (on Dust, Gemini, Claude) for product, support, design, and product marketing, so everyone can save their energy for decisions. I make sure they are properly adopted, add real value, and are actually used.',
       points: [
-        'Discovery Assistant: benchmark and user interview synthesis',
-        'Automated functional specifications',
-        'Automatically generated release notes',
-        'User story writing agent, specialized per product',
+        'Product: Discovery Assistant (benchmark, interview synthesis), per-product user stories, functional specs',
+        'Support: insight gathering and functional documentation',
+        'Design: scoping design work',
+        'Product marketing: release notes, PMM content, and motion design',
       ],
-      logos: ['dust', 'gemini'],
+      proof: 'The result: 2 days saved per PM every week, across all agents, with a quality gain on top.',
+      logos: ['dust', 'gemini', 'claude'],
       accent: 'ember',
       span: 'lg:col-span-3 lg:row-span-2',
     },
@@ -180,12 +180,12 @@ export const contentEn: SiteContent = {
           {
             title: 'Head of Product Casino',
             summary:
-              "I own every digital product of the group's casino division, leading a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications.",
+              "I own every digital product of the group's casino division, leading a team of 4 Product Managers and 2 QA testers, responsible for consistency and experience across all our applications. I also drive AI adoption across the division's teams.",
             summaryPoints: [
               "Barrière Play (the customer mobile app to manage their loyalty and use an in-venue digital wallet)",
               'CZAM (the single in-venue staff tool for managing entries and running floor operations)',
               "Sign-up journey and customer account shared across our different platforms",
-              "Development of the group's online gambling business, still in build and confidential",
+              "Online casino and poker readiness: a platform ready to deploy as soon as online casinos open up in France",
             ],
           },
         ],
@@ -204,6 +204,14 @@ export const contentEn: SiteContent = {
             ],
           },
           {
+            headline: 'AI adoption across product, support, design, and product marketing teams',
+            metrics: [
+              'AI agents (Dust, Gemini, Claude): release notes, PMM and motion design, functional documentation, insights, user stories, design scoping, and discovery',
+              '2 days saved per PM every week, across all agents',
+              'A quality gain on top of the time saved',
+            ],
+          },
+          {
             headline: 'Production rollout of an internal AI chatbot for Casino operations staff',
             metrics: [
               '95% accurate answers',
@@ -216,7 +224,7 @@ export const contentEn: SiteContent = {
             headline: "Launch of CZAM V2, moving the group's legacy desktop client to a web app",
             metrics: [
               '4.2/5 staff satisfaction',
-              'Adopted by all 27 French casinos in the group, +300 users',
+              'Adopted by all 27 French casinos in the group, 300+ users',
               'Better player tracking and support for responsible gambling',
               'Real-time floor performance monitoring, with a tool to help optimize it',
             ],
@@ -224,6 +232,7 @@ export const contentEn: SiteContent = {
           {
             headline: 'Built and shipped a shared sign-up journey and customer account strategy across all our tools',
             metrics: [
+              '50% conversion rate (+10%)',
               'Previously built individually on each product',
               'Cuts maintenance effort',
               'Eliminates functional gaps between tools',
@@ -319,7 +328,7 @@ export const contentEn: SiteContent = {
         wins: [
           {
             headline: 'At the agency (1 year)',
-            metrics: ['Designed and managed web projects for Veolia and Gerep'],
+            metrics: ['Designed and managed 3 web projects for Veolia, Gerep, and Scor'],
           },
           {
             headline: "Embedded with GRDF's teams (1 year)",
@@ -405,14 +414,14 @@ export const contentEn: SiteContent = {
       period: '2012 · 2017',
     },
     {
-      title: 'GenAI for Product Team',
-      detail: 'AI Discipline · certification',
-      period: 'Sep. 2025',
-    },
-    {
       title: 'Claude Code for Product Managers',
       detail: 'AI Discipline · certification',
       period: 'Jul. 2026',
+    },
+    {
+      title: 'GenAI for Product Team',
+      detail: 'AI Discipline · certification',
+      period: 'Sep. 2025',
     },
   ],
 
@@ -430,6 +439,7 @@ export const contentEn: SiteContent = {
     { name: 'Veolia', slug: 'veolia' },
     { name: 'GRDF', slug: 'grdf' },
     { name: 'Gerep', slug: 'gerep' },
+    { name: 'Scor', slug: 'scor' },
   ],
 
   contact: {
